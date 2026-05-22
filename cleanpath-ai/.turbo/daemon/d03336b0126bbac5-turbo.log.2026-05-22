@@ -712,3 +712,5 @@
 2026-05-22T20:20:48.528856Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@cleanpath/edge-gatekeeper"), path: AnchoredSystemPathBuf("edge-gatekeeper") }}))
 2026-05-22T20:36:41.597218Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("application-api/src/routes/publisherRoutes.ts")}
 2026-05-22T20:36:41.600104Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("application-api"), path: AnchoredSystemPathBuf("application-api") }}))
+2026-05-22T20:44:27.061349Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("shared/logging/src/index.d.ts")}
+2026-05-22T20:44:27.064029Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@cleanpath/logging"), path: AnchoredSystemPathBuf("shared/logging") }}))
