@@ -716,3 +716,23 @@
 2026-05-22T20:44:27.064029Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@cleanpath/logging"), path: AnchoredSystemPathBuf("shared/logging") }}))
 2026-05-22T20:57:10.885947Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("application-api/src/index.ts")}
 2026-05-22T20:57:10.887619Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("application-api"), path: AnchoredSystemPathBuf("application-api") }}))
+2026-05-22T21:06:31.600884Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("application-api/src/database/db.ts")}
+2026-05-22T21:06:31.602875Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("application-api"), path: AnchoredSystemPathBuf("application-api") }}))
+2026-05-22T21:07:30.897755Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("edge-gatekeeper/src/middleware/index.ts")}
+2026-05-22T21:07:30.899054Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@cleanpath/edge-gatekeeper"), path: AnchoredSystemPathBuf("edge-gatekeeper") }}))
+2026-05-22T21:10:42.403143Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("dashboard/package.json")}
+2026-05-22T21:10:42.404683Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("dashboard"), path: AnchoredSystemPathBuf("dashboard") }}))
+2026-05-22T21:12:34.713059Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(""), AnchoredSystemPathBuf("_tmp_33892_7ecf6c3016b843898b6a7e5dd9ec473c")}
+2026-05-22T21:12:34.714924Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2026-05-22T21:12:34.994051Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(""), AnchoredSystemPathBuf("_tmp_33895_5a9cad0c6409513ab73caa617687f091")}
+2026-05-22T21:12:34.994060Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2026-05-22T21:12:36.795642Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("")}
+2026-05-22T21:12:36.795662Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({}))
+2026-05-22T21:12:36.994526Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("pnpm-lock.yaml"), AnchoredSystemPathBuf("pnpm-lock.yaml.3581616239")}
+2026-05-22T21:12:36.994538Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2026-05-22T21:13:15.816947Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("application-api/src/routes/graphRoutes.ts")}
+2026-05-22T21:13:15.819105Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("application-api"), path: AnchoredSystemPathBuf("application-api") }}))
+2026-05-22T21:13:51.918588Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("dashboard/src/features/bid-genius/components/ui/resizable.tsx")}
+2026-05-22T21:13:51.921459Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("dashboard"), path: AnchoredSystemPathBuf("dashboard") }}))
+2026-05-22T21:13:56.296146Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("dashboard/src/features/budget-guardian/components/ui/resizable.tsx")}
+2026-05-22T21:13:56.296189Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("dashboard"), path: AnchoredSystemPathBuf("dashboard") }}))
