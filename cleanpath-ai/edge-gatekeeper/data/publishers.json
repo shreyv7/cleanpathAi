@@ -1,0 +1,952 @@
+[
+  {
+    "publisherId": "pub_clean_1",
+    "domain": "clean-publisher-1.com",
+    "currentThermalScore": {
+      "overall": 7,
+      "breakdown": {
+        "adDensity": 6,
+        "engagement": 4,
+        "contentQuality": 13,
+        "domainReputation": 3
+      },
+      "signals": [],
+      "confidence": 0.9569438466336946
+    },
+    "currentRiskLevel": "clean",
+    "historicalScores": [],
+    "lastEvaluated": 1771044703984,
+    "evaluationCount": 1
+  },
+  {
+    "publisherId": "pub_clean_2",
+    "domain": "clean-publisher-2.com",
+    "currentThermalScore": {
+      "overall": 14,
+      "breakdown": {
+        "adDensity": 0,
+        "engagement": 8,
+        "contentQuality": 14,
+        "domainReputation": 9
+      },
+      "signals": [],
+      "confidence": 0.935448450049184
+    },
+    "currentRiskLevel": "clean",
+    "historicalScores": [],
+    "lastEvaluated": 1771044703984,
+    "evaluationCount": 1
+  },
+  {
+    "publisherId": "pub_clean_3",
+    "domain": "clean-publisher-3.com",
+    "currentThermalScore": {
+      "overall": 3,
+      "breakdown": {
+        "adDensity": 12,
+        "engagement": 9,
+        "contentQuality": 10,
+        "domainReputation": 0
+      },
+      "signals": [],
+      "confidence": 0.9673873565501925
+    },
+    "currentRiskLevel": "clean",
+    "historicalScores": [],
+    "lastEvaluated": 1771044703984,
+    "evaluationCount": 1
+  },
+  {
+    "publisherId": "pub_clean_4",
+    "domain": "clean-publisher-4.com",
+    "currentThermalScore": {
+      "overall": 21,
+      "breakdown": {
+        "adDensity": 6,
+        "engagement": 2,
+        "contentQuality": 0,
+        "domainReputation": 13
+      },
+      "signals": [],
+      "confidence": 0.9839778481241102
+    },
+    "currentRiskLevel": "clean",
+    "historicalScores": [],
+    "lastEvaluated": 1771044703984,
+    "evaluationCount": 1
+  },
+  {
+    "publisherId": "pub_clean_5",
+    "domain": "clean-publisher-5.com",
+    "currentThermalScore": {
+      "overall": 0,
+      "breakdown": {
+        "adDensity": 11,
+        "engagement": 7,
+        "contentQuality": 10,
+        "domainReputation": 4
+      },
+      "signals": [],
+      "confidence": 0.9206940109932965
+    },
+    "currentRiskLevel": "clean",
+    "historicalScores": [],
+    "lastEvaluated": 1771044703984,
+    "evaluationCount": 1
+  },
+  {
+    "publisherId": "pub_clean_6",
+    "domain": "clean-publisher-6.com",
+    "currentThermalScore": {
+      "overall": 15,
+      "breakdown": {
+        "adDensity": 3,
+        "engagement": 9,
+        "contentQuality": 1,
+        "domainReputation": 18
+      },
+      "signals": [],
+      "confidence": 0.970642905683125
+    },
+    "currentRiskLevel": "clean",
+    "historicalScores": [],
+    "lastEvaluated": 1771044703984,
+    "evaluationCount": 1
+  },
+  {
+    "publisherId": "pub_clean_7",
+    "domain": "clean-publisher-7.com",
+    "currentThermalScore": {
+      "overall": 6,
+      "breakdown": {
+        "adDensity": 8,
+        "engagement": 11,
+        "contentQuality": 12,
+        "domainReputation": 16
+      },
+      "signals": [],
+      "confidence": 0.9062211078664398
+    },
+    "currentRiskLevel": "clean",
+    "historicalScores": [],
+    "lastEvaluated": 1771044703984,
+    "evaluationCount": 1
+  },
+  {
+    "publisherId": "pub_clean_8",
+    "domain": "clean-publisher-8.com",
+    "currentThermalScore": {
+      "overall": 17,
+      "breakdown": {
+        "adDensity": 5,
+        "engagement": 8,
+        "contentQuality": 12,
+        "domainReputation": 12
+      },
+      "signals": [],
+      "confidence": 0.925749412689952
+    },
+    "currentRiskLevel": "clean",
+    "historicalScores": [],
+    "lastEvaluated": 1771044703984,
+    "evaluationCount": 1
+  },
+  {
+    "publisherId": "pub_clean_9",
+    "domain": "clean-publisher-9.com",
+    "currentThermalScore": {
+      "overall": 24,
+      "breakdown": {
+        "adDensity": 10,
+        "engagement": 11,
+        "contentQuality": 14,
+        "domainReputation": 3
+      },
+      "signals": [],
+      "confidence": 0.9384273045584546
+    },
+    "currentRiskLevel": "clean",
+    "historicalScores": [],
+    "lastEvaluated": 1771044703985,
+    "evaluationCount": 1
+  },
+  {
+    "publisherId": "pub_clean_10",
+    "domain": "clean-publisher-10.com",
+    "currentThermalScore": {
+      "overall": 19,
+      "breakdown": {
+        "adDensity": 3,
+        "engagement": 19,
+        "contentQuality": 18,
+        "domainReputation": 8
+      },
+      "signals": [],
+      "confidence": 0.9335182644599512
+    },
+    "currentRiskLevel": "clean",
+    "historicalScores": [],
+    "lastEvaluated": 1771044703985,
+    "evaluationCount": 1
+  },
+  {
+    "publisherId": "pub_clean_11",
+    "domain": "clean-publisher-11.com",
+    "currentThermalScore": {
+      "overall": 22,
+      "breakdown": {
+        "adDensity": 9,
+        "engagement": 4,
+        "contentQuality": 2,
+        "domainReputation": 16
+      },
+      "signals": [],
+      "confidence": 0.9721989114348439
+    },
+    "currentRiskLevel": "clean",
+    "historicalScores": [],
+    "lastEvaluated": 1771044703985,
+    "evaluationCount": 1
+  },
+  {
+    "publisherId": "pub_clean_12",
+    "domain": "clean-publisher-12.com",
+    "currentThermalScore": {
+      "overall": 5,
+      "breakdown": {
+        "adDensity": 16,
+        "engagement": 12,
+        "contentQuality": 12,
+        "domainReputation": 18
+      },
+      "signals": [],
+      "confidence": 0.9642888179181467
+    },
+    "currentRiskLevel": "clean",
+    "historicalScores": [],
+    "lastEvaluated": 1771044703985,
+    "evaluationCount": 1
+  },
+  {
+    "publisherId": "pub_clean_13",
+    "domain": "clean-publisher-13.com",
+    "currentThermalScore": {
+      "overall": 6,
+      "breakdown": {
+        "adDensity": 20,
+        "engagement": 9,
+        "contentQuality": 16,
+        "domainReputation": 13
+      },
+      "signals": [],
+      "confidence": 0.921687261602443
+    },
+    "currentRiskLevel": "clean",
+    "historicalScores": [],
+    "lastEvaluated": 1771044703985,
+    "evaluationCount": 1
+  },
+  {
+    "publisherId": "pub_clean_14",
+    "domain": "clean-publisher-14.com",
+    "currentThermalScore": {
+      "overall": 9,
+      "breakdown": {
+        "adDensity": 20,
+        "engagement": 8,
+        "contentQuality": 12,
+        "domainReputation": 4
+      },
+      "signals": [],
+      "confidence": 0.9977244298146979
+    },
+    "currentRiskLevel": "clean",
+    "historicalScores": [],
+    "lastEvaluated": 1771044703985,
+    "evaluationCount": 1
+  },
+  {
+    "publisherId": "pub_clean_15",
+    "domain": "clean-publisher-15.com",
+    "currentThermalScore": {
+      "overall": 20,
+      "breakdown": {
+        "adDensity": 9,
+        "engagement": 1,
+        "contentQuality": 9,
+        "domainReputation": 16
+      },
+      "signals": [],
+      "confidence": 0.9869515347742178
+    },
+    "currentRiskLevel": "clean",
+    "historicalScores": [],
+    "lastEvaluated": 1771044703985,
+    "evaluationCount": 1
+  },
+  {
+    "publisherId": "pub_clean_16",
+    "domain": "clean-publisher-16.com",
+    "currentThermalScore": {
+      "overall": 3,
+      "breakdown": {
+        "adDensity": 5,
+        "engagement": 15,
+        "contentQuality": 11,
+        "domainReputation": 1
+      },
+      "signals": [],
+      "confidence": 0.9721482060583525
+    },
+    "currentRiskLevel": "clean",
+    "historicalScores": [],
+    "lastEvaluated": 1771044703985,
+    "evaluationCount": 1
+  },
+  {
+    "publisherId": "pub_clean_17",
+    "domain": "clean-publisher-17.com",
+    "currentThermalScore": {
+      "overall": 21,
+      "breakdown": {
+        "adDensity": 18,
+        "engagement": 8,
+        "contentQuality": 13,
+        "domainReputation": 0
+      },
+      "signals": [],
+      "confidence": 0.9168759169144218
+    },
+    "currentRiskLevel": "clean",
+    "historicalScores": [],
+    "lastEvaluated": 1771044703985,
+    "evaluationCount": 1
+  },
+  {
+    "publisherId": "pub_clean_18",
+    "domain": "clean-publisher-18.com",
+    "currentThermalScore": {
+      "overall": 24,
+      "breakdown": {
+        "adDensity": 12,
+        "engagement": 7,
+        "contentQuality": 13,
+        "domainReputation": 17
+      },
+      "signals": [],
+      "confidence": 0.93792516200096
+    },
+    "currentRiskLevel": "clean",
+    "historicalScores": [],
+    "lastEvaluated": 1771044703985,
+    "evaluationCount": 1
+  },
+  {
+    "publisherId": "pub_clean_19",
+    "domain": "clean-publisher-19.com",
+    "currentThermalScore": {
+      "overall": 5,
+      "breakdown": {
+        "adDensity": 2,
+        "engagement": 13,
+        "contentQuality": 7,
+        "domainReputation": 1
+      },
+      "signals": [],
+      "confidence": 0.905403524618684
+    },
+    "currentRiskLevel": "clean",
+    "historicalScores": [],
+    "lastEvaluated": 1771044703985,
+    "evaluationCount": 1
+  },
+  {
+    "publisherId": "pub_clean_20",
+    "domain": "clean-publisher-20.com",
+    "currentThermalScore": {
+      "overall": 0,
+      "breakdown": {
+        "adDensity": 16,
+        "engagement": 7,
+        "contentQuality": 14,
+        "domainReputation": 19
+      },
+      "signals": [],
+      "confidence": 0.9972070292619878
+    },
+    "currentRiskLevel": "clean",
+    "historicalScores": [],
+    "lastEvaluated": 1771044703985,
+    "evaluationCount": 1
+  },
+  {
+    "publisherId": "pub_moderate_1",
+    "domain": "moderate-publisher-1.com",
+    "currentThermalScore": {
+      "overall": 46,
+      "breakdown": {
+        "adDensity": 36,
+        "engagement": 30,
+        "contentQuality": 48,
+        "domainReputation": 47
+      },
+      "signals": [],
+      "confidence": 0.8
+    },
+    "currentRiskLevel": "moderate",
+    "historicalScores": [],
+    "lastEvaluated": 1771044703985,
+    "evaluationCount": 1
+  },
+  {
+    "publisherId": "pub_moderate_2",
+    "domain": "moderate-publisher-2.com",
+    "currentThermalScore": {
+      "overall": 35,
+      "breakdown": {
+        "adDensity": 59,
+        "engagement": 47,
+        "contentQuality": 59,
+        "domainReputation": 31
+      },
+      "signals": [],
+      "confidence": 0.8
+    },
+    "currentRiskLevel": "moderate",
+    "historicalScores": [],
+    "lastEvaluated": 1771044703985,
+    "evaluationCount": 1
+  },
+  {
+    "publisherId": "pub_moderate_3",
+    "domain": "moderate-publisher-3.com",
+    "currentThermalScore": {
+      "overall": 45,
+      "breakdown": {
+        "adDensity": 47,
+        "engagement": 54,
+        "contentQuality": 58,
+        "domainReputation": 51
+      },
+      "signals": [],
+      "confidence": 0.8
+    },
+    "currentRiskLevel": "moderate",
+    "historicalScores": [],
+    "lastEvaluated": 1771044703985,
+    "evaluationCount": 1
+  },
+  {
+    "publisherId": "pub_moderate_4",
+    "domain": "moderate-publisher-4.com",
+    "currentThermalScore": {
+      "overall": 39,
+      "breakdown": {
+        "adDensity": 47,
+        "engagement": 34,
+        "contentQuality": 59,
+        "domainReputation": 50
+      },
+      "signals": [],
+      "confidence": 0.8
+    },
+    "currentRiskLevel": "moderate",
+    "historicalScores": [],
+    "lastEvaluated": 1771044703985,
+    "evaluationCount": 1
+  },
+  {
+    "publisherId": "pub_moderate_5",
+    "domain": "moderate-publisher-5.com",
+    "currentThermalScore": {
+      "overall": 56,
+      "breakdown": {
+        "adDensity": 50,
+        "engagement": 41,
+        "contentQuality": 54,
+        "domainReputation": 56
+      },
+      "signals": [],
+      "confidence": 0.8
+    },
+    "currentRiskLevel": "moderate",
+    "historicalScores": [],
+    "lastEvaluated": 1771044703985,
+    "evaluationCount": 1
+  },
+  {
+    "publisherId": "pub_moderate_6",
+    "domain": "moderate-publisher-6.com",
+    "currentThermalScore": {
+      "overall": 41,
+      "breakdown": {
+        "adDensity": 59,
+        "engagement": 42,
+        "contentQuality": 55,
+        "domainReputation": 56
+      },
+      "signals": [],
+      "confidence": 0.8
+    },
+    "currentRiskLevel": "moderate",
+    "historicalScores": [],
+    "lastEvaluated": 1771044703985,
+    "evaluationCount": 1
+  },
+  {
+    "publisherId": "pub_moderate_7",
+    "domain": "moderate-publisher-7.com",
+    "currentThermalScore": {
+      "overall": 55,
+      "breakdown": {
+        "adDensity": 58,
+        "engagement": 48,
+        "contentQuality": 51,
+        "domainReputation": 30
+      },
+      "signals": [],
+      "confidence": 0.8
+    },
+    "currentRiskLevel": "moderate",
+    "historicalScores": [],
+    "lastEvaluated": 1771044703985,
+    "evaluationCount": 1
+  },
+  {
+    "publisherId": "pub_moderate_8",
+    "domain": "moderate-publisher-8.com",
+    "currentThermalScore": {
+      "overall": 46,
+      "breakdown": {
+        "adDensity": 58,
+        "engagement": 47,
+        "contentQuality": 59,
+        "domainReputation": 42
+      },
+      "signals": [],
+      "confidence": 0.8
+    },
+    "currentRiskLevel": "moderate",
+    "historicalScores": [],
+    "lastEvaluated": 1771044703985,
+    "evaluationCount": 1
+  },
+  {
+    "publisherId": "pub_moderate_9",
+    "domain": "moderate-publisher-9.com",
+    "currentThermalScore": {
+      "overall": 49,
+      "breakdown": {
+        "adDensity": 52,
+        "engagement": 45,
+        "contentQuality": 32,
+        "domainReputation": 46
+      },
+      "signals": [],
+      "confidence": 0.8
+    },
+    "currentRiskLevel": "moderate",
+    "historicalScores": [],
+    "lastEvaluated": 1771044703985,
+    "evaluationCount": 1
+  },
+  {
+    "publisherId": "pub_moderate_10",
+    "domain": "moderate-publisher-10.com",
+    "currentThermalScore": {
+      "overall": 54,
+      "breakdown": {
+        "adDensity": 59,
+        "engagement": 58,
+        "contentQuality": 47,
+        "domainReputation": 57
+      },
+      "signals": [],
+      "confidence": 0.8
+    },
+    "currentRiskLevel": "moderate",
+    "historicalScores": [],
+    "lastEvaluated": 1771044703985,
+    "evaluationCount": 1
+  },
+  {
+    "publisherId": "pub_moderate_11",
+    "domain": "moderate-publisher-11.com",
+    "currentThermalScore": {
+      "overall": 35,
+      "breakdown": {
+        "adDensity": 60,
+        "engagement": 47,
+        "contentQuality": 57,
+        "domainReputation": 30
+      },
+      "signals": [],
+      "confidence": 0.8
+    },
+    "currentRiskLevel": "moderate",
+    "historicalScores": [],
+    "lastEvaluated": 1771044703985,
+    "evaluationCount": 1
+  },
+  {
+    "publisherId": "pub_moderate_12",
+    "domain": "moderate-publisher-12.com",
+    "currentThermalScore": {
+      "overall": 56,
+      "breakdown": {
+        "adDensity": 38,
+        "engagement": 47,
+        "contentQuality": 58,
+        "domainReputation": 46
+      },
+      "signals": [],
+      "confidence": 0.8
+    },
+    "currentRiskLevel": "moderate",
+    "historicalScores": [],
+    "lastEvaluated": 1771044703985,
+    "evaluationCount": 1
+  },
+  {
+    "publisherId": "pub_moderate_13",
+    "domain": "moderate-publisher-13.com",
+    "currentThermalScore": {
+      "overall": 43,
+      "breakdown": {
+        "adDensity": 36,
+        "engagement": 43,
+        "contentQuality": 41,
+        "domainReputation": 31
+      },
+      "signals": [],
+      "confidence": 0.8
+    },
+    "currentRiskLevel": "moderate",
+    "historicalScores": [],
+    "lastEvaluated": 1771044703985,
+    "evaluationCount": 1
+  },
+  {
+    "publisherId": "pub_moderate_14",
+    "domain": "moderate-publisher-14.com",
+    "currentThermalScore": {
+      "overall": 43,
+      "breakdown": {
+        "adDensity": 43,
+        "engagement": 55,
+        "contentQuality": 58,
+        "domainReputation": 45
+      },
+      "signals": [],
+      "confidence": 0.8
+    },
+    "currentRiskLevel": "moderate",
+    "historicalScores": [],
+    "lastEvaluated": 1771044703985,
+    "evaluationCount": 1
+  },
+  {
+    "publisherId": "pub_moderate_15",
+    "domain": "moderate-publisher-15.com",
+    "currentThermalScore": {
+      "overall": 50,
+      "breakdown": {
+        "adDensity": 56,
+        "engagement": 48,
+        "contentQuality": 40,
+        "domainReputation": 60
+      },
+      "signals": [],
+      "confidence": 0.8
+    },
+    "currentRiskLevel": "moderate",
+    "historicalScores": [],
+    "lastEvaluated": 1771044703985,
+    "evaluationCount": 1
+  },
+  {
+    "publisherId": "pub_moderate_16",
+    "domain": "moderate-publisher-16.com",
+    "currentThermalScore": {
+      "overall": 36,
+      "breakdown": {
+        "adDensity": 40,
+        "engagement": 39,
+        "contentQuality": 43,
+        "domainReputation": 60
+      },
+      "signals": [],
+      "confidence": 0.8
+    },
+    "currentRiskLevel": "moderate",
+    "historicalScores": [],
+    "lastEvaluated": 1771044703985,
+    "evaluationCount": 1
+  },
+  {
+    "publisherId": "pub_moderate_17",
+    "domain": "moderate-publisher-17.com",
+    "currentThermalScore": {
+      "overall": 49,
+      "breakdown": {
+        "adDensity": 44,
+        "engagement": 34,
+        "contentQuality": 50,
+        "domainReputation": 30
+      },
+      "signals": [],
+      "confidence": 0.8
+    },
+    "currentRiskLevel": "moderate",
+    "historicalScores": [],
+    "lastEvaluated": 1771044703985,
+    "evaluationCount": 1
+  },
+  {
+    "publisherId": "pub_moderate_18",
+    "domain": "moderate-publisher-18.com",
+    "currentThermalScore": {
+      "overall": 35,
+      "breakdown": {
+        "adDensity": 33,
+        "engagement": 49,
+        "contentQuality": 52,
+        "domainReputation": 40
+      },
+      "signals": [],
+      "confidence": 0.8
+    },
+    "currentRiskLevel": "moderate",
+    "historicalScores": [],
+    "lastEvaluated": 1771044703985,
+    "evaluationCount": 1
+  },
+  {
+    "publisherId": "pub_moderate_19",
+    "domain": "moderate-publisher-19.com",
+    "currentThermalScore": {
+      "overall": 56,
+      "breakdown": {
+        "adDensity": 45,
+        "engagement": 56,
+        "contentQuality": 39,
+        "domainReputation": 30
+      },
+      "signals": [],
+      "confidence": 0.8
+    },
+    "currentRiskLevel": "moderate",
+    "historicalScores": [],
+    "lastEvaluated": 1771044703985,
+    "evaluationCount": 1
+  },
+  {
+    "publisherId": "pub_moderate_20",
+    "domain": "moderate-publisher-20.com",
+    "currentThermalScore": {
+      "overall": 57,
+      "breakdown": {
+        "adDensity": 45,
+        "engagement": 31,
+        "contentQuality": 52,
+        "domainReputation": 43
+      },
+      "signals": [],
+      "confidence": 0.8
+    },
+    "currentRiskLevel": "moderate",
+    "historicalScores": [],
+    "lastEvaluated": 1771044703985,
+    "evaluationCount": 1
+  },
+  {
+    "publisherId": "pub_high_1",
+    "domain": "high-risk-publisher-1.com",
+    "currentThermalScore": {
+      "overall": 83,
+      "breakdown": {
+        "adDensity": 81,
+        "engagement": 95,
+        "contentQuality": 88,
+        "domainReputation": 95
+      },
+      "signals": [],
+      "confidence": 0.95
+    },
+    "currentRiskLevel": "high",
+    "historicalScores": [],
+    "lastEvaluated": 1771044703986,
+    "evaluationCount": 1
+  },
+  {
+    "publisherId": "pub_high_2",
+    "domain": "high-risk-publisher-2.com",
+    "currentThermalScore": {
+      "overall": 81,
+      "breakdown": {
+        "adDensity": 100,
+        "engagement": 92,
+        "contentQuality": 92,
+        "domainReputation": 81
+      },
+      "signals": [],
+      "confidence": 0.95
+    },
+    "currentRiskLevel": "high",
+    "historicalScores": [],
+    "lastEvaluated": 1771044703986,
+    "evaluationCount": 1
+  },
+  {
+    "publisherId": "pub_high_3",
+    "domain": "high-risk-publisher-3.com",
+    "currentThermalScore": {
+      "overall": 89,
+      "breakdown": {
+        "adDensity": 84,
+        "engagement": 96,
+        "contentQuality": 99,
+        "domainReputation": 88
+      },
+      "signals": [],
+      "confidence": 0.95
+    },
+    "currentRiskLevel": "high",
+    "historicalScores": [],
+    "lastEvaluated": 1771044703986,
+    "evaluationCount": 1
+  },
+  {
+    "publisherId": "pub_high_4",
+    "domain": "high-risk-publisher-4.com",
+    "currentThermalScore": {
+      "overall": 97,
+      "breakdown": {
+        "adDensity": 80,
+        "engagement": 94,
+        "contentQuality": 90,
+        "domainReputation": 98
+      },
+      "signals": [],
+      "confidence": 0.95
+    },
+    "currentRiskLevel": "high",
+    "historicalScores": [],
+    "lastEvaluated": 1771044703986,
+    "evaluationCount": 1
+  },
+  {
+    "publisherId": "pub_high_5",
+    "domain": "high-risk-publisher-5.com",
+    "currentThermalScore": {
+      "overall": 80,
+      "breakdown": {
+        "adDensity": 94,
+        "engagement": 95,
+        "contentQuality": 99,
+        "domainReputation": 85
+      },
+      "signals": [],
+      "confidence": 0.95
+    },
+    "currentRiskLevel": "high",
+    "historicalScores": [],
+    "lastEvaluated": 1771044703986,
+    "evaluationCount": 1
+  },
+  {
+    "publisherId": "pub_high_6",
+    "domain": "high-risk-publisher-6.com",
+    "currentThermalScore": {
+      "overall": 81,
+      "breakdown": {
+        "adDensity": 82,
+        "engagement": 96,
+        "contentQuality": 96,
+        "domainReputation": 84
+      },
+      "signals": [],
+      "confidence": 0.95
+    },
+    "currentRiskLevel": "high",
+    "historicalScores": [],
+    "lastEvaluated": 1771044703986,
+    "evaluationCount": 1
+  },
+  {
+    "publisherId": "pub_high_7",
+    "domain": "high-risk-publisher-7.com",
+    "currentThermalScore": {
+      "overall": 86,
+      "breakdown": {
+        "adDensity": 95,
+        "engagement": 96,
+        "contentQuality": 98,
+        "domainReputation": 98
+      },
+      "signals": [],
+      "confidence": 0.95
+    },
+    "currentRiskLevel": "high",
+    "historicalScores": [],
+    "lastEvaluated": 1771044703986,
+    "evaluationCount": 1
+  },
+  {
+    "publisherId": "pub_high_8",
+    "domain": "high-risk-publisher-8.com",
+    "currentThermalScore": {
+      "overall": 83,
+      "breakdown": {
+        "adDensity": 92,
+        "engagement": 95,
+        "contentQuality": 88,
+        "domainReputation": 95
+      },
+      "signals": [],
+      "confidence": 0.95
+    },
+    "currentRiskLevel": "high",
+    "historicalScores": [],
+    "lastEvaluated": 1771044703986,
+    "evaluationCount": 1
+  },
+  {
+    "publisherId": "pub_high_9",
+    "domain": "high-risk-publisher-9.com",
+    "currentThermalScore": {
+      "overall": 98,
+      "breakdown": {
+        "adDensity": 87,
+        "engagement": 97,
+        "contentQuality": 89,
+        "domainReputation": 83
+      },
+      "signals": [],
+      "confidence": 0.95
+    },
+    "currentRiskLevel": "high",
+    "historicalScores": [],
+    "lastEvaluated": 1771044703986,
+    "evaluationCount": 1
+  },
+  {
+    "publisherId": "pub_high_10",
+    "domain": "high-risk-publisher-10.com",
+    "currentThermalScore": {
+      "overall": 81,
+      "breakdown": {
+        "adDensity": 82,
+        "engagement": 84,
+        "contentQuality": 85,
+        "domainReputation": 89
+      },
+      "signals": [],
+      "confidence": 0.95
+    },
+    "currentRiskLevel": "high",
+    "historicalScores": [],
+    "lastEvaluated": 1771044703986,
+    "evaluationCount": 1
+  }
+]

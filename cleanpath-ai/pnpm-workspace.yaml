@@ -1,0 +1,7 @@
+packages:
+  - 'edge-gatekeeper'
+  - 'application-api'
+  - 'graph-service'
+  - 'analytics-pipeline'
+  - 'dashboard'
+  - 'shared/*'

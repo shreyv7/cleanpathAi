@@ -1,0 +1,35 @@
+{
+    "name": "@cleanpath/edge-gatekeeper",
+    "version": "0.1.0",
+    "private": true,
+    "main": "./src/index.ts",
+    "dependencies": {
+        "@cleanpath/logging": "workspace:*",
+        "@cleanpath/types": "workspace:*",
+        "axios": "^1.6.0",
+        "ioredis": "^5.9.3"
+    },
+    "devDependencies": {
+        "@types/jest": "^29.5.12",
+        "@types/node": "^20.11.0",
+        "jest": "^29.7.0",
+        "ts-jest": "^29.1.2",
+        "tsx": "^4.7.0",
+        "typescript": "^5.3.3"
+    },
+    "scripts": {
+        "dev": "tsx watch src/index.ts",
+        "dev:cluster": "tsx src/cluster.ts",
+        "start": "node dist/cluster.js",
+        "build": "tsc",
+        "typecheck": "tsc --noEmit",
+        "lint": "eslint src --ext .ts",
+        "test": "jest",
+        "test:watch": "jest --watch",
+        "test:coverage": "jest --coverage",
+        "benchmark:latency": "tsx benchmarks/latency-test.ts",
+        "benchmark:throughput": "tsx benchmarks/throughput-test.ts",
+        "simulate:paths": "tsx scripts/simulate-paths.ts",
+        "clean": "rm -rf dist"
+    }
+}

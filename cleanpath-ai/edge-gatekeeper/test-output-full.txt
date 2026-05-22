@@ -1,0 +1,265 @@
+
+> @cleanpath/edge-gatekeeper@0.1.0 test
+> jest src/__tests__
+
+PASS src/__tests__/CTVFeatureExtractor.test.ts
+  CTVFeatureExtractor
+    ✓ extracts features from a clean request (7 ms)
+    ✓ extracts features with spoof signals (4 ms)
+    ✓ handles missing optional fields gracefully (2 ms)
+    ✓ calculates historical features correctly
+
+PASS src/__tests__/pacing/TokenBucketPacer.test.ts
+  TokenBucketPacer
+    ✓ should allow request when budget is unlimited (no cap set) (1 ms)
+    ✓ should call Lua script with correct parameters when cap is set (1 ms)
+    ✓ should block request when Lua script returns 0 (1 ms)
+    ✓ should fail open (allow) on redis error
+
+PASS src/__tests__/pacing/PIDPacer.test.ts
+  PIDPacer
+    ✓ should allow request when no budget limit is set (9 ms)
+    ✓ should calculate aggressive probability when underspending
+    ✓ should throttle requests when overspending (1 ms)
+
+PASS src/__tests__/LRUCache.test.ts
+  LRUCache
+    Basic Operations
+      ✓ should set and get values (9 ms)
+      ✓ should return undefined for missing keys
+      ✓ should check if key exists (8 ms)
+      ✓ should delete keys (43 ms)
+      ✓ should clear all entries (1 ms)
+      ✓ should return correct size (1 ms)
+    LRU Eviction
+      ✓ should evict least recently used item when full
+      ✓ should update LRU order on access (1 ms)
+    TTL Management
+      ✓ should expire entries after TTL (154 ms)
+      ✓ should support custom TTL per entry (163 ms)
+      ✓ should prune expired entries (158 ms)
+    Statistics
+      ✓ should track cache hits and misses (1 ms)
+      ✓ should calculate hit rate correctly (1 ms)
+      ✓ should reset stats on clear (2 ms)
+    Access Tracking
+      ✓ should track access count
+      ✓ should limit most accessed results
+    Utility Methods
+      ✓ should return all keys
+      ✓ should return all values (1 ms)
+    Performance
+      ✓ should handle large number of entries efficiently (22 ms)
+
+PASS src/__tests__/middleware.test.ts
+  AuthMiddleware
+    ✓ should authenticate valid API key (1 ms)
+    ✓ should reject invalid API key
+    ✓ should reject missing API key
+    ✓ should allow all requests when disabled
+    ✓ should handle case-insensitive headers (2 ms)
+    ✓ should support runtime key management
+  RateLimitMiddleware
+    ✓ should allow requests within limit (1 ms)
+    ✓ should reject requests exceeding limit
+    ✓ should track remaining quota
+    ✓ should reset after time window (162 ms)
+    ✓ should support per-client limits (1 ms)
+    ✓ should isolate clients (1 ms)
+    ✓ should allow all requests when disabled (2 ms)
+  RequestParserMiddleware
+    ✓ should parse valid bid request (1 ms)
+    ✓ should normalize OpenRTB field names
+    ✓ should detect device types correctly
+    ✓ should handle missing optional fields (2 ms)
+    ✓ should reject invalid requests (5 ms)
+    ✓ should parse JSON strings
+    ✓ should generate request ID if missing (1 ms)
+
+PASS src/__tests__/integration/BidPipeline.test.ts
+  BidPipeline Integration
+    ✓ should block bid when Pacing Orchestrator denies budget (7 ms)
+    ✓ should allow and shade bid when pacing allows (1 ms)
+
+PASS src/__tests__/RLComponents.test.ts
+  RL Components
+    RLRewardService
+      ✓ calculates positive reward for correct BLOCK of spoof (5 ms)
+      ✓ calculates negative reward for False Positive (Blocking Clean)
+      ✓ calculates positive reward for Correct Allow (True Negative) (1 ms)
+      ✓ penalizes False Negative (Allowing Spoof)
+    ExperienceReplayBuffer
+      ✓ adds experiences up to capacity (2 ms)
+      ✓ overwrites old experiences when full (3 ms)
+      ✓ samples a batch of correct size (1 ms)
+      ✓ returns all items if sample size > buffer size (1 ms)
+
+PASS src/__tests__/CTVSpoofGuard.test.ts
+  CTVAppValidator
+    ✓ should load the allowlist with entries (1 ms)
+    ✓ should pass a valid allowlisted app bundle
+    ✓ should flag an unknown bundle ID
+    ✓ should flag store URL domain mismatch (1 ms)
+    ✓ should pass bundle with matching store URL
+    ✓ should flag name mismatch for allowlisted bundle
+    ✓ should check isAllowlisted correctly
+  CTVDeviceChecker
+    ✓ should pass a consistent Roku device fingerprint (1 ms)
+    ✓ should detect emulator user-agent patterns (1 ms)
+    ✓ should flag UA inconsistency when device make does not match UA (1 ms)
+    ✓ should flag OS version outside known firmware range
+    ✓ should flag non-standard screen resolution
+    ✓ should cap risk score at 100 (1 ms)
+  CTVStreamValidator
+    ✓ should pass a normal streaming session (1 ms)
+    ✓ should flag excessive session duration
+    ✓ should flag zero-duration sessions (1 ms)
+    ✓ should flag excessive concurrent sessions
+    ✓ should flag geo inconsistency between IP and declared region (1 ms)
+    ✓ should flag implausible bitrate
+    ✓ should pass valid bitrate
+  CTVSpoofGuard
+    ✓ should return CLEAN for non-CTV requests
+    ✓ should return CLEAN for a legitimate CTV request (1 ms)
+    ✓ should detect a spoofed CTV request with emulator UA
+    ✓ should flag unknown app bundle combined with emulator (2 ms)
+    ✓ should include confidence based on available data (1 ms)
+    ✓ should have processing time measured
+    ✓ should return configurable thresholds (1 ms)
+  CTVDeviceCache
+    ✓ should store and retrieve a device entry (1 ms)
+    ✓ should return null for unknown IFA (1 ms)
+    ✓ should detect device make mutation (1 ms)
+    ✓ should detect OS version downgrade (1 ms)
+    ✓ should not flag identical fingerprints
+    ✓ should evict LRU entries at capacity (1 ms)
+    ✓ should report correct cache size
+
+PASS src/__tests__/CTVModelInference.test.ts
+  CTVModelInference
+    ✓ should load model on initialization if file exists (16 ms)
+    ✓ should log warning validation if model file missing (1 ms)
+    ✓ should run prediction and return probability (12 ms)
+    ✓ should return -1 on inference error (12 ms)
+
+PASS src/__tests__/CTVIntegration.test.ts
+  CTV Integration Test
+    ✓ allows clean CTV request (14 ms)
+    ✓ blocks Emulator request (High Risk) (3 ms)
+
+FAIL src/__tests__/DecisionHandler.test.ts
+  ● Test suite failed to run
+
+    [96msrc/__tests__/DecisionHandler.test.ts[0m:[93m171[0m:[93m27[0m - [91merror[0m[90m TS2339: [0mProperty 'decision' does not exist on type 'Promise<DecisionResult>'.
+
+    [7m171[0m             expect(result.decision.decision).toBe(DecisionType.BLOCK);
+    [7m   [0m [91m                          ~~~~~~~~[0m
+
+      [96msrc/__tests__/DecisionHandler.test.ts[0m:[93m171[0m:[93m27[0m
+        [7m171[0m             expect(result.decision.decision).toBe(DecisionType.BLOCK);
+        [7m   [0m [96m                          ~~~~~~~~[0m
+        Did you forget to use 'await'?
+    [96msrc/__tests__/DecisionHandler.test.ts[0m:[93m172[0m:[93m27[0m - [91merror[0m[90m TS2339: [0mProperty 'decision' does not exist on type 'Promise<DecisionResult>'.
+
+    [7m172[0m             expect(result.decision.blockReason).toBe(BlockReason.INVALID_PUBLISHER);
+    [7m   [0m [91m                          ~~~~~~~~[0m
+
+      [96msrc/__tests__/DecisionHandler.test.ts[0m:[93m172[0m:[93m27[0m
+        [7m172[0m             expect(result.decision.blockReason).toBe(BlockReason.INVALID_PUBLISHER);
+        [7m   [0m [96m                          ~~~~~~~~[0m
+        Did you forget to use 'await'?
+    [96msrc/__tests__/DecisionHandler.test.ts[0m:[93m173[0m:[93m27[0m - [91merror[0m[90m TS2339: [0mProperty 'usedFailOpen' does not exist on type 'Promise<DecisionResult>'.
+
+    [7m173[0m             expect(result.usedFailOpen).toBe(true);
+    [7m   [0m [91m                          ~~~~~~~~~~~~[0m
+
+      [96msrc/__tests__/DecisionHandler.test.ts[0m:[93m173[0m:[93m27[0m
+        [7m173[0m             expect(result.usedFailOpen).toBe(true);
+        [7m   [0m [96m                          ~~~~~~~~~~~~[0m
+        Did you forget to use 'await'?
+    [96msrc/__tests__/DecisionHandler.test.ts[0m:[93m215[0m:[93m28[0m - [91merror[0m[90m TS1308: [0m'await' expressions are only allowed within async functions and at the top levels of modules.
+
+    [7m215[0m             const result = await handler.decide({
+    [7m   [0m [91m                           ~~~~~[0m
+
+      [96msrc/__tests__/DecisionHandler.test.ts[0m:[93m193[0m:[93m50[0m
+        [7m193[0m         it('should allow configuration updates', () => {
+        [7m   [0m [96m                                                 ~~~~~~~[0m
+        Did you mean to mark this function as 'async'?
+
+FAIL src/__tests__/MFAThermalEngine.test.ts
+  MFAThermalEngine
+    Classification
+      ✕ should classify clean publisher with low thermal score (12 ms)
+      ✓ should classify moderate-risk publisher
+      ✓ should classify high-risk MFA publisher (1 ms)
+      ✓ should include thermal score breakdown (1 ms)
+      ✓ should identify triggered signals (1 ms)
+    Rule Configuration
+      ✓ should return current rule configuration
+      ✓ should allow updating rule configuration
+    Performance
+      ✓ should complete classification in under 5ms
+      ✓ should handle batch classification efficiently (1 ms)
+    Edge Cases
+      ✓ should handle missing optional metrics
+      ✓ should handle extreme metric values (1 ms)
+
+  ● MFAThermalEngine › Classification › should classify clean publisher with low thermal score
+
+    expect(received).toBeGreaterThan(expected)
+
+    Expected: > 0
+    Received:   0
+
+      39 |             expect(result.classification.riskLevel).toBe(RiskLevel.CLEAN);
+      40 |             expect(result.classification.thermalScore.overall).toBeLessThanOrEqual(30);
+    > 41 |             expect(result.processingTimeMs).toBeGreaterThan(0);
+         |                                             ^
+      42 |             expect(result.processingTimeMs).toBeLessThan(10);
+      43 |         });
+      44 |
+
+      at Object.<anonymous> (src/__tests__/MFAThermalEngine.test.ts:41:45)
+
+{"level":"error","timestamp":1771178985322,"service":"test","environment":"test","requestId":"req_123","requestId":"req_123","error":{"name":"Error","message":"Simulation of engine failure","stack":"Error: Simulation of engine failure\n    at MFAThermalEngine.<anonymous> (/Users/shreyvashistha/Desktop/CLEAN PATH AI 2/cleanpath-ai/edge-gatekeeper/src/__tests__/BidRequestHandler.test.ts:210:19)\n    at /Users/shreyvashistha/Desktop/CLEAN PATH AI 2/cleanpath-ai/node_modules/.pnpm/jest-mock@29.7.0/node_modules/jest-mock/build/index.js:397:39\n    at MFAThermalEngine.<anonymous> (/Users/shreyvashistha/Desktop/CLEAN PATH AI 2/cleanpath-ai/node_modules/.pnpm/jest-mock@29.7.0/node_modules/jest-mock/build/index.js:404:13)\n    at MFAThermalEngine.mockConstructor [as classify] (/Users/shreyvashistha/Desktop/CLEAN PATH AI 2/cleanpath-ai/node_modules/.pnpm/jest-mock@29.7.0/node_modules/jest-mock/build/index.js:148:19)\n    at BidRequestHandler.process (/Users/shreyvashistha/Desktop/CLEAN PATH AI 2/cleanpath-ai/edge-gatekeeper/src/handlers/BidRequestHandler.ts:132:61)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (/Users/shreyvashistha/Desktop/CLEAN PATH AI 2/cleanpath-ai/edge-gatekeeper/src/__tests__/BidRequestHandler.test.ts:213:26)"},"publisherId":"pub_1","domain":"example.com","msg":"Error processing bid request"}
+FAIL src/__tests__/BidRequestHandler.test.ts
+  BidRequestHandler Integration
+    ✓ should process valid request and return decision (9 ms)
+    ✓ should validate request fields (1 ms)
+    ✓ should use cached publisher data when available (1 ms)
+    ✕ should handle MFA publishers correctly (4 ms)
+    ✓ should track processing latency (1 ms)
+    ✓ should return health check status
+    ✓ should handle component failures gracefully (5 ms)
+
+  ● BidRequestHandler Integration › should handle MFA publishers correctly
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "block"
+    Received: "allow"
+
+      186 |         const response = await handler.process(mfaRequest);
+      187 |
+    > 188 |         expect(response.decision.decision).toBe(DecisionType.BLOCK);
+          |                                            ^
+      189 |         expect(response.decision.blockReason).toBe(BlockReason.MFA_HIGH_RISK);
+      190 |     });
+      191 |
+
+      at Object.<anonymous> (src/__tests__/BidRequestHandler.test.ts:188:44)
+
+A worker process has failed to exit gracefully and has been force exited. This is likely caused by tests leaking due to improper teardown. Try running with --detectOpenHandles to find leaks. Active timers can also cause this, ensure that .unref() was called on them.
+Test Suites: 3 failed, 10 passed, 13 total
+Tests:       2 failed, 116 passed, 118 total
+Snapshots:   0 total
+Time:        4.811 s
+Ran all test suites matching /src\/__tests__/i.
+npm error Lifecycle script `test` failed with error:
+npm error code 1
+npm error path /Users/shreyvashistha/Desktop/CLEAN PATH AI 2/cleanpath-ai/edge-gatekeeper
+npm error workspace @cleanpath/edge-gatekeeper@0.1.0
+npm error location /Users/shreyvashistha/Desktop/CLEAN PATH AI 2/cleanpath-ai/edge-gatekeeper
+npm error command failed
+npm error command sh -c jest src/__tests__

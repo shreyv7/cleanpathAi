@@ -1,0 +1,63 @@
+{
+    "compilerOptions": {
+        "target": "ES2022",
+        "lib": [
+            "ES2022"
+        ],
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "allowJs": true,
+        "checkJs": false,
+        "outDir": "./dist",
+        "rootDir": "./",
+        "removeComments": true,
+        "strict": true,
+        "noImplicitAny": true,
+        "strictNullChecks": true,
+        "strictFunctionTypes": true,
+        "strictBindCallApply": true,
+        "strictPropertyInitialization": true,
+        "noImplicitThis": true,
+        "alwaysStrict": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "noImplicitReturns": true,
+        "noFallthroughCasesInSwitch": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "declaration": true,
+        "declarationMap": true,
+        "sourceMap": true,
+        "incremental": true,
+        "baseUrl": ".",
+        "paths": {
+            "@cleanpath/types": [
+                "./shared/types/dist"
+            ],
+            "@cleanpath/logging": [
+                "./shared/logging/dist"
+            ],
+            "@cleanpath/security": [
+                "./shared/security/src"
+            ],
+            "@cleanpath/utils": [
+                "./shared/utils/src"
+            ],
+            "@cleanpath/constants": [
+                "./shared/constants/src"
+            ],
+            "@cleanpath/database": [
+                "./shared/database/dist"
+            ]
+        }
+    },
+    "exclude": [
+        "node_modules",
+        "dist",
+        "build",
+        ".next",
+        "coverage"
+    ]
+}

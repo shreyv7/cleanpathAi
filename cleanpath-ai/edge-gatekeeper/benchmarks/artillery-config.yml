@@ -1,0 +1,36 @@
+
+config:
+  target: "http://localhost:3000"
+  phases:
+    - duration: 60
+      arrivalRate: 50
+      rampTo: 500
+      name: "Ramping up load"
+    - duration: 120
+      arrivalRate: 500
+      name: "Sustained load"
+  payload:
+    path: "../../tests/fixtures/bid-requests.json"
+    fields:
+      - "id"
+      - "timestamp"
+      - "impressions"
+      - "site"
+      - "device"
+      - "user"
+    order: "random"
+  headers:
+    x-api-key: "test-api-key"
+
+scenarios:
+  - name: "Bid Request Lifecycle"
+    flow:
+      - post:
+          url: "/bid"
+          json:
+            id: "{{ id }}"
+            timestamp: "{{ timestamp }}"
+            impressions: "{{ impressions }}"
+            site: "{{ site }}"
+            device: "{{ device }}"
+            user: "{{ user }}"

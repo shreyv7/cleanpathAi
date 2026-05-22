@@ -1,0 +1,74 @@
+
+> @cleanpath/edge-gatekeeper@0.1.0 test
+> jest src/__tests__/integration
+
+  console.log
+    Bid Shading Response: {
+      "decision": {
+        "requestId": "req-123",
+        "decision": "block",
+        "timestamp": 1771178554823,
+        "processingTimeMs": 0,
+        "metadata": {
+          "publisherId": "pub-1",
+          "domain": "example.com"
+        },
+        "blockReason": "invalid_request"
+      },
+      "cacheHit": false,
+      "fallbackUsed": false
+    }
+
+      at Object.<anonymous> (src/__tests__/integration/BidPipeline.test.ts:122:17)
+
+FAIL src/__tests__/integration/BidPipeline.test.ts
+  BidPipeline Integration
+    ✕ should block bid when Pacing Orchestrator returns block (4 ms)
+    ✕ should proceed to decision and shade bid when Pacing allows (7 ms)
+
+  ● BidPipeline Integration › should block bid when Pacing Orchestrator returns block
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "budget_exhausted"
+    Received: "invalid_request"
+
+       95 |
+       96 |         // blockReason is top-level in createErrorResponse
+    >  97 |         expect(response.decision.blockReason).toBe(BlockReason.BUDGET_EXHAUSTED);
+          |                                               ^
+       98 |
+       99 |         expect(mockPacer.checkPacing).toHaveBeenCalled();
+      100 |         expect(mockDecisionHandler.decide).not.toHaveBeenCalled(); // Should short-circuit
+
+      at Object.<anonymous> (src/__tests__/integration/BidPipeline.test.ts:97:47)
+
+  ● BidPipeline Integration › should proceed to decision and shade bid when Pacing allows
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "allow"
+    Received: "block"
+
+      122 |         console.log('Bid Shading Response:', JSON.stringify(response, null, 2));
+      123 |
+    > 124 |         expect(response.decision.decision).toBe(DecisionType.ALLOW);
+          |                                            ^
+      125 |         expect(response.decision.price).toBe(4.25); // Should use shaded price
+      126 |         expect(response.decision.metadata?.originalPrice).toBe(5.0);
+      127 |         expect(response.decision.metadata?.savings).toBe(0.75);
+
+      at Object.<anonymous> (src/__tests__/integration/BidPipeline.test.ts:124:44)
+
+Test Suites: 1 failed, 1 total
+Tests:       2 failed, 2 total
+Snapshots:   0 total
+Time:        0.82 s, estimated 2 s
+Ran all test suites matching /src\/__tests__\/integration/i.
+npm error Lifecycle script `test` failed with error:
+npm error code 1
+npm error path /Users/shreyvashistha/Desktop/CLEAN PATH AI 2/cleanpath-ai/edge-gatekeeper
+npm error workspace @cleanpath/edge-gatekeeper@0.1.0
+npm error location /Users/shreyvashistha/Desktop/CLEAN PATH AI 2/cleanpath-ai/edge-gatekeeper
+npm error command failed
+npm error command sh -c jest src/__tests__/integration

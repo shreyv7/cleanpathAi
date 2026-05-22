@@ -1,0 +1,11 @@
+# Production Environment
+environment              = "production"
+aws_region              = "us-east-1"
+lambda_memory_mb        = 1024
+lambda_timeout_seconds  = 10
+redis_node_type         = "cache.r6g.large"
+redis_num_cache_nodes   = 2
+max_latency_ms          = 20
+enable_redis            = true
+enable_detailed_logging = false
+log_retention_days      = 30

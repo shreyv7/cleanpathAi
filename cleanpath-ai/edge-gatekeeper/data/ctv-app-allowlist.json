@@ -1,0 +1,518 @@
+[
+    {
+        "bundleId": "com.roku.nbc",
+        "name": "NBC",
+        "storeUrl": "https://channelstore.roku.com/details/nbc",
+        "publisher": "NBCUniversal",
+        "expectedDeviceTypes": [
+            "Roku"
+        ]
+    },
+    {
+        "bundleId": "com.hulu.plus",
+        "name": "Hulu",
+        "storeUrl": "https://channelstore.roku.com/details/hulu",
+        "publisher": "Hulu LLC",
+        "expectedDeviceTypes": [
+            "Roku",
+            "Amazon",
+            "Samsung",
+            "LG",
+            "Apple",
+            "Google"
+        ]
+    },
+    {
+        "bundleId": "com.netflix.mediaclient",
+        "name": "Netflix",
+        "storeUrl": "https://www.amazon.com/dp/B00ZGJ92BQ",
+        "publisher": "Netflix Inc.",
+        "expectedDeviceTypes": [
+            "Roku",
+            "Amazon",
+            "Samsung",
+            "LG",
+            "Apple",
+            "Google",
+            "Sony",
+            "Vizio"
+        ]
+    },
+    {
+        "bundleId": "com.amazon.avod",
+        "name": "Amazon Freevee",
+        "storeUrl": "https://www.amazon.com/dp/B08KTGQHTV",
+        "publisher": "Amazon",
+        "expectedDeviceTypes": [
+            "Amazon",
+            "Roku",
+            "Samsung",
+            "LG"
+        ]
+    },
+    {
+        "bundleId": "com.disney.disneyplus",
+        "name": "Disney+",
+        "storeUrl": "https://channelstore.roku.com/details/disneyplus",
+        "publisher": "The Walt Disney Company",
+        "expectedDeviceTypes": [
+            "Roku",
+            "Amazon",
+            "Samsung",
+            "LG",
+            "Apple",
+            "Google",
+            "Sony",
+            "Vizio"
+        ]
+    },
+    {
+        "bundleId": "com.hbo.hbomax",
+        "name": "Max (HBO)",
+        "storeUrl": "https://channelstore.roku.com/details/hbomax",
+        "publisher": "Warner Bros. Discovery",
+        "expectedDeviceTypes": [
+            "Roku",
+            "Amazon",
+            "Samsung",
+            "LG",
+            "Apple",
+            "Google"
+        ]
+    },
+    {
+        "bundleId": "com.peacocktv.peacockandroid",
+        "name": "Peacock",
+        "storeUrl": "https://channelstore.roku.com/details/peacock",
+        "publisher": "NBCUniversal",
+        "expectedDeviceTypes": [
+            "Roku",
+            "Amazon",
+            "Samsung",
+            "LG",
+            "Apple",
+            "Google"
+        ]
+    },
+    {
+        "bundleId": "com.paramount.paramount",
+        "name": "Paramount+",
+        "storeUrl": "https://channelstore.roku.com/details/paramountplus",
+        "publisher": "Paramount Global",
+        "expectedDeviceTypes": [
+            "Roku",
+            "Amazon",
+            "Samsung",
+            "LG",
+            "Apple",
+            "Google"
+        ]
+    },
+    {
+        "bundleId": "com.crunchyroll.crunchyroid",
+        "name": "Crunchyroll",
+        "storeUrl": "https://channelstore.roku.com/details/crunchyroll",
+        "publisher": "Sony Pictures",
+        "expectedDeviceTypes": [
+            "Roku",
+            "Amazon",
+            "Samsung",
+            "Apple",
+            "Google"
+        ]
+    },
+    {
+        "bundleId": "com.apple.atve",
+        "name": "Apple TV+",
+        "storeUrl": "https://www.apple.com/apple-tv-plus/",
+        "publisher": "Apple Inc.",
+        "expectedDeviceTypes": [
+            "Apple",
+            "Roku",
+            "Amazon",
+            "Samsung",
+            "LG",
+            "Google",
+            "Sony"
+        ]
+    },
+    {
+        "bundleId": "com.pluto.pluto",
+        "name": "Pluto TV",
+        "storeUrl": "https://channelstore.roku.com/details/plutotv",
+        "publisher": "Paramount Global",
+        "expectedDeviceTypes": [
+            "Roku",
+            "Amazon",
+            "Samsung",
+            "LG",
+            "Apple",
+            "Google",
+            "Vizio"
+        ]
+    },
+    {
+        "bundleId": "com.tubi.tubitv",
+        "name": "Tubi",
+        "storeUrl": "https://channelstore.roku.com/details/tubi",
+        "publisher": "Fox Corporation",
+        "expectedDeviceTypes": [
+            "Roku",
+            "Amazon",
+            "Samsung",
+            "LG",
+            "Apple",
+            "Google",
+            "Vizio"
+        ]
+    },
+    {
+        "bundleId": "com.vudu.air",
+        "name": "Vudu",
+        "storeUrl": "https://channelstore.roku.com/details/vudu",
+        "publisher": "Fandango",
+        "expectedDeviceTypes": [
+            "Roku",
+            "Amazon",
+            "Samsung",
+            "LG",
+            "Apple"
+        ]
+    },
+    {
+        "bundleId": "com.sling",
+        "name": "Sling TV",
+        "storeUrl": "https://channelstore.roku.com/details/slingtv",
+        "publisher": "Dish Network",
+        "expectedDeviceTypes": [
+            "Roku",
+            "Amazon",
+            "Apple",
+            "Google"
+        ]
+    },
+    {
+        "bundleId": "com.espn.score_center",
+        "name": "ESPN",
+        "storeUrl": "https://channelstore.roku.com/details/espn",
+        "publisher": "The Walt Disney Company",
+        "expectedDeviceTypes": [
+            "Roku",
+            "Amazon",
+            "Samsung",
+            "Apple",
+            "Google"
+        ]
+    },
+    {
+        "bundleId": "com.philo",
+        "name": "Philo",
+        "storeUrl": "https://channelstore.roku.com/details/philo",
+        "publisher": "Philo Inc.",
+        "expectedDeviceTypes": [
+            "Roku",
+            "Amazon",
+            "Apple",
+            "Google"
+        ]
+    },
+    {
+        "bundleId": "com.fubotv.roku",
+        "name": "fuboTV",
+        "storeUrl": "https://channelstore.roku.com/details/fubotv",
+        "publisher": "fuboTV Inc.",
+        "expectedDeviceTypes": [
+            "Roku",
+            "Amazon",
+            "Apple",
+            "Google",
+            "Samsung"
+        ]
+    },
+    {
+        "bundleId": "com.discovery.discoveryplus",
+        "name": "Discovery+",
+        "storeUrl": "https://channelstore.roku.com/details/discoveryplus",
+        "publisher": "Warner Bros. Discovery",
+        "expectedDeviceTypes": [
+            "Roku",
+            "Amazon",
+            "Samsung",
+            "LG",
+            "Apple",
+            "Google"
+        ]
+    },
+    {
+        "bundleId": "com.youtube.tv",
+        "name": "YouTube TV",
+        "storeUrl": "https://channelstore.roku.com/details/youtubetv",
+        "publisher": "Google LLC",
+        "expectedDeviceTypes": [
+            "Roku",
+            "Amazon",
+            "Samsung",
+            "LG",
+            "Apple",
+            "Google"
+        ]
+    },
+    {
+        "bundleId": "com.google.android.youtube",
+        "name": "YouTube",
+        "storeUrl": "https://channelstore.roku.com/details/youtube",
+        "publisher": "Google LLC",
+        "expectedDeviceTypes": [
+            "Roku",
+            "Amazon",
+            "Samsung",
+            "LG",
+            "Apple",
+            "Google",
+            "Sony",
+            "Vizio"
+        ]
+    },
+    {
+        "bundleId": "com.fox.now",
+        "name": "FOX NOW",
+        "storeUrl": "https://channelstore.roku.com/details/foxnow",
+        "publisher": "Fox Corporation",
+        "expectedDeviceTypes": [
+            "Roku",
+            "Amazon",
+            "Samsung",
+            "Apple",
+            "Google"
+        ]
+    },
+    {
+        "bundleId": "com.cbs.app",
+        "name": "CBS",
+        "storeUrl": "https://channelstore.roku.com/details/cbs",
+        "publisher": "Paramount Global",
+        "expectedDeviceTypes": [
+            "Roku",
+            "Amazon",
+            "Samsung",
+            "Apple",
+            "Google"
+        ]
+    },
+    {
+        "bundleId": "com.abc.abcvideo",
+        "name": "ABC",
+        "storeUrl": "https://channelstore.roku.com/details/abc",
+        "publisher": "The Walt Disney Company",
+        "expectedDeviceTypes": [
+            "Roku",
+            "Amazon",
+            "Apple",
+            "Google"
+        ]
+    },
+    {
+        "bundleId": "com.showtime.standalone",
+        "name": "Showtime",
+        "storeUrl": "https://channelstore.roku.com/details/showtime",
+        "publisher": "Paramount Global",
+        "expectedDeviceTypes": [
+            "Roku",
+            "Amazon",
+            "Samsung",
+            "Apple",
+            "Google"
+        ]
+    },
+    {
+        "bundleId": "com.starz.starzplay",
+        "name": "STARZ",
+        "storeUrl": "https://channelstore.roku.com/details/starz",
+        "publisher": "Lionsgate",
+        "expectedDeviceTypes": [
+            "Roku",
+            "Amazon",
+            "Apple",
+            "Google"
+        ]
+    },
+    {
+        "bundleId": "com.mubi",
+        "name": "MUBI",
+        "storeUrl": "https://channelstore.roku.com/details/mubi",
+        "publisher": "MUBI Inc.",
+        "expectedDeviceTypes": [
+            "Roku",
+            "Amazon",
+            "Samsung",
+            "Apple",
+            "Google"
+        ]
+    },
+    {
+        "bundleId": "com.roku.roku",
+        "name": "The Roku Channel",
+        "storeUrl": "https://channelstore.roku.com/details/therokuchannel",
+        "publisher": "Roku Inc.",
+        "expectedDeviceTypes": [
+            "Roku"
+        ]
+    },
+    {
+        "bundleId": "com.samsung.tvplus",
+        "name": "Samsung TV Plus",
+        "storeUrl": "https://www.samsung.com/us/tvplus/",
+        "publisher": "Samsung Electronics",
+        "expectedDeviceTypes": [
+            "Samsung"
+        ]
+    },
+    {
+        "bundleId": "com.lg.lgchannels",
+        "name": "LG Channels",
+        "storeUrl": "https://www.lg.com/us/lg-channels",
+        "publisher": "LG Electronics",
+        "expectedDeviceTypes": [
+            "LG"
+        ]
+    },
+    {
+        "bundleId": "com.vizio.watchfree",
+        "name": "WatchFree+",
+        "storeUrl": "https://www.vizio.com/en/watchfreeplus",
+        "publisher": "VIZIO",
+        "expectedDeviceTypes": [
+            "Vizio"
+        ]
+    },
+    {
+        "bundleId": "com.amazon.amazonvideo.livingroom",
+        "name": "Prime Video",
+        "storeUrl": "https://www.amazon.com/gp/video",
+        "publisher": "Amazon",
+        "expectedDeviceTypes": [
+            "Amazon",
+            "Roku",
+            "Samsung",
+            "LG",
+            "Apple",
+            "Google",
+            "Sony",
+            "Vizio"
+        ]
+    },
+    {
+        "bundleId": "com.xumo.xumo",
+        "name": "Xumo Play",
+        "storeUrl": "https://channelstore.roku.com/details/xumo",
+        "publisher": "Comcast",
+        "expectedDeviceTypes": [
+            "Roku",
+            "Amazon",
+            "Samsung",
+            "LG"
+        ]
+    },
+    {
+        "bundleId": "com.pbs.video",
+        "name": "PBS Video",
+        "storeUrl": "https://channelstore.roku.com/details/pbsvideo",
+        "publisher": "PBS",
+        "expectedDeviceTypes": [
+            "Roku",
+            "Amazon",
+            "Samsung",
+            "Apple",
+            "Google"
+        ]
+    },
+    {
+        "bundleId": "com.aetnd.aetv",
+        "name": "A&E",
+        "storeUrl": "https://channelstore.roku.com/details/ae",
+        "publisher": "A+E Networks",
+        "expectedDeviceTypes": [
+            "Roku",
+            "Amazon",
+            "Apple",
+            "Google"
+        ]
+    },
+    {
+        "bundleId": "com.bravo.bravonow",
+        "name": "Bravo",
+        "storeUrl": "https://channelstore.roku.com/details/bravo",
+        "publisher": "NBCUniversal",
+        "expectedDeviceTypes": [
+            "Roku",
+            "Amazon",
+            "Apple",
+            "Google"
+        ]
+    },
+    {
+        "bundleId": "com.amcn.amcfullepisodes",
+        "name": "AMC+",
+        "storeUrl": "https://channelstore.roku.com/details/amcplus",
+        "publisher": "AMC Networks",
+        "expectedDeviceTypes": [
+            "Roku",
+            "Amazon",
+            "Samsung",
+            "Apple",
+            "Google"
+        ]
+    },
+    {
+        "bundleId": "com.hallmark.movies",
+        "name": "Hallmark Movies Now",
+        "storeUrl": "https://channelstore.roku.com/details/hallmark",
+        "publisher": "Hallmark",
+        "expectedDeviceTypes": [
+            "Roku",
+            "Amazon",
+            "Apple",
+            "Google"
+        ]
+    },
+    {
+        "bundleId": "com.bet.betplus",
+        "name": "BET+",
+        "storeUrl": "https://channelstore.roku.com/details/betplus",
+        "publisher": "Paramount Global",
+        "expectedDeviceTypes": [
+            "Roku",
+            "Amazon",
+            "Apple",
+            "Google"
+        ]
+    },
+    {
+        "bundleId": "com.twitch.android.app",
+        "name": "Twitch",
+        "storeUrl": "https://channelstore.roku.com/details/twitch",
+        "publisher": "Amazon",
+        "expectedDeviceTypes": [
+            "Roku",
+            "Amazon",
+            "Samsung",
+            "Apple",
+            "Google"
+        ]
+    },
+    {
+        "bundleId": "com.plex.plex",
+        "name": "Plex",
+        "storeUrl": "https://channelstore.roku.com/details/plex",
+        "publisher": "Plex Inc.",
+        "expectedDeviceTypes": [
+            "Roku",
+            "Amazon",
+            "Samsung",
+            "LG",
+            "Apple",
+            "Google",
+            "Sony"
+        ]
+    }
+]

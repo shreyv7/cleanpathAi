@@ -1,0 +1,42 @@
+[
+    {
+        "bundleId": "com.hulu.plus",
+        "name": "Hulu",
+        "storeUrl": "https://channelstore.roku.com/details/hulu",
+        "publisher": "Hulu, LLC",
+        "expectedDeviceTypes": [
+            "roku",
+            "firetv",
+            "androidtv",
+            "tvos"
+        ]
+    },
+    {
+        "bundleId": "com.netflix.ninja",
+        "name": "Netflix",
+        "storeUrl": "https://play.google.com/store/apps/details?id=com.netflix.ninja",
+        "publisher": "Netflix, Inc.",
+        "expectedDeviceTypes": [
+            "androidtv",
+            "firetv"
+        ]
+    },
+    {
+        "bundleId": "834072",
+        "name": "Disney Plus",
+        "storeUrl": "https://channelstore.roku.com/details/834072",
+        "publisher": "Disney",
+        "expectedDeviceTypes": [
+            "roku"
+        ]
+    },
+    {
+        "bundleId": "com.amazon.firetv.youtube",
+        "name": "YouTube",
+        "storeUrl": "https://www.amazon.com/Google-LLC-YouTube/dp/B00I0562K4",
+        "publisher": "Google LLC",
+        "expectedDeviceTypes": [
+            "firetv"
+        ]
+    }
+]

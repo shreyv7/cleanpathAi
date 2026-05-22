@@ -1,0 +1,14 @@
+
+> @cleanpath/edge-gatekeeper@0.1.0 test
+> jest src/__tests__/integration
+
+PASS src/__tests__/integration/BidPipeline.test.ts
+  BidPipeline Integration
+    ✓ should block bid when Pacing Orchestrator denies budget (1 ms)
+    ✓ should allow and shade bid when pacing allows (1 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       2 passed, 2 total
+Snapshots:   0 total
+Time:        0.7 s, estimated 1 s
+Ran all test suites matching /src\/__tests__\/integration/i.

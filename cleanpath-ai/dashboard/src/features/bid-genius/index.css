@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@layer base {
+  :root {
+    --background: 220 20% 7%;
+    --foreground: 210 20% 95%;
+
+    --card: 220 18% 10%;
+    --card-foreground: 210 20% 95%;
+
+    --popover: 220 18% 12%;
+    --popover-foreground: 210 20% 95%;
+
+    --primary: 152 60% 48%;
+    --primary-foreground: 220 20% 7%;
+
+    --secondary: 220 16% 16%;
+    --secondary-foreground: 210 20% 85%;
+
+    --muted: 220 14% 14%;
+    --muted-foreground: 215 12% 55%;
+
+    --accent: 152 50% 40%;
+    --accent-foreground: 220 20% 7%;
+
+    --destructive: 0 72% 58%;
+    --destructive-foreground: 210 20% 95%;
+
+    --border: 220 14% 18%;
+    --input: 220 14% 18%;
+    --ring: 152 60% 48%;
+
+    --radius: 0.75rem;
+
+    /* Custom tokens */
+    --savings: 152 60% 48%;
+    --savings-glow: 152 80% 55%;
+    --market: 0 72% 58%;
+    --market-muted: 0 50% 45%;
+    --chart-area: 152 60% 48%;
+    --kpi-bg: 220 18% 12%;
+    --kpi-border: 220 14% 20%;
+    --badge-bg: 152 60% 48%;
+
+    --font-display: 'Inter', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    --shadow-glow: 0 0 30px hsl(152 60% 48% / 0.15);
+    --shadow-card: 0 4px 24px hsl(0 0% 0% / 0.3);
+
+    --sidebar-background: 220 18% 10%;
+    --sidebar-foreground: 210 20% 85%;
+    --sidebar-primary: 152 60% 48%;
+    --sidebar-primary-foreground: 220 20% 7%;
+    --sidebar-accent: 220 16% 16%;
+    --sidebar-accent-foreground: 210 20% 85%;
+    --sidebar-border: 220 14% 18%;
+    --sidebar-ring: 152 60% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-display);
+  }
+}
+
+@layer utilities {
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+
+  .text-savings {
+    color: hsl(var(--savings));
+  }
+
+  .text-market {
+    color: hsl(var(--market));
+  }
+
+  .bg-kpi {
+    background: hsl(var(--kpi-bg));
+    border: 1px solid hsl(var(--kpi-border));
+  }
+
+  .glow-savings {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .gradient-savings-text {
+    background: linear-gradient(135deg, hsl(var(--savings)), hsl(var(--savings-glow)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+@keyframes counter-roll {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes ring-fill {
+  from { stroke-dashoffset: 251; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px hsl(152 60% 48% / 0.1); }
+  50% { box-shadow: 0 0 40px hsl(152 60% 48% / 0.25); }
+}
+
+.animate-counter-roll {
+  animation: counter-roll 0.6s ease-out forwards;
+}
+
+.animate-ring-fill {
+  animation: ring-fill 1.2s ease-out forwards;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
