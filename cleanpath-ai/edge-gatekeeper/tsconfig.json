@@ -3,7 +3,7 @@
     "compilerOptions": {
         "outDir": "./dist",
         "allowJs": false,
-        "composite": true,
+        "composite": false,
         "types": [
             "node",
             "jest"
