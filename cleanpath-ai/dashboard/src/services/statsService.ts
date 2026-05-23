@@ -31,11 +31,12 @@ export async function fetchDecisionStats(): Promise<DecisionStats> {
     } catch (error) {
         console.warn('statsService: Backend API unavailable. Falling back to dynamic simulated metrics.');
         return {
+            period: '24h',
             total_requests: 1245892,
-            allowed_requests: 984501,
             blocked_requests: 261391,
             block_rate: 20.98,
             avg_thermal_score: 41.2,
+            avg_latency: 14.5,
             estimated_waste_saved: 65347.75
         };
     }
