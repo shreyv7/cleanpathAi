@@ -15,13 +15,22 @@
         "baseUrl": ".",
         "paths": {
             "@cleanpath/types": [
-                "../shared/types/dist"
+                "../shared/types/src"
             ],
             "@cleanpath/logging": [
-                "../shared/logging/dist"
+                "../shared/logging/src"
             ],
             "@cleanpath/database": [
-                "../shared/database/dist"
+                "../shared/database/src"
+            ],
+            "@cleanpath/security": [
+                "../shared/security/src"
+            ],
+            "@cleanpath/utils": [
+                "../shared/utils/src"
+            ],
+            "@cleanpath/constants": [
+                "../shared/constants/src"
             ]
         }
     },
