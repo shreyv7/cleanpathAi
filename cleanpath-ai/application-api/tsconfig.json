@@ -11,7 +11,19 @@
         "noUnusedParameters": false,
         "types": [
             "node"
-        ]
+        ],
+        "baseUrl": ".",
+        "paths": {
+            "@cleanpath/types": [
+                "../shared/types/dist"
+            ],
+            "@cleanpath/logging": [
+                "../shared/logging/dist"
+            ],
+            "@cleanpath/database": [
+                "../shared/database/dist"
+            ]
+        }
     },
     "include": [
         "src/**/*"
