@@ -30,28 +30,7 @@
         "declaration": true,
         "declarationMap": true,
         "sourceMap": true,
-        "incremental": true,
-        "baseUrl": ".",
-        "paths": {
-            "@cleanpath/types": [
-                "./shared/types/dist"
-            ],
-            "@cleanpath/logging": [
-                "./shared/logging/dist"
-            ],
-            "@cleanpath/security": [
-                "./shared/security/src"
-            ],
-            "@cleanpath/utils": [
-                "./shared/utils/src"
-            ],
-            "@cleanpath/constants": [
-                "./shared/constants/src"
-            ],
-            "@cleanpath/database": [
-                "./shared/database/dist"
-            ]
-        }
+        "incremental": true
     },
     "exclude": [
         "node_modules",
