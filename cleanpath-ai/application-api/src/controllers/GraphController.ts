@@ -80,7 +80,7 @@ export class GraphController {
             const results = await this.neo4j.read<any>(query);
             res.json({
                 count: results.length,
-                anomalies: results.map(row => ({
+                anomalies: results.map((row: any) => ({
                     siteId: row.siteId,
                     siteDomain: row.siteDomain,
                     publisherId: row.publisherId,

@@ -52,7 +52,7 @@ export class FinancialAuditor {
 
         try {
             const results = await this.neo4j.read<any>(query, { siteId });
-            return results.map(row => ({
+            return results.map((row: any) => ({
                 siteId: row.siteId,
                 siteDomain: row.siteDomain,
                 totalFeePercentage: parseFloat(row.totalFeePercentage.toFixed(4)),
@@ -94,7 +94,7 @@ export class FinancialAuditor {
 
         try {
             const results = await this.neo4j.read<any>(query, { threshold });
-            return results.map(row => ({
+            return results.map((row: any) => ({
                 siteId: row.siteId,
                 siteDomain: row.siteDomain,
                 totalFeePercentage: parseFloat(row.totalFeePercentage.toFixed(4)),
