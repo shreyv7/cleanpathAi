@@ -3,11 +3,33 @@
     "compilerOptions": {
         "outDir": "./dist",
         "rootDir": "./src",
+        "allowJs": false,
         "composite": true,
         "types": [
             "node",
             "jest"
-        ]
+        ],
+        "baseUrl": ".",
+        "paths": {
+            "@cleanpath/types": [
+                "../shared/types/src"
+            ],
+            "@cleanpath/logging": [
+                "../shared/logging/src"
+            ],
+            "@cleanpath/database": [
+                "../shared/database/src"
+            ],
+            "@cleanpath/security": [
+                "../shared/security/src"
+            ],
+            "@cleanpath/utils": [
+                "../shared/utils/src"
+            ],
+            "@cleanpath/constants": [
+                "../shared/constants/src"
+            ]
+        }
     },
     "include": [
         "src/**/*"
