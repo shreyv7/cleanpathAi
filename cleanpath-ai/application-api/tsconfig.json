@@ -11,25 +11,17 @@
         "types": [
             "node"
         ],
+        "rootDir": "src",
         "baseUrl": ".",
         "paths": {
             "@cleanpath/types": [
-                "../shared/types/src"
+                "../shared/types/dist"
             ],
             "@cleanpath/logging": [
-                "../shared/logging/src"
+                "../shared/logging/dist"
             ],
             "@cleanpath/database": [
-                "../shared/database/src"
-            ],
-            "@cleanpath/security": [
-                "../shared/security/src"
-            ],
-            "@cleanpath/utils": [
-                "../shared/utils/src"
-            ],
-            "@cleanpath/constants": [
-                "../shared/constants/src"
+                "../shared/database/dist"
             ]
         }
     },
