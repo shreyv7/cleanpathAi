@@ -85,3 +85,6 @@ temp/
 # Package manager locks (keep pnpm-lock.yaml only)
 package-lock.json
 yarn.lock
+
+# TypeScript build cache
+*.tsbuildinfo
