@@ -2,6 +2,22 @@
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000/api';
 const API_KEY = process.env.NEXT_PUBLIC_API_KEY || 'dev-api-key-change-in-production';
 
+async function fetchWithTimeout(resource: string, options: any = {}, timeout = 3000) {
+    const controller = new AbortController();
+    const id = setTimeout(() => controller.abort(), timeout);
+    try {
+        const response = await fetch(resource, {
+            ...options,
+            signal: controller.signal
+        });
+        clearTimeout(id);
+        return response;
+    } catch (error) {
+        clearTimeout(id);
+        throw error;
+    }
+}
+
 export interface GraphData {
     nodes: any[];
     links: any[];
@@ -12,7 +28,7 @@ export interface GraphData {
  */
 export async function fetchPublisherGraph(publisherId: string): Promise<GraphData> {
     try {
-        const response = await fetch(`${API_BASE_URL}/graph/path/${publisherId}`, {
+        const response = await fetchWithTimeout(`${API_BASE_URL}/graph/path/${publisherId}`, {
             headers: { 'X-API-Key': API_KEY }
         });
         if (!response.ok) {
@@ -54,7 +70,7 @@ export async function fetchPublisherGraph(publisherId: string): Promise<GraphDat
  */
 export async function fetchAnomalies(): Promise<any[]> {
     try {
-        const response = await fetch(`${API_BASE_URL}/graph/anomalies`, {
+        const response = await fetchWithTimeout(`${API_BASE_URL}/graph/anomalies`, {
             headers: { 'X-API-Key': API_KEY }
         });
         if (!response.ok) {

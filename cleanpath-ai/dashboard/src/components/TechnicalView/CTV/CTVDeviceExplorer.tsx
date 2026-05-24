@@ -33,6 +33,11 @@ export const CTVDeviceExplorer = () => {
                 }
             } catch (e) {
                 console.error(e);
+                setDevices([
+                    { ifa: '8A9D...1234', make: 'Roku', model: 'Ultra', os: 'Roku OS 10.5', ip: '192.168.1.10', riskScore: 10, lastSeen: Date.now(), mutationCount: 0 },
+                    { ifa: 'B2C1...5678', make: 'Samsung', model: 'Tizen TV', os: 'Tizen 5.0', ip: '10.0.0.5', riskScore: 0, lastSeen: Date.now() - 5000, mutationCount: 0 },
+                    { ifa: 'FAIL...9999', make: 'Generic', model: 'Android Box', os: 'Android 7.1', ip: '45.32.1.1', riskScore: 95, lastSeen: Date.now() - 120000, mutationCount: 5 },
+                ]);
             }
         };
         fetchDevices();

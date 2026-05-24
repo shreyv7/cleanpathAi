@@ -4,9 +4,25 @@ import { fetchWasteRecovered } from './financialService';
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000/api';
 const API_KEY = process.env.NEXT_PUBLIC_API_KEY || 'dev-api-key-change-in-production';
 
+async function fetchWithTimeout(resource: string, options: any = {}, timeout = 3000) {
+    const controller = new AbortController();
+    const id = setTimeout(() => controller.abort(), timeout);
+    try {
+        const response = await fetch(resource, {
+            ...options,
+            signal: controller.signal
+        });
+        clearTimeout(id);
+        return response;
+    } catch (error) {
+        clearTimeout(id);
+        throw error;
+    }
+}
+
 export async function fetchDecisionStats(): Promise<DecisionStats> {
     try {
-        const response = await fetch(`${API_BASE_URL}/decisions/stats`, {
+        const response = await fetchWithTimeout(`${API_BASE_URL}/decisions/stats`, {
             headers: { 'X-API-Key': API_KEY }
         });
         if (!response.ok) {
@@ -47,7 +63,7 @@ export async function fetchDecisionLog(page = 1, limit = 50, decision?: string):
         let url = `${API_BASE_URL}/decisions?page=${page}&limit=${limit}`;
         if (decision) url += `&decision=${decision}`;
 
-        const response = await fetch(url, {
+        const response = await fetchWithTimeout(url, {
             headers: { 'X-API-Key': API_KEY }
         });
         if (!response.ok) {

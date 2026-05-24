@@ -9,6 +9,22 @@
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000/api';
 const API_KEY = process.env.NEXT_PUBLIC_API_KEY || 'dev-api-key-change-in-production';
 
+async function fetchWithTimeout(resource: string, options: any = {}, timeout = 3000) {
+    const controller = new AbortController();
+    const id = setTimeout(() => controller.abort(), timeout);
+    try {
+        const response = await fetch(resource, {
+            ...options,
+            signal: controller.signal
+        });
+        clearTimeout(id);
+        return response;
+    } catch (error) {
+        clearTimeout(id);
+        throw error;
+    }
+}
+
 export interface FinancialSummary {
     totalCampaigns: number;
     totalDecisions: number;
@@ -53,7 +69,7 @@ export interface SpendTimelinePoint {
  */
 export async function fetchFinancialSummary(): Promise<FinancialSummary> {
     try {
-        const response = await fetch(`${API_BASE_URL}/financial/summary`, {
+        const response = await fetchWithTimeout(`${API_BASE_URL}/financial/summary`, {
             headers: { 'X-API-Key': API_KEY }
         });
         if (!response.ok) throw new Error('Failed to fetch financial summary');
@@ -87,7 +103,7 @@ export async function fetchWorkingMedia(
         if (end) params.set('end', end);
         if (params.toString()) url += `?${params}`;
 
-        const response = await fetch(url, {
+        const response = await fetchWithTimeout(url, {
             headers: { 'X-API-Key': API_KEY }
         });
         if (!response.ok) throw new Error('Failed to fetch working media');
@@ -119,7 +135,7 @@ export async function fetchWasteRecovered(campaignId?: string): Promise<WasteRec
         const url = campaignId
             ? `${API_BASE_URL}/financial/waste-recovered/${campaignId}`
             : `${API_BASE_URL}/financial/waste-recovered`;
-        const response = await fetch(url, {
+        const response = await fetchWithTimeout(url, {
             headers: { 'X-API-Key': API_KEY }
         });
         if (!response.ok) throw new Error('Failed to fetch waste recovered');
@@ -143,7 +159,7 @@ export async function fetchSpendTimeline(
     days: number = 30
 ): Promise<SpendTimelinePoint[]> {
     try {
-        const response = await fetch(
+        const response = await fetchWithTimeout(
             `${API_BASE_URL}/financial/spend-timeline/${campaignId}?days=${days}`,
             { headers: { 'X-API-Key': API_KEY } }
         );
@@ -170,7 +186,7 @@ export async function fetchSpendTimeline(
  */
 export async function fetchCampaignBudgets(): Promise<any[]> {
     try {
-        const response = await fetch(`${API_BASE_URL}/budgets`, {
+        const response = await fetchWithTimeout(`${API_BASE_URL}/budgets`, {
             headers: { 'X-API-Key': API_KEY }
         });
         if (!response.ok) throw new Error('Failed to fetch campaign budgets');
