@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 import { fetchDecisionLog } from '@/services/statsService';
 import { DecisionLogEntry, DecisionLogResponse } from '@/services/types';
 import { Calendar, Filter, ChevronLeft, ChevronRight, Hash, Clock, Globe, Shield } from 'lucide-react';
@@ -8,6 +9,7 @@ export const DecisionLog: React.FC = () => {
     const [page, setPage] = useState(1);
     const [loading, setLoading] = useState(true);
     const [filter, setFilter] = useState<string>('');
+    const router = useRouter();
 
     useEffect(() => {
         const loadData = async () => {
@@ -84,7 +86,7 @@ export const DecisionLog: React.FC = () => {
                                 </tr>
                             ) : (
                                 data?.data.map((entry) => (
-                                    <tr key={entry.id} className="hover:bg-white/[0.02] transition-colors group">
+                                    <tr key={entry.id} className="hover:bg-white/[0.02] transition-colors group cursor-pointer" onClick={() => router.push(`/investigate/${encodeURIComponent(entry.publisher_id)}`)}>
                                         <td className="px-6 py-4 text-sm text-white/70 font-mono whitespace-nowrap">
                                             {new Date(entry.timestamp).toLocaleTimeString()}
                                         </td>

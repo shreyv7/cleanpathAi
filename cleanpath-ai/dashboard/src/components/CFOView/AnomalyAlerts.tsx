@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 import { fetchAnomalies } from '../../services/graphService';
 import { AlertTriangle, TrendingDown, ExternalLink, ShieldAlert } from 'lucide-react';
 
@@ -11,6 +12,7 @@ import { AlertTriangle, TrendingDown, ExternalLink, ShieldAlert } from 'lucide-r
 export const AnomalyAlerts: React.FC = () => {
     const [anomalies, setAnomalies] = useState<any[]>([]);
     const [loading, setLoading] = useState(true);
+    const router = useRouter();
 
     useEffect(() => {
         const load = async () => {
@@ -67,7 +69,7 @@ export const AnomalyAlerts: React.FC = () => {
                                 </td>
                             </tr>
                         ) : anomalies.map((anomaly, idx) => (
-                            <tr key={idx} className="hover:bg-white/[0.02] transition-colors group">
+                            <tr key={idx} className="hover:bg-white/[0.02] transition-colors group cursor-pointer" onClick={() => router.push(`/investigate/${encodeURIComponent(anomaly.siteDomain)}`)}>
                                 <td className="px-8 py-6">
                                     <div className="font-bold text-white group-hover:text-blue-400 transition-colors cursor-pointer text-base">
                                         {anomaly.siteDomain}

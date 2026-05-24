@@ -1,6 +1,7 @@
 
 import React, { useMemo, useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
+import { useRouter } from 'next/router';
 
 // Dynamic import with SSR disabled because react-force-graph uses browser-only APIs (canvas)
 const ForceGraph2D = dynamic(() => import('react-force-graph-2d'), { ssr: false });
@@ -21,6 +22,7 @@ interface PathGraphProps {
  */
 export const PathGraph: React.FC<PathGraphProps> = ({ data, width, height }) => {
     const [containerWidth, setContainerWidth] = useState(800);
+    const router = useRouter();
 
     useEffect(() => {
         const updateWidth = () => {
@@ -64,6 +66,12 @@ export const PathGraph: React.FC<PathGraphProps> = ({ data, width, height }) => 
                     height={height || 500}
                     nodeAutoColorBy="label"
                     nodeLabel={(node: any) => `${node.label}: ${node.properties?.domain || node.id}`}
+                    onNodeClick={(node: any) => {
+                        const domain = node.properties?.domain || node.id;
+                        if (domain) {
+                            router.push(`/investigate/${encodeURIComponent(domain)}`);
+                        }
+                    }}
                     linkDirectionalArrowLength={6}
                     linkDirectionalArrowRelPos={1}
                     backgroundColor="#0D1117"

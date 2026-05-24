@@ -41,3 +41,139 @@
 .gradient-text {
   @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-emerald-400;
 }
+
+/* ============================================================
+   INVESTIGATION WORKSPACE — Enterprise Motion System
+   ============================================================ */
+
+/* Particle flow along SVG paths */
+@keyframes particleFlow {
+  0% { stroke-dashoffset: 24; }
+  100% { stroke-dashoffset: 0; }
+}
+
+.particle-flow {
+  stroke-dasharray: 4 20;
+  animation: particleFlow 2s linear infinite;
+}
+
+.particle-flow-fast {
+  stroke-dasharray: 3 15;
+  animation: particleFlow 1s linear infinite;
+}
+
+.particle-flow-suspicious {
+  stroke-dasharray: 6 12;
+  animation: particleFlow 0.8s linear infinite;
+}
+
+/* Infrastructure pulse for live indicators */
+@keyframes infraPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.infra-pulse {
+  animation: infraPulse 2s ease-in-out infinite;
+}
+
+.infra-pulse-fast {
+  animation: infraPulse 1s ease-in-out infinite;
+}
+
+/* Threat glow for critical nodes */
+@keyframes threatGlow {
+  0%, 100% { box-shadow: 0 0 4px rgba(239, 68, 68, 0.3); }
+  50% { box-shadow: 0 0 16px rgba(239, 68, 68, 0.6); }
+}
+
+.threat-glow {
+  animation: threatGlow 2s ease-in-out infinite;
+}
+
+/* Scanline effect for investigation mode */
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+.scanline {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.15), transparent);
+  animation: scanline 8s linear infinite;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Timeline connector lines */
+@keyframes timelinePulse {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 0% 100%; }
+}
+
+.timeline-connector {
+  background: linear-gradient(180deg, rgba(59, 130, 246, 0.3) 0%, rgba(59, 130, 246, 0.05) 50%, rgba(59, 130, 246, 0.3) 100%);
+  background-size: 100% 200%;
+  animation: timelinePulse 3s ease-in-out infinite;
+}
+
+/* Live stream auto-scroll ticker */
+@keyframes tickerSlide {
+  from { transform: translateY(0); }
+  to { transform: translateY(-50%); }
+}
+
+.ticker-scroll {
+  animation: tickerSlide 30s linear infinite;
+}
+
+/* Surgical fade-in for panels */
+@keyframes surgicalFadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.surgical-fade-in {
+  animation: surgicalFadeIn 0.4s ease-out forwards;
+}
+
+/* Confidence meter fill */
+@keyframes meterFill {
+  from { width: 0%; }
+}
+
+.meter-fill {
+  animation: meterFill 1.2s ease-out forwards;
+}
+
+/* Graph node hover ring */
+.node-ring {
+  transition: all 0.2s ease;
+}
+
+.node-ring:hover {
+  filter: brightness(1.3);
+  transform: scale(1.15);
+}
+
+/* Dense panel scrollbar */
+.investigation-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+
+.investigation-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.investigation-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 2px;
+}
+
+.investigation-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
