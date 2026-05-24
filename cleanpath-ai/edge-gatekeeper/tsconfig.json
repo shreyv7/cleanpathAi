@@ -12,13 +12,13 @@
         "baseUrl": ".",
         "paths": {
             "@cleanpath/types": [
-                "../shared/types/dist"
+                "../shared/types/dist/index.d.ts"
             ],
             "@cleanpath/logging": [
-                "../shared/logging/dist"
+                "../shared/logging/dist/index.d.ts"
             ],
             "@cleanpath/database": [
-                "../shared/database/dist"
+                "../shared/database/dist/index.d.ts"
             ]
         }
     },
