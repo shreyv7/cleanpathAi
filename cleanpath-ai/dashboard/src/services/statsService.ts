@@ -65,7 +65,15 @@ export async function fetchDecisionLog(page = 1, limit = 50, decision?: string):
             { id: 'dec_005', timestamp: new Date(Date.now() - 14000).toISOString(), client_id: 'Tubio App', domain: 'tubi.tv', app_bundle: 'com.tubitv', device_type: 'connected_tv', declared_bid: 9.50, shaded_bid: 7.60, classification: 'allowed', risk_score: 18.5, final_decision: 'allow' }
         ];
         return {
-            decisions: mockLog,
+            data: mockLog.map(m => ({
+                id: m.id,
+                request_id: m.id,
+                publisher_id: m.domain,
+                decision: m.final_decision.toUpperCase() as any,
+                thermal_score: m.risk_score,
+                latency_ms: Math.floor(Math.random() * 20) + 5,
+                timestamp: m.timestamp
+            })),
             pagination: { page, limit, total: 261391, pages: 5200 }
         };
     }

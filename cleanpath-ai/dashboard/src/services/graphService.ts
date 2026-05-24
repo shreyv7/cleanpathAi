@@ -65,8 +65,22 @@ export async function fetchAnomalies(): Promise<any[]> {
     } catch (error) {
         console.warn('graphService: fetchAnomalies failed. Returning simulated ad supply anomalies.');
         return [
-            { id: 'anom_001', type: 'fee_stacking', severity: 'high', publisherId: 'hulu.com', description: 'Triple hop detected on Magnite SSP stacking 18% unnecessary fees.', timestamp: new Date(Date.now() - 3600000).toISOString() },
-            { id: 'anom_002', type: 'domain_spoofing', severity: 'critical', publisherId: 'roku.freetv', description: 'Declared Roku CTV inventory running on unverified desktop web canvas.', timestamp: new Date(Date.now() - 7200000).toISOString() }
+            { 
+                siteId: 'pub_anomaly_1', 
+                siteDomain: 'hulu.com', 
+                type: 'fee_stacking', 
+                severity: 'HIGH', 
+                details: 'Triple hop detected on Magnite SSP stacking 18% unnecessary fees.', 
+                timestamp: new Date(Date.now() - 3600000).toISOString() 
+            },
+            { 
+                siteId: 'pub_anomaly_2', 
+                siteDomain: 'roku.freetv', 
+                type: 'domain_spoofing', 
+                severity: 'HIGH', 
+                details: 'Declared Roku CTV inventory running on unverified desktop web canvas.', 
+                timestamp: new Date(Date.now() - 7200000).toISOString() 
+            }
         ];
     }
 }
