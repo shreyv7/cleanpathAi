@@ -15,19 +15,42 @@ export interface RedisClient {
 
 export function createRedisClient(config: any): RedisClient {
     const Redis = require('ioredis');
-    const host = config.host || process.env.REDIS_HOST || 'localhost';
-    const port = config.port || parseInt(process.env.REDIS_PORT || '6379', 10);
-    const password = config.password || process.env.REDIS_PASSWORD;
-    const client = new Redis({
-        host,
-        port,
-        password,
-        lazyConnect: true
+    const redisUrl = process.env.REDIS_URL || process.env.INTERNAL_REDIS_URL;
+    let client: any;
+
+    if (redisUrl) {
+        client = new Redis(redisUrl, {
+            lazyConnect: true,
+            maxRetriesPerRequest: 3
+        });
+    } else {
+        const host = config.host || process.env.REDIS_HOST || 'localhost';
+        const port = config.port || parseInt(process.env.REDIS_PORT || '6379', 10);
+        const password = config.password || process.env.REDIS_PASSWORD;
+        client = new Redis({
+            host,
+            port,
+            password,
+            lazyConnect: true,
+            maxRetriesPerRequest: 3
+        });
+    }
+
+    // Register error handler to prevent unhandled ECONNREFUSED exceptions from crashing the process
+    client.on('error', (err: any) => {
+        const logger = new Logger({ service: 'redis-client', environment: 'production', level: LogLevel.WARN });
+        logger.warn('Redis Connection Event Error', { message: err.message });
     });
 
     return {
         async connect() {
-            await client.connect();
+            try {
+                await client.connect();
+            } catch (err: any) {
+                const logger = new Logger({ service: 'redis-client', environment: 'production', level: LogLevel.ERROR });
+                logger.error('Failed to connect to Redis', { message: err.message });
+                throw err;
+            }
         },
         async get(key: string) {
             return await client.get(key);
@@ -66,7 +89,10 @@ export class BudgetSyncWorker {
     private intervalId?: NodeJS.Timeout;
 
     constructor(redisUrl?: string, intervalMs: number = 30000) {
-        this.redis = createRedisClient({ host: 'localhost', port: 6379 });
+        this.redis = createRedisClient({
+            host: process.env.REDIS_HOST,
+            port: process.env.REDIS_PORT ? parseInt(process.env.REDIS_PORT, 10) : undefined
+        });
         this.logger = new Logger({ service: 'budget-sync-worker', environment: 'production', level: LogLevel.INFO });
         this.intervalMs = intervalMs;
     }
