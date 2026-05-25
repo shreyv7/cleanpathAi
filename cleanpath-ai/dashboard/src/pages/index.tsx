@@ -42,8 +42,18 @@ export default function Home() {
                         className="flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 hover:bg-emerald-500/20 hover:border-emerald-500/40 hover:-translate-y-0.5 transition-all text-xs font-bold uppercase tracking-wider cursor-pointer shadow-lg shadow-emerald-500/5 duration-300 relative overflow-hidden"
                     >
                         <div className="flex items-center gap-1.5">
-                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 infra-pulse-fast animate-pulse" />
+                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 infra-pulse-fast" />
                             <span>Bloomberg Treasury Suite</span>
+                        </div>
+                    </button>
+
+                    <button
+                        onClick={() => router.push('/control')}
+                        className="flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/10 border border-purple-500/20 text-purple-400 hover:bg-purple-500/20 hover:border-purple-500/40 hover:-translate-y-0.5 transition-all text-xs font-bold uppercase tracking-wider cursor-pointer shadow-lg shadow-purple-500/5 duration-300 relative overflow-hidden"
+                    >
+                        <div className="flex items-center gap-1.5">
+                            <span className="w-1.5 h-1.5 rounded-full bg-purple-400 infra-pulse-fast animate-pulse" />
+                            <span>Autonomous Control Plane</span>
                         </div>
                     </button>
                 </div>
