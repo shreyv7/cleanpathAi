@@ -15,6 +15,7 @@ This document details the entire software ecosystem inside the `CPFINAL` workspa
 | **Backend** | **`application-api`** | Node.js (Express), PostgreSQL, Neo4j | `3000` | `cleanpath-ai/application-api` | Core business logic API and data integration layer. |
 | **ML Service**| **`ctv-spoof-detector`**| Python (FastAPI), ONNX Runtime, XGBoost | `8001` | `cleanpath-ai/ctv-spoof-detector` | CTV spoof-detection classifier and feature evaluation service. |
 | **SDK** | **`pulse.js`** | Vanilla JavaScript | Local | `cleanpath-ai/dashboard/public/pulse.js` | Client-side micro-interaction tracking SDK (Module C). |
+| **Script** | **`simulate-dsp-traffic`** | Node.js (http.request) | N/A | `cleanpath-ai/dashboard/scripts` | Background programmatic bid request simulator acting as a DSP client. |
 
 ---
 
@@ -23,6 +24,10 @@ This document details the entire software ecosystem inside the `CPFINAL` workspa
 ### 1. Unified Next.js Console (`dashboard`)
 * **Path:** `cleanpath-ai/dashboard`
 * **Role:** This is the primary administration console. It coordinates database views, manages active campaigns, controls API authentication credentials, and aggregates platform health statistics.
+* **Special Upgrades:**
+  * **DSP Pre-Bid Integration Hub:** Displays direct JavaScript/Python/JSON integration script blocks for TTD, DV360, and Xandr APB setups with interactive latency cutoff parameters and entitlement token generators.
+  * **Stripe-Grade Subscription Console:** Hosts pricing tiers (Starter, Growth, custom Enterprise schedules) with an interactive **Campaign Net ROI Calculator** dynamically showing ad-spend savings vs. licensing fees.
+  * **Global Environment Toggle:** Provides dynamic header toggles (`[ Sandbox Simulator ] <---> [ Live Production DB ]`) across all pages to shift between simulated pacing models and live PostgreSQL telemetry instantly.
 * **Commands to Run:**
   ```bash
   npx pnpm --filter dashboard dev
@@ -51,7 +56,7 @@ This document details the entire software ecosystem inside the `CPFINAL` workspa
 
 ---
 
-## ⚙️ Backend & Machine Learning Services (3 Total)
+## ⚙️ Backend & Machine Learning Services (4 Total)
 
 ### 1. Edge Gatekeeper (`edge-gatekeeper`)
 * **Path:** `cleanpath-ai/edge-gatekeeper`
@@ -77,6 +82,14 @@ This document details the entire software ecosystem inside the `CPFINAL` workspa
   # Inside cleanpath-ai/ctv-spoof-detector
   source venv/bin/activate
   uvicorn main:app --host 127.0.0.1 --port 8001 --reload
+  ```
+
+### 4. DSP Traffic Simulator (`simulate-dsp-traffic`)
+* **Path:** `cleanpath-ai/dashboard/scripts/simulate-dsp-traffic.js`
+* **Role:** Background programmatic client script built using standard, zero-dependency Node.js `http.request`. It acts as a live DSP client sending high-frequency bid requests (valid, MFA, CTV emulators) to the Edge Gatekeeper to feed the active PostgreSQL database telemetry logs.
+* **Commands to Run:**
+  ```bash
+  node dashboard/scripts/simulate-dsp-traffic.js
   ```
 
 ---

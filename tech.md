@@ -94,6 +94,17 @@ We built three distinct web apps utilizing state-of-the-art developer tools:
 * **Unified Console:** Built in **Next.js** for server-side rendering, routing, and centralized security.
 * **Client Dashboards:** Both `bid-genius` and `budget-guardian` are built using **Vite**, offering sub-second Hot Module Replacement (HMR) during development.
 
+### Dynamic Telemetry Environment Switcher
+* **Implementation:** The `EnvironmentToggle.tsx` acts as a reactive state controller. It allows operators to dynamically shift the dashboard data stream between **Sandbox Simulator** (which executes client-side pacing loops) and **Live Production DB** (which executes direct SQL aggregate queries against PostgreSQL through the Express API).
+* **Sync Architecture:** Leverages session storage persistence and custom window event dispatchers to synchronize the data state across unrelated dashboard sub-widgets in real-time.
+
+### Stripe-Grade Premium SaaS Console & ROI Engine
+* **Pre-Bid Integration Workspace:** Renders actual SDK configurations for TTD (custom pre-bid JS wrappers), DV360 (Python Custom Bidding models), and Xandr APB JSON configurations. Allows customized configurations of latency timeout limits (ms) and fail-safe triggers.
+* **Net Campaign ROI Calculator:** Embedded a live calculation slider where users adjust their monthly campaign spend ($100k - $10M) to compute:
+  $$\text{Gross Recovery Savings} = \text{Monthly Spend} \times 18.4\% \text{ average programmatic waste}$$
+  $$\text{Licensing CPM Fees} = \text{Base Tier} + \left( \frac{\text{Spend}}{\text{Est. CPM}} \times \text{CPM Surcharge} \right)$$
+  $$\text{Net Recovered Spend} = \text{Gross Recovery} - \text{Licensing Fees}$$
+
 ### TanStack Query (React Query)
 * **State Synchronization:** Manages server-state on the frontend. It implements automated background polling, query retries, dynamic caching, and optimistic UI updates, keeping the CFO dashboards up-to-date with live PostgreSQL decision-log metrics without manual refreshes.
 
@@ -114,6 +125,10 @@ We built three distinct web apps utilizing state-of-the-art developer tools:
 ### Docker & Docker Compose
 * **Containerization:** Packages the PostgreSQL, Redis, and Neo4j systems into isolated virtual services (`docker-compose.test.yml`) to ensure local development environments perfectly match production cloud topology.
 
+### DSP Bidstream Traffic Emulator (`simulate-dsp-traffic.js`)
+* **Role:** A highly reliable programmatic background script built using standard, zero-dependency Node.js `http.request`.
+* **Behavior:** It acts as the DSP bidder node, sending real HTTP POST bid requests to the Edge Gatekeeper (Port 8000 `/api/decisions/process`). It programmatically rotates through valid allowed supply domains, suspected multi-hop resellers, high-exposure mobile MFA sites, and spoofed CTV emulators, generating active database telemetry entries in PostgreSQL to prove the real-time efficacy of the dashboard under load.
+
 ---
 
 ## 💡 Quick Interview Q&A Cheatsheet
@@ -129,3 +144,6 @@ We built three distinct web apps utilizing state-of-the-art developer tools:
 
 ### Q: "How does your system implement real-time Machine Learning model optimization without adding latency?"
 > **A:** *"We designed a hybrid machine learning pipeline. For security and fraud detection, we run static **supervised XGBoost models** compiled in ONNX format to block bots immediately on the hot path in under 1ms. For allowed traffic, we optimize bid shading using an active **online Thompson Sampling Multi-Armed Bandit (MAB) reinforcement loop**. We store dynamic success (`alpha`) and failure (`beta`) parameters in Redis. In the real-time path, our bid shader draws from a Beta distribution using an optimized Marsaglia and Tsang Gamma sampling approximation in sub-milliseconds to adjust the bid price. When users convert, an asynchronous `/api/telemetry/pixel` webhook increments the parameters in Redis, creating a closed-loop learning engine that runs at extreme scale."*
+
+### Q: "How did you transition the platform to support direct commercial B2B DSP subscription monetization?"
+> **A:** *"We moved from isolated mock interfaces to a Stripe-grade pre-bid integration SaaS model. We implemented direct pre-bid JavaScript and Python filters for The Trade Desk, Google DV360, and Xandr, paired with a dynamic Campaign Net ROI Calculator showing custom CPM licensing pricing relative to recovery yields. To prove systems credibility, we built a global environment toggle linking React views to active PostgreSQL aggregate database tables and designed a Node.js traffic simulator that continuously fires real RTB decision requests, proving edge latency and database write telemetry under realistic ad exchange loads."*
