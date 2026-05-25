@@ -1,166 +1,143 @@
-import { LayoutDashboard, ShieldCheck, Activity, BarChart3 } from "lucide-react";
-import { MetricsSummary } from "@/components/CFOView/MetricsSummary";
-import { AnomalyAlerts } from "@/components/CFOView/AnomalyAlerts";
-import { DecisionLog } from "@/components/TechnicalView/DecisionLog";
-import { SupplyPathExplorer } from "@/components/TechnicalView/SupplyPathExplorer";
-import { CTVIntegrityWidget } from "@/components/TechnicalView/CTV/CTVIntegrityWidget";
-import { MLPerformanceWidget } from "@/components/TechnicalView/CTV/MLPerformanceWidget";
-import { CTVDeviceExplorer } from "@/components/TechnicalView/CTV/CTVDeviceExplorer";
-import { MonitorPlay } from "lucide-react";
-import { EnvironmentToggle } from "@/components/ui/EnvironmentToggle";
+import React from 'react';
+import Head from 'next/head';
+import { useRouter } from 'next/router';
+import { ShieldCheck, ArrowRight, MonitorPlay, Activity, Layers, Landmark } from 'lucide-react';
 
-import { useRouter } from "next/router";
-
-export default function Home() {
+export default function LandingPage() {
     const router = useRouter();
 
     return (
-        <main className="flex min-h-screen flex-col items-center p-12 bg-[#0B0E14] text-white">
-            <div className="z-10 max-w-7xl w-full items-center justify-between font-mono text-sm flex mb-12 border-b border-white/5 pb-6">
-                <div className="flex items-center gap-3">
-                    <ShieldCheck className="w-6 h-6 text-blue-500" />
-                    <span className="text-lg font-black tracking-widest text-white/90">
-                        CLEANPATH AI
-                    </span>
-                    <code className="text-[10px] bg-blue-500/10 border border-blue-500/20 text-blue-400 font-mono font-bold px-1.5 py-0.5 rounded">
-                        v0.1.0
-                    </code>
-                </div>
+        <>
+            <Head>
+                <title>CleanPath AI | Financial Integrity Operating System</title>
+                <meta name="description" content="The Financial Integrity Operating System for Programmatic Advertising." />
+            </Head>
 
-                <div className="flex flex-wrap items-center gap-3">
-                    <EnvironmentToggle />
-                    <div className="h-6 w-px bg-white/10 hidden md:block mx-1" />
-
-                    <button
-                        onClick={() => router.push('/ops')}
-                        className="flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/10 border border-blue-500/20 text-blue-400 hover:bg-blue-500/20 hover:border-blue-500/40 hover:-translate-y-0.5 transition-all text-xs font-bold uppercase tracking-wider cursor-pointer shadow-lg shadow-blue-500/5 duration-300 relative overflow-hidden"
-                    >
-                        <div className="flex items-center gap-1.5">
-                            <span className="w-1.5 h-1.5 rounded-full bg-blue-400 infra-pulse-fast" />
-                            <span>Launch Operations Room</span>
+            <main className="min-h-screen bg-[#030406] text-white font-sans selection:bg-white/20">
+                {/* Navigation Bar */}
+                <nav className="fixed top-0 w-full z-50 border-b border-white/5 bg-[#030406]/80 backdrop-blur-md">
+                    <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+                        <div className="flex items-center gap-3">
+                            <ShieldCheck className="w-6 h-6 text-white" />
+                            <span className="text-lg font-bold tracking-tight">CleanPath AI</span>
                         </div>
-                    </button>
-
-                    <button
-                        onClick={() => router.push('/financial')}
-                        className="flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 hover:bg-emerald-500/20 hover:border-emerald-500/40 hover:-translate-y-0.5 transition-all text-xs font-bold uppercase tracking-wider cursor-pointer shadow-lg shadow-emerald-500/5 duration-300 relative overflow-hidden"
-                    >
-                        <div className="flex items-center gap-1.5">
-                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 infra-pulse-fast" />
-                            <span>Bloomberg Treasury Suite</span>
+                        
+                        <div className="hidden md:flex items-center gap-8 text-sm font-medium text-white/60">
+                            <a href="#platform" className="hover:text-white transition-colors">Platform</a>
+                            <a href="#solutions" className="hover:text-white transition-colors">Solutions</a>
+                            <a href="#customers" className="hover:text-white transition-colors">Customers</a>
+                            <a href="#developers" className="hover:text-white transition-colors">Developers</a>
                         </div>
-                    </button>
 
-                    <button
-                        onClick={() => router.push('/control')}
-                        className="flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/10 border border-purple-500/20 text-purple-400 hover:bg-purple-500/20 hover:border-purple-500/40 hover:-translate-y-0.5 transition-all text-xs font-bold uppercase tracking-wider cursor-pointer shadow-lg shadow-purple-500/5 duration-300 relative overflow-hidden"
-                    >
-                        <div className="flex items-center gap-1.5">
-                            <span className="w-1.5 h-1.5 rounded-full bg-purple-400 infra-pulse-fast" />
-                            <span>Autonomous Control Plane</span>
+                        <div className="flex items-center gap-4">
+                            <button 
+                                onClick={() => router.push('/auth/login')}
+                                className="text-sm font-medium text-white/80 hover:text-white transition-colors"
+                            >
+                                Sign in
+                            </button>
+                            <button 
+                                onClick={() => router.push('/auth/login')}
+                                className="text-sm font-medium bg-white text-black px-4 py-2 rounded-full hover:bg-white/90 transition-transform hover:scale-105 active:scale-95"
+                            >
+                                Contact Sales
+                            </button>
                         </div>
-                    </button>
+                    </div>
+                </nav>
 
-                    <button
-                        onClick={() => router.push('/developer')}
-                        className="flex items-center gap-2 px-4 py-2 rounded-lg bg-orange-500/10 border border-orange-500/20 text-orange-400 hover:bg-orange-500/20 hover:border-orange-500/40 hover:-translate-y-0.5 transition-all text-xs font-bold uppercase tracking-wider cursor-pointer shadow-lg shadow-orange-500/5 duration-300 relative overflow-hidden"
-                    >
-                        <div className="flex items-center gap-1.5">
-                            <span className="w-1.5 h-1.5 rounded-full bg-orange-400 infra-pulse-fast animate-pulse" />
-                            <span>Developer & Ecosystem Hub</span>
+                {/* Hero Section */}
+                <section className="relative pt-40 pb-20 px-6 overflow-hidden">
+                    {/* Ambient subtle glow */}
+                    <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[500px] bg-blue-500/10 blur-[150px] rounded-full pointer-events-none opacity-40" />
+                    
+                    <div className="max-w-5xl mx-auto text-center relative z-10 flex flex-col items-center">
+                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 text-xs font-medium text-white/80 mb-8 backdrop-blur-sm">
+                            <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
+                            Pre-Bid DSP Integrations Now Live
                         </div>
-                    </button>
-                </div>
-            </div>
+                        
+                        <h1 className="text-5xl md:text-7xl font-extrabold tracking-tighter leading-[1.1] mb-8">
+                            The Financial Integrity OS <br className="hidden md:block" />
+                            <span className="text-white/50">for the Internet.</span>
+                        </h1>
+                        
+                        <p className="text-lg md:text-xl text-white/50 max-w-2xl leading-relaxed mb-10">
+                            Quantify hidden supply chain economics, isolate multi-hop arbitrage, and enforce buy-side routing policies in real-time across global ad exchanges.
+                        </p>
+                        
+                        <div className="flex flex-col sm:flex-row items-center gap-4">
+                            <button 
+                                onClick={() => router.push('/auth/login')}
+                                className="w-full sm:w-auto px-8 py-4 bg-white text-black font-semibold rounded-full flex items-center justify-center gap-2 hover:bg-white/90 transition-all group"
+                            >
+                                Access Platform
+                                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                            </button>
+                            <button className="w-full sm:w-auto px-8 py-4 bg-transparent border border-white/20 text-white font-semibold rounded-full hover:bg-white/5 transition-all">
+                                Read the Whitepaper
+                            </button>
+                        </div>
+                    </div>
+                </section>
 
-            <div className="max-w-7xl w-full flex flex-col gap-24">
-                {/* Stage 1: Metrics */}
-                <div id="executive-summary" className="scroll-mt-12 flex flex-col gap-2">
-                    <h1 className="text-5xl font-extrabold tracking-tighter text-white">
-                        Executive Summary
-                    </h1>
-                    <p className="text-white/50 text-xl">
-                        High-level performance metrics for MFA exclusion operations.
-                    </p>
-                </div>
+                {/* Features Grid */}
+                <section id="platform" className="py-24 px-6 border-t border-white/5 bg-[#05070B]">
+                    <div className="max-w-7xl mx-auto">
+                        <div className="mb-16">
+                            <h2 className="text-3xl font-bold tracking-tight mb-4">A unified control plane for programmatic capital.</h2>
+                            <p className="text-white/50 text-lg max-w-2xl">Stop relying on post-bid reporting. CleanPath sits directly on the hot path, modifying bids and routing logic in sub-20 milliseconds.</p>
+                        </div>
 
-                <div className="flex flex-col gap-10">
-                    <MetricsSummary />
-                    <AnomalyAlerts />
-                </div>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <FeatureCard 
+                                icon={<Activity className="w-6 h-6 text-blue-400" />}
+                                title="Pre-Bid Filtration"
+                                description="Intercepts and blocks Made-for-Advertising (MFA) and spoofed traffic directly inside the DSP bidding engine before money changes hands."
+                            />
+                            <FeatureCard 
+                                icon={<Layers className="w-6 h-6 text-emerald-400" />}
+                                title="Supply Path Optimization"
+                                description="Graph-based auditing isolates redundant reseller hops and dynamic fee stacking, mathematically prioritizing direct publisher integrations."
+                            />
+                            <FeatureCard 
+                                icon={<Landmark className="w-6 h-6 text-purple-400" />}
+                                title="CFO Treasury Analytics"
+                                description="Translates technical ad-ops blocking metrics into boardroom-ready financial recovery and net ROI calculations."
+                            />
+                        </div>
+                    </div>
+                </section>
 
-                {/* Stage 2: Graph Intelligence (Phase 2 Task 6.2) */}
-                <div id="supply-path-explorer" className="scroll-mt-12">
-                    <SupplyPathExplorer />
-                </div>
-
-                <div className="h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-
-                {/* Phase 3: CTV Intelligence */}
-                <div id="ctv-intelligence" className="scroll-mt-12 flex flex-col gap-8">
-                    <h2 className="text-3xl font-bold tracking-tight text-white flex items-center gap-3">
-                        <MonitorPlay className="w-8 h-8 text-blue-500" />
-                        CTV Intelligence
-                    </h2>
-                    <CTVIntegrityWidget />
-                    <MLPerformanceWidget />
-                    <CTVDeviceExplorer />
-                </div>
-
-                <div className="h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-
-                {/* Stage 3: Decision Log */}
-                <div id="decision-log" className="scroll-mt-12">
-                    <DecisionLog />
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
-                    <Card
-                        icon={<ShieldCheck className="w-8 h-8 text-blue-400" />}
-                        title="MFA Detection"
-                        description="Thermal imaging heuristics at the edge."
-                        href="#ctv-intelligence"
-                    />
-                    <Card
-                        icon={<Activity className="w-8 h-8 text-emerald-400" />}
-                        title="Real-time Decisions"
-                        description="Sub-20ms latency bid modification."
-                        href="#decision-log"
-                    />
-                    <Card
-                        icon={<BarChart3 className="w-8 h-8 text-purple-400" />}
-                        title="CFO Metrics"
-                        description="Track waste prevention in real-time."
-                        href="#executive-summary"
-                    />
-                    <Card
-                        icon={<LayoutDashboard className="w-8 h-8 text-orange-400" />}
-                        title="Analytics"
-                        description="Deep dive into publisher performance."
-                        href="#supply-path-explorer"
-                    />
-                </div>
-            </div>
-        </main>
+                {/* Footer */}
+                <footer className="border-t border-white/5 py-12 px-6">
+                    <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+                        <div className="flex items-center gap-2 text-white/40 font-medium text-sm">
+                            <ShieldCheck className="w-4 h-4" />
+                            <span>© 2026 CleanPath AI Systems. All rights reserved.</span>
+                        </div>
+                        <div className="flex gap-6 text-sm text-white/40">
+                            <a href="#" className="hover:text-white transition-colors">Privacy</a>
+                            <a href="#" className="hover:text-white transition-colors">Terms</a>
+                            <a href="#" className="hover:text-white transition-colors">System Status</a>
+                        </div>
+                    </div>
+                </footer>
+            </main>
+        </>
     );
 }
 
-function Card({ icon, title, description, href }: { icon: React.ReactNode, title: string, description: string, href: string }) {
+function FeatureCard({ icon, title, description }: { icon: React.ReactNode, title: string, description: string }) {
     return (
-        <a 
-            href={href} 
-            className="group rounded-2xl border border-white/5 bg-white/5 px-5 py-6 transition-all hover:border-white/20 hover:bg-white/[0.08] hover:-translate-y-1 block cursor-pointer glass duration-300"
-        >
-            <div className="mb-4">{icon}</div>
-            <h2 className="mb-3 text-2xl font-semibold flex items-center gap-1">
-                {title}{" "}
-                <span className="inline-block transition-transform group-hover:translate-x-1.5 motion-reduce:transform-none">
-                    -&gt;
-                </span>
-            </h2>
-            <p className="m-0 max-w-[30ch] text-sm opacity-50 leading-relaxed">
+        <div className="p-8 rounded-3xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] transition-colors group cursor-default">
+            <div className="w-12 h-12 rounded-2xl bg-white/[0.05] border border-white/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
+                {icon}
+            </div>
+            <h3 className="text-xl font-semibold mb-3">{title}</h3>
+            <p className="text-white/50 leading-relaxed text-sm">
                 {description}
             </p>
-        </a>
+        </div>
     );
 }

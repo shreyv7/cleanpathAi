@@ -37,7 +37,7 @@ export default function FinancialSuite() {
                         {/* Left Controls */}
                         <div className="flex items-center gap-4">
                             <button
-                                onClick={() => router.push('/')}
+                                onClick={() => router.push('/dashboard')}
                                 className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/[0.03] border border-white/5 text-white/40 hover:text-white hover:border-white/10 hover:bg-white/5 transition-all text-xs cursor-pointer"
                             >
                                 <ArrowLeft className="w-3.5 h-3.5" />

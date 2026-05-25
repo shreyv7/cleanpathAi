@@ -736,3 +736,9 @@
 2026-05-22T21:13:51.921459Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("dashboard"), path: AnchoredSystemPathBuf("dashboard") }}))
 2026-05-22T21:13:56.296146Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("dashboard/src/features/budget-guardian/components/ui/resizable.tsx")}
 2026-05-22T21:13:56.296189Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("dashboard"), path: AnchoredSystemPathBuf("dashboard") }}))
+2026-05-22T21:19:43.823056Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("infra/terraform/edge/main.tf")}
+2026-05-22T21:19:43.824724Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2026-05-22T21:21:22.018899Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("dashboard/src/services/graphService.ts")}
+2026-05-22T21:21:22.021065Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("dashboard"), path: AnchoredSystemPathBuf("dashboard") }}))
+2026-05-22T21:25:46.718693Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("dashboard/src/styles/globals.css"), AnchoredSystemPathBuf("dashboard/src/components/CFOView/AnomalyAlerts.tsx")}
+2026-05-22T21:25:46.720139Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("dashboard"), path: AnchoredSystemPathBuf("dashboard") }}))

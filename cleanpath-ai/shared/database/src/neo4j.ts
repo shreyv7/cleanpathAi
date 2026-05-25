@@ -24,10 +24,12 @@ export class Neo4jPool {
 
     public static getInstance(config?: Neo4jConfig): Neo4jPool {
         if (!Neo4jPool.instance) {
-            if (!config) {
-                throw new Error('Neo4jPool config required for first initialization');
-            }
-            Neo4jPool.instance = new Neo4jPool(config);
+            const resolvedConfig = config || {
+                uri: process.env.NEO4J_URI || 'bolt://localhost:7687',
+                user: process.env.NEO4J_USER || 'neo4j',
+                pass: process.env.NEO4J_PASS || 'password'
+            };
+            Neo4jPool.instance = new Neo4jPool(resolvedConfig);
         }
         return Neo4jPool.instance;
     }
