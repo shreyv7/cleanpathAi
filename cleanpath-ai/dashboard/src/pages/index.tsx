@@ -26,15 +26,27 @@ export default function Home() {
                     </code>
                 </div>
 
-                <button
-                    onClick={() => router.push('/ops')}
-                    className="flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 hover:bg-emerald-500/20 hover:border-emerald-500/40 hover:-translate-y-0.5 transition-all text-xs font-bold uppercase tracking-wider cursor-pointer shadow-lg shadow-emerald-500/5 duration-300 relative overflow-hidden"
-                >
-                    <div className="flex items-center gap-1.5">
-                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 infra-pulse-fast" />
-                        <span>Launch Operations Room</span>
-                    </div>
-                </button>
+                <div className="flex items-center gap-3">
+                    <button
+                        onClick={() => router.push('/ops')}
+                        className="flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/10 border border-blue-500/20 text-blue-400 hover:bg-blue-500/20 hover:border-blue-500/40 hover:-translate-y-0.5 transition-all text-xs font-bold uppercase tracking-wider cursor-pointer shadow-lg shadow-blue-500/5 duration-300 relative overflow-hidden"
+                    >
+                        <div className="flex items-center gap-1.5">
+                            <span className="w-1.5 h-1.5 rounded-full bg-blue-400 infra-pulse-fast" />
+                            <span>Launch Operations Room</span>
+                        </div>
+                    </button>
+
+                    <button
+                        onClick={() => router.push('/financial')}
+                        className="flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 hover:bg-emerald-500/20 hover:border-emerald-500/40 hover:-translate-y-0.5 transition-all text-xs font-bold uppercase tracking-wider cursor-pointer shadow-lg shadow-emerald-500/5 duration-300 relative overflow-hidden"
+                    >
+                        <div className="flex items-center gap-1.5">
+                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 infra-pulse-fast animate-pulse" />
+                            <span>Bloomberg Treasury Suite</span>
+                        </div>
+                    </button>
+                </div>
             </div>
 
             <div className="max-w-7xl w-full flex flex-col gap-24">
