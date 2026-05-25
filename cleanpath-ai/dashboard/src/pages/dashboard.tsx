@@ -66,59 +66,56 @@ export default function Home() {
                 </div>
             )}
 
-            <div className="z-10 max-w-7xl w-full items-center justify-between font-mono text-sm flex mb-12 border-b border-white/5 pb-6">
-                <div className="flex items-center gap-3">
-                    <ShieldCheck className="w-6 h-6 text-blue-500" />
-                    <span className="text-lg font-black tracking-widest text-white/90">
-                        CLEANPATH AI
-                    </span>
-                    <code className="text-[10px] bg-blue-500/10 border border-blue-500/20 text-blue-400 font-mono font-bold px-1.5 py-0.5 rounded">
-                        v0.1.0
-                    </code>
+            <div className="z-10 max-w-7xl w-full flex flex-col md:flex-row md:items-center justify-between gap-6 mb-16 border-b border-white/5 pb-6">
+                {/* Brand Logo & Telemetry Switcher */}
+                <div className="flex items-center gap-4">
+                    <div className="flex items-center gap-2">
+                        <ShieldCheck className="w-5 h-5 text-white/80" />
+                        <span className="text-sm font-bold tracking-wider text-white">
+                            CLEANPATH
+                        </span>
+                        <span className="text-[10px] text-white/40 bg-white/5 border border-white/10 font-mono px-1.5 py-0.5 rounded">
+                            L4-SECURE
+                        </span>
+                    </div>
+
+                    <div className="h-4 w-px bg-white/10 hidden sm:block" />
+
+                    <EnvironmentToggle />
                 </div>
 
-                <div className="flex flex-wrap items-center gap-3">
-                    <EnvironmentToggle />
-                    <div className="h-6 w-px bg-white/10 hidden md:block mx-1" />
-
+                {/* Unified Monochromatic Workspace Navigation */}
+                <div className="flex flex-wrap items-center gap-2 text-xs">
                     <button
                         onClick={() => router.push('/ops')}
-                        className="flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/10 border border-blue-500/20 text-blue-400 hover:bg-blue-500/20 hover:border-blue-500/40 hover:-translate-y-0.5 transition-all text-xs font-bold uppercase tracking-wider cursor-pointer shadow-lg shadow-blue-500/5 duration-300 relative overflow-hidden"
+                        className="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-[#0A0C10] border border-white/5 text-white/60 hover:text-white hover:border-white/10 hover:bg-white/[0.01] transition-all cursor-pointer font-medium"
                     >
-                        <div className="flex items-center gap-1.5">
-                            <span className="w-1.5 h-1.5 rounded-full bg-blue-400 infra-pulse-fast" />
-                            <span>Launch Operations Room</span>
-                        </div>
+                        <Activity className="w-3.5 h-3.5 opacity-60" />
+                        <span>Operations Room</span>
                     </button>
 
                     <button
                         onClick={() => router.push('/financial')}
-                        className="flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 hover:bg-emerald-500/20 hover:border-emerald-500/40 hover:-translate-y-0.5 transition-all text-xs font-bold uppercase tracking-wider cursor-pointer shadow-lg shadow-emerald-500/5 duration-300 relative overflow-hidden"
+                        className="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-[#0A0C10] border border-white/5 text-white/60 hover:text-white hover:border-white/10 hover:bg-white/[0.01] transition-all cursor-pointer font-medium"
                     >
-                        <div className="flex items-center gap-1.5">
-                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 infra-pulse-fast" />
-                            <span>Bloomberg Treasury Suite</span>
-                        </div>
+                        <BarChart3 className="w-3.5 h-3.5 opacity-60" />
+                        <span>Bloomberg Treasury</span>
                     </button>
 
                     <button
                         onClick={() => router.push('/control')}
-                        className="flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/10 border border-purple-500/20 text-purple-400 hover:bg-purple-500/20 hover:border-purple-500/40 hover:-translate-y-0.5 transition-all text-xs font-bold uppercase tracking-wider cursor-pointer shadow-lg shadow-purple-500/5 duration-300 relative overflow-hidden"
+                        className="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-[#0A0C10] border border-white/5 text-white/60 hover:text-white hover:border-white/10 hover:bg-white/[0.01] transition-all cursor-pointer font-medium"
                     >
-                        <div className="flex items-center gap-1.5">
-                            <span className="w-1.5 h-1.5 rounded-full bg-purple-400 infra-pulse-fast" />
-                            <span>Autonomous Control Plane</span>
-                        </div>
+                        <ShieldCheck className="w-3.5 h-3.5 opacity-60" />
+                        <span>Control Plane</span>
                     </button>
 
                     <button
                         onClick={() => router.push('/developer')}
-                        className="flex items-center gap-2 px-4 py-2 rounded-lg bg-orange-500/10 border border-orange-500/20 text-orange-400 hover:bg-orange-500/20 hover:border-orange-500/40 hover:-translate-y-0.5 transition-all text-xs font-bold uppercase tracking-wider cursor-pointer shadow-lg shadow-orange-500/5 duration-300 relative overflow-hidden"
+                        className="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-[#0A0C10] border border-white/5 text-white/60 hover:text-white hover:border-white/10 hover:bg-white/[0.01] transition-all cursor-pointer font-medium"
                     >
-                        <div className="flex items-center gap-1.5">
-                            <span className="w-1.5 h-1.5 rounded-full bg-orange-400 infra-pulse-fast animate-pulse" />
-                            <span>Developer & Ecosystem Hub</span>
-                        </div>
+                        <LayoutDashboard className="w-3.5 h-3.5 opacity-60" />
+                        <span>Developer Hub</span>
                     </button>
                 </div>
             </div>
