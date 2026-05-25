@@ -89,16 +89,16 @@ export const AttackPlaybackSimulator: React.FC = () => {
     };
 
     return (
-        <div className="glass rounded-2xl p-6 border border-white/5 bg-[#080B10]/80 relative overflow-hidden flex flex-col gap-4 h-[400px]">
+        <div className="bg-white border border-slate-200 dark:bg-[#080B10]/80 dark:border-white/5 shadow-sm hover:shadow-md rounded-2xl p-6 relative overflow-hidden flex flex-col gap-4 h-[400px] transition-all">
             {/* Header */}
             <div className="flex items-center justify-between shrink-0">
                 <div className="flex items-center gap-2">
-                    <Cpu className="w-5 h-5 text-blue-400" />
+                    <Cpu className="w-5 h-5 text-blue-600 dark:text-blue-400" />
                     <div>
-                        <h2 className="text-sm font-bold uppercase tracking-widest text-white/90">
+                        <h2 className="text-sm font-bold uppercase tracking-widest text-slate-900 dark:text-white/90">
                             Operational Intelligence Playback
                         </h2>
-                        <p className="text-[10px] text-white/40">Replay, pause, and analyze attack emergence timelines</p>
+                        <p className="text-[10px] text-slate-500 dark:text-white/40 font-medium">Replay, pause, and analyze attack emergence timelines</p>
                     </div>
                 </div>
 
@@ -108,15 +108,15 @@ export const AttackPlaybackSimulator: React.FC = () => {
                         onClick={() => setIsPlaying(!isPlaying)}
                         className={`p-1.5 rounded-lg border transition-all cursor-pointer ${
                             isPlaying
-                                ? 'bg-red-500/10 border-red-500/20 text-red-400 hover:bg-red-500/20'
-                                : 'bg-blue-500/10 border-blue-500/20 text-blue-400 hover:bg-blue-500/20'
+                                ? 'bg-red-500/10 border-red-500/20 text-red-650 dark:text-red-400 hover:bg-red-500/20'
+                                : 'bg-blue-50 border border-blue-200 text-blue-700 dark:bg-blue-500/10 dark:border-blue-500/20 dark:text-blue-400 hover:bg-blue-100/50'
                         }`}
                     >
                         {isPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
                     </button>
                     <button
                         onClick={handleRestart}
-                        className="p-1.5 rounded-lg bg-white/[0.03] border border-white/5 text-white/40 hover:text-white/70 transition-all cursor-pointer"
+                        className="p-1.5 rounded-lg bg-slate-50 border border-slate-200 text-slate-500 hover:text-slate-800 dark:bg-white/[0.03] dark:border-white/5 dark:text-white/40 dark:hover:text-white/70 transition-all cursor-pointer shadow-sm"
                     >
                         <RotateCcw className="w-4 h-4" />
                     </button>

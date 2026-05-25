@@ -79,11 +79,11 @@ export const EntityIntelligence: React.FC<EntityIntelligenceProps> = ({ entity }
                 <div className="space-y-2">
                     <div className="flex justify-between text-xs">
                         <span className="text-white/30">First Seen</span>
-                        <span className="text-white/60 font-mono">{new Date(entity.firstSeen).toLocaleDateString()}</span>
+                        <span className="text-white/60 font-mono" suppressHydrationWarning>{new Date(entity.firstSeen).toLocaleDateString()}</span>
                     </div>
                     <div className="flex justify-between text-xs">
                         <span className="text-white/30">Last Active</span>
-                        <span className="text-white/60 font-mono">{new Date(entity.lastActive).toLocaleTimeString()}</span>
+                        <span className="text-white/60 font-mono" suppressHydrationWarning>{new Date(entity.lastActive).toLocaleTimeString()}</span>
                     </div>
                     <div className="flex justify-between text-xs">
                         <span className="text-white/30">Incidents</span>

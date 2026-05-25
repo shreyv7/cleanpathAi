@@ -67,7 +67,7 @@ export default function Home() {
                 </div>
             )}
 
-            <div className="z-10 max-w-7xl w-full flex flex-col lg:flex-row lg:items-center justify-between gap-6 mb-16 border-b border-slate-200 dark:border-white/10 pb-6">
+            <div className="z-10 max-w-7xl w-full flex flex-col lg:flex-row lg:items-center justify-between gap-6 mb-12 border-b border-slate-200 dark:border-white/10 pb-6">
                 {/* Brand Logo & Telemetry Switcher */}
                 <div className="flex flex-wrap items-center gap-4">
                     <div className="flex items-center gap-2">
@@ -79,10 +79,6 @@ export default function Home() {
                             L4-SECURE
                         </span>
                     </div>
-
-                    <div className="h-4 w-px bg-slate-200 dark:bg-white/10 hidden sm:block" />
-
-                    <EnvironmentToggle />
 
                     <div className="h-4 w-px bg-slate-200 dark:bg-white/10 hidden sm:block" />
 
@@ -122,6 +118,20 @@ export default function Home() {
                         <LayoutDashboard className="w-3.5 h-3.5 opacity-60" />
                         <span>Developer Hub</span>
                     </button>
+                </div>
+            </div>
+
+            {/* Sub-Header Simulation context banner */}
+            <div className="z-10 max-w-7xl w-full border border-slate-200 dark:border-white/5 bg-white/70 dark:bg-[#080B10]/70 backdrop-blur-lg py-2.5 px-4 rounded-2xl flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-sm shrink-0 mb-8 transition-all">
+                <div className="flex items-center gap-2 text-xs font-semibold text-slate-650 dark:text-white/60">
+                    <span className="text-[10px] font-mono uppercase tracking-widest text-slate-400 dark:text-white/30 font-bold">OPERATIONAL CONTEXT</span>
+                    <div className="h-3 w-px bg-slate-250 dark:bg-white/10 hidden sm:block" />
+                    <span className="text-slate-700 dark:text-slate-350 font-mono text-[10.5px]">Plane: Executive Dashboard Executive View</span>
+                </div>
+
+                <div className="flex items-center gap-3">
+                    <span className="text-[10px] font-mono text-slate-500 dark:text-white/40 uppercase tracking-wider font-bold">SIMULATION plane SELECTOR:</span>
+                    <EnvironmentToggle />
                 </div>
             </div>
 

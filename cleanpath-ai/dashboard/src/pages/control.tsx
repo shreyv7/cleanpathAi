@@ -37,22 +37,22 @@ export default function ControlTower() {
                         <div className="flex items-center gap-4">
                             <button
                                 onClick={() => router.push('/dashboard')}
-                                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-card border border-border text-foreground/60 hover:text-foreground hover:border-foreground/10 hover:bg-muted dark:bg-white/[0.03] dark:border-white/5 dark:text-white/40 dark:hover:text-white dark:hover:border-white/10 dark:hover:bg-white/5 transition-all text-xs cursor-pointer"
+                                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-card border border-border text-foreground/60 hover:text-foreground hover:border-foreground/10 hover:bg-muted dark:bg-white/[0.03] dark:border-white/5 dark:text-white/40 dark:hover:text-white dark:hover:border-white/10 dark:hover:bg-white/5 transition-all text-xs cursor-pointer font-semibold"
                             >
                                 <ArrowLeft className="w-3.5 h-3.5" />
                                 <span>Return to Executive Summary</span>
                             </button>
 
-                            <div className="h-6 w-px bg-white/10" />
+                            <div className="h-6 w-px bg-slate-200 dark:bg-white/10" />
 
                             <div className="flex items-center gap-3">
-                                <Shield className="w-5 h-5 text-blue-500 infra-pulse" />
+                                <Shield className="w-5 h-5 text-blue-600 dark:text-blue-500 infra-pulse" />
                                 <div>
                                     <div className="flex items-center gap-2">
-                                        <span className="text-sm font-black tracking-widest uppercase text-white/90">
+                                        <span className="text-sm font-black tracking-widest uppercase text-slate-900 dark:text-white/90">
                                             CleanPath Control Tower
                                         </span>
-                                        <span className="text-[9px] bg-blue-500/10 border border-blue-500/20 text-blue-400 font-mono font-bold px-1.5 py-0.5 rounded">
+                                        <span className="text-[9px] bg-blue-500/10 border border-blue-500/20 text-blue-600 dark:text-blue-400 font-mono font-bold px-1.5 py-0.5 rounded">
                                             CONTROL PLANE L4
                                         </span>
                                     </div>
@@ -67,19 +67,19 @@ export default function ControlTower() {
                                 onClick={() => setWarRoomMode(!warRoomMode)}
                                 className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border text-xs font-bold transition-all cursor-pointer ${
                                     warRoomMode
-                                        ? 'bg-red-500/15 border-red-500/35 text-red-400 animate-pulse'
-                                        : 'bg-white/[0.03] border-white/5 text-white/45 hover:text-white hover:border-white/10'
+                                        ? 'bg-red-500/15 border-red-500/35 text-red-650 dark:text-red-400 animate-pulse'
+                                        : 'bg-slate-100 dark:bg-white/[0.03] border-slate-200 dark:border-white/5 text-slate-500 dark:text-white/45 hover:text-slate-900 dark:hover:text-white hover:border-slate-300 dark:hover:border-white/10'
                                 }`}
                             >
                                 <Flame className="w-3.5 h-3.5 animate-bounce" style={{ animationDuration: '2s' }} />
                                 <span>{warRoomMode ? 'Emergency War Room Active' : 'Trigger War Room Mode'}</span>
                             </button>
 
-                            <div className="h-6 w-px bg-white/10 hidden md:block" />
+                            <div className="h-6 w-px bg-slate-200 dark:bg-white/10 hidden md:block" />
 
                             <div className="hidden md:flex items-center gap-2">
-                                <Radio className="w-3.5 h-3.5 text-emerald-500 infra-pulse" />
-                                <span className="text-emerald-500 font-bold uppercase tracking-wider text-[10px]">GOVERNANCE ONLINE</span>
+                                <Radio className="w-3.5 h-3.5 text-emerald-650 dark:text-emerald-500 infra-pulse" />
+                                <span className="text-emerald-650 dark:text-emerald-500 font-bold uppercase tracking-wider text-[10px]">GOVERNANCE ONLINE</span>
                             </div>
                         </div>
                     </div>
@@ -92,11 +92,11 @@ export default function ControlTower() {
                         : 'p-6 md:p-8'
                 }`}>
                     {/* Title */}
-                    <div className="flex flex-col gap-1.5 pb-2 border-b border-white/5">
-                        <h1 className="text-3xl font-extrabold tracking-tight text-white/90">
+                    <div className="flex flex-col gap-1.5 pb-2 border-b border-slate-200 dark:border-white/5">
+                        <h1 className="text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white/90">
                             Ecosystem Governance & Autonomous Control Tower
                         </h1>
-                        <p className="text-white/40 text-sm font-mono">
+                        <p className="text-slate-500 dark:text-white/40 text-sm font-mono font-medium">
                             Live buy-side policy enforcement, self-healing routing paths, and autonomous ad-fraud quarantines.
                         </p>
                     </div>
@@ -104,8 +104,8 @@ export default function ControlTower() {
                     {/* AI Agent Operations Report bar */}
                     <div className={`p-4 rounded-xl border font-mono text-[10.5px] leading-relaxed transition-all duration-500 ${
                         warRoomMode 
-                            ? 'bg-red-500/5 border-red-500/20 text-red-300' 
-                            : 'bg-blue-500/5 border-blue-500/15 text-blue-300'
+                            ? 'bg-red-50 border-red-200 text-red-700 dark:bg-red-500/5 dark:border-red-500/20 dark:text-red-300' 
+                            : 'bg-blue-50 border-blue-200 text-blue-700 dark:bg-blue-500/5 dark:border-blue-500/15 dark:text-blue-300'
                     }`}>
                         {strategicInsight}
                     </div>

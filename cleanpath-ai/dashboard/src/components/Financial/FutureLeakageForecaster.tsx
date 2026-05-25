@@ -20,16 +20,16 @@ export const FutureLeakageForecaster: React.FC = () => {
     const state = useTelemetry();
 
     return (
-        <div className="glass rounded-2xl p-6 border border-white/5 bg-[#080B10]/80 relative overflow-hidden flex flex-col gap-4 h-[400px]">
+        <div className="bg-white border border-slate-200 dark:bg-[#080B10]/80 dark:border-white/5 shadow-sm hover:shadow-md rounded-2xl p-6 relative overflow-hidden flex flex-col gap-4 h-[400px] transition-all">
             {/* Header */}
             <div className="flex items-center justify-between shrink-0">
                 <div className="flex items-center gap-2">
-                    <TrendingUp className="w-5 h-5 text-emerald-400" />
+                    <TrendingUp className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
                     <div>
-                        <h2 className="text-sm font-bold uppercase tracking-widest text-white/90">
+                        <h2 className="text-sm font-bold uppercase tracking-widest text-slate-900 dark:text-white/90">
                             Predictive Strategic Financial Horizons
                         </h2>
-                        <p className="text-[10px] text-white/40">Multi-quarter programmatic leakage growth & optimized recovery bounds</p>
+                        <p className="text-[10px] text-slate-500 dark:text-white/40 font-medium">Multi-quarter programmatic leakage growth & optimized recovery bounds</p>
                     </div>
                 </div>
             </div>
@@ -42,15 +42,15 @@ export const FutureLeakageForecaster: React.FC = () => {
                     return (
                         <div
                             key={fc.quarter}
-                            className="p-3.5 rounded-xl border border-white/5 bg-[#03060a]/60 hover:bg-[#05080f]/80 hover:border-white/10 transition-all duration-300 flex flex-col gap-2.5"
+                            className="p-3.5 rounded-xl border border-slate-200 bg-slate-50 dark:border-white/5 dark:bg-[#03060a]/60 dark:hover:bg-[#05080f]/80 hover:border-slate-300 dark:hover:border-white/10 transition-all duration-300 flex flex-col gap-2.5 shadow-sm"
                         >
                             {/* Quarter Title & Saving */}
                             <div className="flex justify-between items-center">
-                                <span className="font-bold text-white/90 flex items-center gap-1.5">
-                                    <Calendar className="w-3.5 h-3.5 text-blue-400" />
+                                <span className="font-bold text-slate-800 dark:text-white/90 flex items-center gap-1.5">
+                                    <Calendar className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
                                     {fc.quarter}
                                 </span>
-                                <span className="text-emerald-400 font-bold text-xs">
+                                <span className="text-emerald-600 dark:text-emerald-400 font-bold text-xs">
                                     Saved: ${totalSavings.toLocaleString()}
                                 </span>
                             </div>
@@ -58,28 +58,28 @@ export const FutureLeakageForecaster: React.FC = () => {
                             {/* Performance bars compared */}
                             <div className="space-y-1.5 text-[9.5px]">
                                 {/* Baseline Leakage */}
-                                <div className="flex justify-between items-center text-white/45">
+                                <div className="flex justify-between items-center text-slate-500 dark:text-white/45 font-medium">
                                     <span>Unmitigated Leakage:</span>
-                                    <span>${fc.baselineLeakageUsd.toLocaleString()}</span>
+                                    <span className="text-slate-750 dark:text-white/80 font-bold">${fc.baselineLeakageUsd.toLocaleString()}</span>
                                 </div>
-                                <div className="w-full bg-white/5 rounded-full h-1 overflow-hidden">
+                                <div className="w-full bg-slate-200 dark:bg-white/5 rounded-full h-1 overflow-hidden">
                                     <div className="bg-red-500/60 h-full" style={{ width: `${(fc.baselineLeakageUsd / 1000000) * 100}%` }} />
                                 </div>
 
                                 {/* Optimized Leakage */}
-                                <div className="flex justify-between items-center text-white/45 pt-1">
+                                <div className="flex justify-between items-center text-slate-500 dark:text-white/45 pt-1 font-medium">
                                     <span>Optimized Leakage (CleanPath Active):</span>
-                                    <span className="text-emerald-400 font-bold">${fc.optimizedLeakageUsd.toLocaleString()}</span>
+                                    <span className="text-emerald-600 dark:text-emerald-400 font-bold">${fc.optimizedLeakageUsd.toLocaleString()}</span>
                                 </div>
-                                <div className="w-full bg-white/5 rounded-full h-1 overflow-hidden">
+                                <div className="w-full bg-slate-200 dark:bg-white/5 rounded-full h-1 overflow-hidden">
                                     <div className="bg-emerald-500 h-full" style={{ width: `${(fc.optimizedLeakageUsd / 1000000) * 100}%` }} />
                                 </div>
                             </div>
 
                             {/* Working media delta */}
-                            <div className="flex justify-between items-center text-[9px] border-t border-white/5 pt-2 mt-0.5 text-white/30">
+                            <div className="flex justify-between items-center text-[9px] border-t border-slate-150 dark:border-white/5 pt-2 mt-0.5 text-slate-400 dark:text-white/30 font-medium">
                                 <span>Projected Path Efficiency Improvement:</span>
-                                <span className="text-emerald-400 font-bold">+{fc.efficiencyGainPct}%</span>
+                                <span className="text-emerald-600 dark:text-emerald-400 font-bold">+{fc.efficiencyGainPct}%</span>
                             </div>
                         </div>
                     );

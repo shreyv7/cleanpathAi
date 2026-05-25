@@ -42,16 +42,16 @@ const REGIONAL_LEAKS: RegionalLeakage[] = [
 
 export const EconomicPressureMap: React.FC = () => {
     return (
-        <div className="glass rounded-2xl p-6 border border-white/5 bg-[#080B10]/80 relative overflow-hidden flex flex-col gap-4 h-[420px]">
+        <div className="bg-white border border-slate-200 dark:bg-[#080B10]/80 dark:border-white/5 shadow-sm hover:shadow-md rounded-2xl p-6 relative overflow-hidden flex flex-col gap-4 h-[420px] transition-all">
             {/* Header */}
             <div className="flex justify-between items-center shrink-0">
                 <div className="flex items-center gap-2">
-                    <Globe className="w-5 h-5 text-purple-400" />
+                    <Globe className="w-5 h-5 text-purple-600 dark:text-purple-400" />
                     <div>
-                        <h2 className="text-sm font-bold uppercase tracking-widest text-white/90">
+                        <h2 className="text-sm font-bold uppercase tracking-widest text-slate-900 dark:text-white/90">
                             Global Supply Path Economic Pressure Map
                         </h2>
-                        <p className="text-[10px] text-white/40">Macroeconomic regional markup and tax concentration audits</p>
+                        <p className="text-[10px] text-slate-500 dark:text-white/40 font-medium">Macroeconomic regional markup and tax concentration audits</p>
                     </div>
                 </div>
             </div>
@@ -67,26 +67,26 @@ export const EconomicPressureMap: React.FC = () => {
                             key={leak.region}
                             className={`p-3.5 rounded-xl border transition-all duration-300 relative group flex gap-3 items-start justify-between ${
                                 isCritical 
-                                    ? 'bg-red-950/15 border-red-500/20 hover:border-red-500/40'
+                                    ? 'bg-red-50 dark:bg-red-950/15 border-red-200 dark:border-red-500/20 hover:border-red-400 dark:hover:border-red-500/40'
                                     : isElevated 
-                                        ? 'bg-yellow-950/10 border-yellow-500/20 hover:border-yellow-500/40'
-                                        : 'bg-white/[0.01] border-white/5 opacity-80'
+                                        ? 'bg-amber-50/50 dark:bg-yellow-950/10 border-amber-200 dark:border-yellow-500/20 hover:border-amber-400 dark:hover:border-yellow-500/40'
+                                        : 'bg-slate-50 border border-slate-200 dark:bg-white/[0.01] dark:border-white/5 opacity-90'
                             }`}
                         >
                             <div className="space-y-1">
                                 <div className="flex items-center gap-2">
-                                    <span className="text-xs font-bold text-white/90">{leak.region}</span>
+                                    <span className="text-xs font-bold text-slate-800 dark:text-white/90">{leak.region}</span>
                                     <span className={`text-[8px] font-black tracking-widest uppercase px-1.5 py-0.5 rounded ${
-                                        isCritical ? 'bg-red-500/10 text-red-400 border border-red-500/20' :
-                                        isElevated ? 'bg-yellow-500/10 text-yellow-400 border border-yellow-500/20' : 'bg-blue-500/10 text-blue-400 border border-blue-500/20'
+                                        isCritical ? 'bg-red-100 text-red-700 border border-red-200 dark:bg-red-500/10 dark:text-red-400 dark:border-red-500/20' :
+                                        isElevated ? 'bg-amber-100 text-amber-800 border border-amber-200 dark:bg-yellow-500/10 dark:text-yellow-400 dark:border-yellow-500/20' : 'bg-blue-100 text-blue-800 border border-blue-200 dark:bg-blue-500/10 dark:text-blue-400 dark:border-blue-500/20'
                                     }`}>
                                         {leak.riskStatus}
                                     </span>
                                 </div>
-                                <p className="text-[10px] text-white/45 pl-0 leading-normal">
-                                    Inventory: <span className="text-white/70">{leak.inventoryClass}</span>
+                                <p className="text-[10px] text-slate-500 dark:text-white/45 pl-0 leading-normal">
+                                    Inventory: <span className="text-slate-700 dark:text-white/70 font-semibold">{leak.inventoryClass}</span>
                                 </p>
-                                <div className="text-[9px] text-white/30">
+                                <div className="text-[9px] text-slate-400 dark:text-white/30 font-medium">
                                     Primary Leak: {leak.associatedSsp}
                                 </div>
                             </div>
@@ -94,12 +94,12 @@ export const EconomicPressureMap: React.FC = () => {
                             {/* Percentage markup bubble */}
                             <div className="text-right shrink-0">
                                 <span className={`text-sm font-black flex items-center gap-0.5 justify-end ${
-                                    isCritical ? 'text-red-400' : isElevated ? 'text-yellow-400' : 'text-emerald-400'
+                                    isCritical ? 'text-red-600' : isElevated ? 'text-amber-600 dark:text-yellow-400' : 'text-emerald-600 dark:text-emerald-400'
                                 }`}>
                                     <ArrowUpRight className="w-3.5 h-3.5" />
                                     +{leak.inflationPct}%
                                 </span>
-                                <span className="text-[8.5px] text-white/20 uppercase">Structural Tax</span>
+                                <span className="text-[8.5px] text-slate-400 dark:text-white/20 font-bold uppercase">Structural Tax</span>
                             </div>
                         </div>
                     );

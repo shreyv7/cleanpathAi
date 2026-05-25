@@ -94,7 +94,7 @@ export const LiveStreamPanel: React.FC = () => {
                         </div>
                         <div className="flex-1 min-w-0">
                             <p className="text-[11px] text-white/60 leading-relaxed">{event.message}</p>
-                            <span className="text-[9px] text-white/15 font-mono">{event.timestamp}</span>
+                            <span className="text-[9px] text-white/15 font-mono" suppressHydrationWarning>{event.timestamp}</span>
                         </div>
                     </div>
                 ))}

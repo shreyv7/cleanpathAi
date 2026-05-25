@@ -87,7 +87,7 @@ export const DecisionLog: React.FC = () => {
                             ) : (
                                 data?.data.map((entry) => (
                                     <tr key={entry.id} className="hover:bg-slate-50 dark:hover:bg-white/[0.02] transition-colors group cursor-pointer" onClick={() => router.push(`/investigate/${encodeURIComponent(entry.publisher_id)}`)}>
-                                        <td className="px-6 py-4 text-sm text-slate-600 dark:text-white/70 font-mono whitespace-nowrap">
+                                        <td className="px-6 py-4 text-sm text-slate-600 dark:text-white/70 font-mono whitespace-nowrap" suppressHydrationWarning>
                                             {new Date(entry.timestamp).toLocaleTimeString()}
                                         </td>
                                         <td className="px-6 py-4 text-sm text-slate-900 dark:text-white/90 font-semibold whitespace-nowrap">

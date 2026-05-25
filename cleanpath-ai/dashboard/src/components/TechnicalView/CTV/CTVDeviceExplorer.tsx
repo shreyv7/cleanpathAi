@@ -83,7 +83,7 @@ export const CTVDeviceExplorer = () => {
                                     <RiskBadge score={device.riskScore} />
                                 </td>
                                 <td className="px-6 py-4 text-slate-600 dark:text-white/70">{device.mutationCount}</td>
-                                <td className="px-6 py-4 text-slate-400 dark:text-white/50 text-xs font-mono">
+                                <td className="px-6 py-4 text-slate-400 dark:text-white/50 text-xs font-mono" suppressHydrationWarning>
                                     {new Date(device.lastSeen).toLocaleTimeString()}
                                 </td>
                             </tr>

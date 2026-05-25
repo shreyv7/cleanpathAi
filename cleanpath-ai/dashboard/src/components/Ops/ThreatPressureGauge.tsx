@@ -15,13 +15,13 @@ export const ThreatPressureGauge: React.FC = () => {
     const strokeDashoffset = circumference - (integrityScore / 100) * circumference;
 
     return (
-        <div className="glass rounded-2xl p-6 border border-white/5 bg-[#080B10]/80 relative overflow-hidden flex flex-col items-center justify-between h-[240px]">
+        <div className="bg-white border border-slate-200 dark:bg-[#080B10]/80 dark:border-white/5 shadow-sm hover:shadow-md rounded-2xl p-6 relative overflow-hidden flex flex-col items-center justify-between h-[240px] transition-all">
             {/* Top info */}
             <div className="w-full text-left self-start">
-                <h2 className="text-sm font-bold uppercase tracking-widest text-white/90">
+                <h2 className="text-sm font-bold uppercase tracking-widest text-slate-900 dark:text-white/90">
                     Global Integrity Index
                 </h2>
-                <p className="text-[10px] text-white/40">CleanPath continuous buy-side protection efficiency</p>
+                <p className="text-[10px] text-slate-500 dark:text-white/40 font-medium">CleanPath continuous buy-side protection efficiency</p>
             </div>
 
             {/* Gauge Graphic */}
@@ -32,8 +32,8 @@ export const ThreatPressureGauge: React.FC = () => {
                         cx="56"
                         cy="56"
                         r={radius}
-                        stroke="#ffffff"
-                        strokeOpacity="0.04"
+                        stroke="currentColor"
+                        className="text-slate-100 dark:text-white/5"
                         strokeWidth={strokeWidth}
                         fill="transparent"
                     />
@@ -67,11 +67,11 @@ export const ThreatPressureGauge: React.FC = () => {
 
                 {/* Score text overlay inside circle */}
                 <div className="absolute flex flex-col items-center justify-center text-center">
-                    <span className="text-2xl font-black font-mono text-white/90 tracking-tight">
+                    <span className="text-2xl font-black font-mono text-slate-900 dark:text-white/90 tracking-tight">
                         {integrityScore}%
                     </span>
                     <span className={`text-[8px] font-black font-mono tracking-widest uppercase mt-0.5 ${
-                        integrityScore > 75 ? 'text-emerald-400' : integrityScore > 50 ? 'text-yellow-400' : 'text-red-400'
+                        integrityScore > 75 ? 'text-emerald-600 dark:text-emerald-400' : integrityScore > 50 ? 'text-yellow-600 dark:text-yellow-400' : 'text-red-600 dark:text-red-400'
                     }`}>
                         {integrityScore > 75 ? 'optimal' : integrityScore > 50 ? 'degraded' : 'critical'}
                     </span>
@@ -79,16 +79,16 @@ export const ThreatPressureGauge: React.FC = () => {
             </div>
 
             {/* Bottom info */}
-            <div className="w-full text-xs font-mono flex items-center justify-between text-white/40 border-t border-white/5 pt-3">
+            <div className="w-full text-xs font-mono flex items-center justify-between text-slate-500 dark:text-white/40 border-t border-slate-200 dark:border-white/5 pt-3 font-medium">
                 <div className="flex items-center gap-1.5">
                     {integrityScore > 75 ? (
-                        <ShieldCheck className="w-4 h-4 text-emerald-400" />
+                        <ShieldCheck className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
                     ) : (
-                        <ShieldAlert className="w-4 h-4 text-red-400 animate-bounce" />
+                        <ShieldAlert className="w-4 h-4 text-red-500 animate-bounce" />
                     )}
                     <span>Graph Toxicity:</span>
                 </div>
-                <span className="font-bold text-white/80">{state.graphToxicity}%</span>
+                <span className="font-bold text-slate-700 dark:text-white/80">{state.graphToxicity}%</span>
             </div>
         </div>
     );

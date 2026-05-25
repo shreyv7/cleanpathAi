@@ -29,45 +29,45 @@ export const CorrelationEngine: React.FC = () => {
     }, [state.activeIncidents, state.activePathReroutes, state.routeEfficiency]);
 
     return (
-        <div className="glass rounded-2xl p-6 border border-white/5 bg-[#080B10]/80 relative overflow-hidden flex flex-col gap-4">
+        <div className="bg-white border border-slate-200 dark:bg-[#080B10]/80 dark:border-white/5 shadow-sm hover:shadow-md rounded-2xl p-6 relative overflow-hidden flex flex-col gap-4 transition-all">
             <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                    <Brain className="w-5 h-5 text-purple-400" />
+                    <Brain className="w-5 h-5 text-purple-650 dark:text-purple-400" />
                     <div>
-                        <h2 className="text-sm font-bold uppercase tracking-widest text-white/90">
+                        <h2 className="text-sm font-bold uppercase tracking-widest text-slate-900 dark:text-white/90">
                             Multi-Signal Correlation Engine
                         </h2>
-                        <p className="text-[10px] text-white/40">CleanPath AI Deep Synthesis & Threat Attribution</p>
+                        <p className="text-[10px] text-slate-500 dark:text-white/40 font-medium">CleanPath AI Deep Synthesis & Threat Attribution</p>
                     </div>
                 </div>
-                <div className="p-1 rounded-md bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center gap-1 text-[9px] font-mono">
+                <div className="p-1 rounded bg-purple-55 border border-purple-200 text-purple-700 dark:bg-purple-500/10 dark:border-purple-500/20 dark:text-purple-400 flex items-center gap-1 text-[9px] font-mono shadow-sm">
                     <Cpu className="w-3 h-3 animate-spin" style={{ animationDuration: '4s' }} />
                     <span>L4_MODEL_ACTIVE</span>
                 </div>
             </div>
 
             {/* Simulated AI Log Output */}
-            <div className="flex-1 bg-[#03060a]/90 border border-white/5 rounded-xl p-4 font-mono text-xs text-purple-300 relative overflow-hidden min-h-[140px] flex flex-col justify-between">
+            <div className="flex-1 bg-slate-900 border border-slate-950 dark:bg-[#03060a]/90 dark:border-white/5 rounded-xl p-4 font-mono text-xs text-purple-300 relative overflow-hidden min-h-[140px] flex flex-col justify-between shadow-inner">
                 {/* Visual scanline */}
                 <div className="absolute inset-0 bg-gradient-to-b from-purple-500/5 to-transparent pointer-events-none" />
 
                 <div className="space-y-3 z-10">
-                    <div className="flex items-center gap-1.5 text-white/30 text-[9px]">
+                    <div className="flex items-center gap-1.5 text-white/40 text-[9px]">
                         <span>[CORE_ATTRIBUTION_MODEL]</span>
                         <span>•</span>
                         <span>CONFIDENCE: 92.4%</span>
                     </div>
-                    <p className="leading-relaxed text-white/80">
+                    <p className="leading-relaxed text-white/90">
                         {insight}
                     </p>
                 </div>
 
-                <div className="flex items-center justify-between text-[9px] border-t border-purple-500/10 pt-3 mt-4 text-purple-400/60 z-10">
+                <div className="flex items-center justify-between text-[9px] border-t border-purple-500/10 pt-3 mt-4 text-purple-400/80 z-10 font-bold">
                     <span className="flex items-center gap-1">
                         <MessageSquare className="w-3 h-3" />
                         Attributed Group: AP-2094
                     </span>
-                    <button className="flex items-center gap-1 hover:text-purple-300 transition-colors uppercase font-bold tracking-wider">
+                    <button className="flex items-center gap-1 hover:text-purple-300 transition-colors uppercase font-bold tracking-wider cursor-pointer">
                         Inspect Signatures
                         <ArrowRight className="w-3 h-3" />
                     </button>

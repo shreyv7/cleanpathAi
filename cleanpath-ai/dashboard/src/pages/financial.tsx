@@ -13,6 +13,7 @@ import { PortfolioAnalytics } from '@/components/Financial/PortfolioAnalytics';
 import { EconomicTrustMatrix } from '@/components/Financial/EconomicTrustMatrix';
 import { BoardroomReporter } from '@/components/Financial/BoardroomReporter';
 import { EnvironmentToggle } from '@/components/ui/EnvironmentToggle';
+import { ThemeSwitcher } from '@/components/ui/ThemeSwitcher';
 
 import { ArrowLeft, Shield, Radio, Landmark, Presentation, Layers, Download, CheckCircle2 } from 'lucide-react';
 
@@ -38,22 +39,22 @@ export default function FinancialSuite() {
                         <div className="flex items-center gap-4">
                             <button
                                 onClick={() => router.push('/dashboard')}
-                                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-card border border-border text-foreground/60 hover:text-foreground hover:border-foreground/10 hover:bg-muted dark:bg-white/[0.03] dark:border-white/5 dark:text-white/40 dark:hover:text-white dark:hover:border-white/10 dark:hover:bg-white/5 transition-all text-xs cursor-pointer"
+                                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-card border border-border text-foreground/60 hover:text-foreground hover:border-foreground/10 hover:bg-muted dark:bg-white/[0.03] dark:border-white/5 dark:text-white/40 dark:hover:text-white dark:hover:border-white/10 dark:hover:bg-white/5 transition-all text-xs cursor-pointer font-semibold"
                             >
                                 <ArrowLeft className="w-3.5 h-3.5" />
                                 <span>Return to Executive Summary</span>
                             </button>
 
-                            <div className="h-6 w-px bg-white/10" />
+                            <div className="h-6 w-px bg-slate-200 dark:bg-white/10" />
 
                             <div className="flex items-center gap-3">
-                                <Landmark className="w-5 h-5 text-emerald-500 infra-pulse" />
+                                <Landmark className="w-5 h-5 text-emerald-600 dark:text-emerald-500 infra-pulse" />
                                 <div>
                                     <div className="flex items-center gap-2">
-                                        <span className="text-sm font-black tracking-widest uppercase text-white/90">
+                                        <span className="text-sm font-black tracking-widest uppercase text-slate-900 dark:text-white/90">
                                             CleanPath Bloomberg Suite
                                         </span>
-                                        <span className="text-[9px] bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 font-mono font-bold px-1.5 py-0.5 rounded">
+                                        <span className="text-[9px] bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 font-mono font-bold px-1.5 py-0.5 rounded">
                                             TREASURY LEVEL L4
                                         </span>
                                     </div>
@@ -63,16 +64,13 @@ export default function FinancialSuite() {
 
                         {/* Right Controls */}
                         <div className="flex items-center gap-4 text-xs font-mono select-none">
-                            <EnvironmentToggle />
-                            <div className="h-6 w-px bg-white/10 hidden md:block" />
-
                             {/* Presentation Toggle */}
                             <button
                                 onClick={() => setPresentationMode(!presentationMode)}
                                 className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border text-xs font-bold transition-all cursor-pointer ${
                                     presentationMode
-                                        ? 'bg-purple-500/15 border-purple-500/35 text-purple-400'
-                                        : 'bg-white/[0.03] border-white/5 text-white/45 hover:text-white hover:border-white/10'
+                                        ? 'bg-purple-500/15 border-purple-500/35 text-purple-600 dark:text-purple-400'
+                                        : 'bg-slate-100 dark:bg-white/[0.03] border-slate-200 dark:border-white/5 text-slate-500 dark:text-white/45 hover:text-slate-900 dark:hover:text-white hover:border-slate-300 dark:hover:border-white/10'
                                 }`}
                             >
                                 <Presentation className="w-3.5 h-3.5" />
@@ -80,26 +78,44 @@ export default function FinancialSuite() {
                             </button>
 
 
-                            <div className="h-6 w-px bg-white/10 hidden md:block" />
+                            <div className="h-6 w-px bg-slate-200 dark:bg-white/10 hidden md:block" />
 
                             <div className="hidden md:flex items-center gap-2">
-                                <Radio className="w-3.5 h-3.5 text-emerald-500 infra-pulse" />
-                                <span className="text-emerald-500 font-bold uppercase tracking-wider text-[10px]">VERIFICATION LIVE</span>
+                                <Radio className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-500 infra-pulse" />
+                                <span className="text-emerald-600 dark:text-emerald-500 font-bold uppercase tracking-wider text-[10px]">VERIFICATION LIVE</span>
                             </div>
+
+                            <div className="h-6 w-px bg-slate-200 dark:bg-white/10 hidden sm:block" />
+
+                            <ThemeSwitcher />
                         </div>
                     </div>
                 </header>
+
+                {/* Sub-Header Simulation context banner */}
+                <div className="w-full border-b border-slate-200 dark:border-white/5 bg-slate-50/70 dark:bg-[#080B10]/70 backdrop-blur-lg py-2.5 px-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-sm shrink-0">
+                    <div className="flex items-center gap-2 text-xs font-semibold text-slate-650 dark:text-white/60">
+                        <span className="text-[10px] font-mono uppercase tracking-widest text-slate-400 dark:text-white/30 font-bold">OPERATIONAL CONTEXT</span>
+                        <div className="h-3 w-px bg-slate-250 dark:bg-white/10 hidden sm:block" />
+                        <span className="text-slate-700 dark:text-slate-350 font-mono text-[10.5px]">Plane: Executive Financial Commander & Bloomberg Suite</span>
+                    </div>
+
+                    <div className="flex items-center gap-3">
+                        <span className="text-[10px] font-mono text-slate-500 dark:text-white/40 uppercase tracking-wider font-bold">SIMULATION plane SELECTOR:</span>
+                        <EnvironmentToggle />
+                    </div>
+                </div>
 
                 {/* Main Workspace Frame */}
                 <div className={`flex-1 max-w-7xl w-full mx-auto flex flex-col gap-6 md:gap-8 transition-all duration-700 ${
                     presentationMode ? 'p-4 border border-purple-500/15 rounded-3xl bg-[#080B10]/40 backdrop-blur-md shadow-2xl shadow-purple-500/[0.02] mt-6' : 'p-6 md:p-8'
                 }`}>
                     {/* Header Section */}
-                    <div className="flex flex-col gap-1.5 pb-2 border-b border-white/5">
-                        <h1 className="text-3xl font-extrabold tracking-tight text-white/90">
+                    <div className="flex flex-col gap-1.5 pb-2 border-b border-slate-200 dark:border-white/5">
+                        <h1 className="text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white/90">
                             Executive Working Media Command Center
                         </h1>
-                        <p className="text-white/40 text-sm font-mono">
+                        <p className="text-slate-500 dark:text-white/40 text-sm font-mono font-medium">
                             Palantir-grade economic treasury. Auditing intermediary extraction rates and routing recovery margins.
                         </p>
                     </div>

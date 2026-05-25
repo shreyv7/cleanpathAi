@@ -136,22 +136,22 @@ export const PreBidDSPIntegrator: React.FC = () => {
     };
 
     return (
-        <div className="glass rounded-2xl p-6 border border-white/5 bg-[#080B10]/80 relative overflow-hidden flex flex-col gap-5 h-[420px] font-mono text-xs select-none">
+        <div className="bg-white border border-slate-200 dark:bg-[#080B10]/80 dark:border-white/5 shadow-sm hover:shadow-md rounded-2xl p-6 relative overflow-hidden flex flex-col gap-5 h-[420px] font-mono text-xs select-none transition-all">
             {/* Header */}
             <div className="flex justify-between items-center shrink-0">
                 <div className="flex items-center gap-2">
-                    <Terminal className="w-5 h-5 text-blue-400" />
+                    <Terminal className="w-5 h-5 text-blue-500 dark:text-blue-400" />
                     <div>
-                        <h2 className="text-sm font-bold uppercase tracking-widest text-white/90">
+                        <h2 className="text-sm font-bold uppercase tracking-widest text-slate-900 dark:text-white/90">
                             DSP Pre-Bid Integration Hub
                         </h2>
-                        <p className="text-[10px] text-white/40">Inject active pre-bid wrapper configurations inside your programmatic DSP seats</p>
+                        <p className="text-[10px] text-slate-500 dark:text-white/40 font-medium">Inject active pre-bid wrapper configurations inside your programmatic DSP seats</p>
                     </div>
                 </div>
                 
                 {/* Live indicators */}
                 <div className="flex items-center gap-3">
-                    <div className="flex items-center gap-1.5 bg-[#03060a]/90 border border-emerald-500/20 px-2 py-0.5 rounded text-[8.5px] text-emerald-400 font-bold">
+                    <div className="flex items-center gap-1.5 bg-emerald-50 border border-emerald-200 dark:bg-[#03060a]/90 dark:border-emerald-500/20 px-2 py-0.5 rounded text-[8.5px] text-emerald-700 dark:text-emerald-400 font-bold">
                         <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 infra-pulse" />
                         <span>GATEKEEPER LIVE</span>
                     </div>
@@ -159,7 +159,7 @@ export const PreBidDSPIntegrator: React.FC = () => {
             </div>
 
             {/* Selector Row */}
-            <div className="flex gap-2 border-b border-white/5 pb-3 shrink-0">
+            <div className="flex gap-2 border-b border-slate-200 dark:border-white/5 pb-3 shrink-0">
                 {(['ttd', 'dv360', 'xandr'] as DspType[]).map((dsp) => {
                     const isActive = activeDsp === dsp;
                     const labels = { ttd: 'The Trade Desk', dv360: 'Google DV360', xandr: 'Xandr APB' };
@@ -169,8 +169,8 @@ export const PreBidDSPIntegrator: React.FC = () => {
                             onClick={() => setActiveDsp(dsp)}
                             className={`px-3 py-1.5 rounded-lg border font-bold text-[10px] uppercase transition-all duration-300 cursor-pointer ${
                                 isActive 
-                                    ? 'bg-blue-500/10 border-blue-500/30 text-white' 
-                                    : 'bg-white/[0.01] border-white/5 text-white/40 hover:text-white hover:border-white/10'
+                                    ? 'bg-blue-50 dark:bg-blue-500/10 border-blue-200 dark:border-blue-500/30 text-blue-755 dark:text-white shadow-sm' 
+                                    : 'bg-slate-50 border-slate-200 text-slate-500 hover:text-slate-800 hover:border-slate-350 dark:bg-white/[0.01] dark:border-white/5 dark:text-white/40 dark:hover:text-white dark:hover:border-white/10'
                             }`}
                         >
                             {labels[dsp]}
@@ -182,37 +182,37 @@ export const PreBidDSPIntegrator: React.FC = () => {
             {/* Layout Wrapper */}
             <div className="flex-1 flex gap-5 min-h-0">
                 {/* Left Side: Snippet Code Container */}
-                <div className="flex-1 bg-[#03060a]/90 border border-white/5 rounded-xl p-3 flex flex-col justify-between min-h-0 relative">
+                <div className="flex-1 bg-[#03060a] dark:bg-[#03060a]/90 border border-slate-950 dark:border-white/5 rounded-xl p-3 flex flex-col justify-between min-h-0 relative">
                     <div className="flex justify-between items-center text-[8.5px] border-b border-white/5 pb-2 mb-2 shrink-0">
                         <span className="text-white/40">{activeSnippet.title} ({activeSnippet.language})</span>
                         
                         <button 
                             onClick={copyToClipboard}
-                            className="flex items-center gap-1 px-1.5 py-0.5 rounded bg-white/5 hover:bg-white/10 border border-white/5 text-white/50 hover:text-white transition-all cursor-pointer text-[8px]"
+                            className="flex items-center gap-1 px-1.5 py-0.5 rounded bg-white/10 hover:bg-white/20 border border-white/20 text-white/70 hover:text-white dark:bg-white/5 dark:hover:bg-white/10 dark:border-white/5 dark:text-white/50 dark:hover:text-white transition-all cursor-pointer text-[8px]"
                         >
-                            {copied ? <Check className="w-3 h-3 text-emerald-400" /> : <Copy className="w-3 h-3" />}
+                            {copied ? <Check className="w-3 h-3 text-emerald-455" /> : <Copy className="w-3 h-3" />}
                             <span>{copied ? 'Copied!' : 'Copy Script'}</span>
                         </button>
                     </div>
 
-                    <pre className="flex-1 overflow-auto font-mono text-[9px] leading-relaxed text-blue-300/90 pr-2 select-text selection:bg-blue-500/30">
+                    <pre className="flex-1 overflow-auto font-mono text-[9px] leading-relaxed text-blue-200 dark:text-blue-300/90 pr-2 select-text selection:bg-blue-500/30">
                         <code>{interpolatedCode}</code>
                     </pre>
                 </div>
 
                 {/* Right Side: Configurations Panel */}
-                <div className="w-72 border border-white/5 bg-[#03060a]/30 rounded-xl p-4 flex flex-col justify-between shrink-0 select-none">
+                <div className="w-72 border border-slate-200 bg-slate-50/50 dark:border-white/5 dark:bg-[#03060a]/30 rounded-xl p-4 flex flex-col justify-between shrink-0 select-none">
                     <div className="flex flex-col gap-4">
-                        <div className="flex items-center gap-1 text-[9.5px] font-bold text-white/80 uppercase">
-                            <Settings className="w-3.5 h-3.5" />
+                        <div className="flex items-center gap-1 text-[9.5px] font-bold text-slate-800 dark:text-white/80 uppercase">
+                            <Settings className="w-3.5 h-3.5 text-slate-600 dark:text-white/50" />
                             <span>Configuration Overrides</span>
                         </div>
 
                         {/* latency slider */}
                         <div className="flex flex-col gap-1.5">
-                            <div className="flex justify-between text-[9px] text-white/40">
+                            <div className="flex justify-between text-[9px] text-slate-500 dark:text-white/40 font-medium">
                                 <span>Edge Latency Cutoff:</span>
-                                <span className="text-white font-bold">{maxLatency}ms</span>
+                                <span className="text-slate-900 dark:text-white font-bold">{maxLatency}ms</span>
                             </div>
                             <input
                                 type="range"
@@ -220,17 +220,17 @@ export const PreBidDSPIntegrator: React.FC = () => {
                                 max={50}
                                 value={maxLatency}
                                 onChange={(e) => setMaxLatency(parseInt(e.target.value))}
-                                className="accent-blue-500 h-1 bg-white/5 rounded-lg appearance-none cursor-pointer"
+                                className="accent-blue-500 h-1 bg-slate-200 dark:bg-white/5 rounded-lg appearance-none cursor-pointer"
                             />
                         </div>
 
                         {/* fail open check */}
-                        <div className="flex items-center justify-between border-t border-white/5 pt-3">
-                            <span className="text-[9px] text-white/40">Fail-Open Safe Route:</span>
+                        <div className="flex items-center justify-between border-t border-slate-200 dark:border-white/5 pt-3">
+                            <span className="text-[9px] text-slate-500 dark:text-white/40 font-medium">Fail-Open Safe Route:</span>
                             <button
                                 onClick={() => setFailOpen(!failOpen)}
                                 className={`px-2 py-0.5 rounded text-[8px] font-bold uppercase border transition-all cursor-pointer ${
-                                    failOpen ? 'bg-emerald-500/10 border-emerald-500/20 text-emerald-400' : 'bg-red-500/10 border-red-500/20 text-red-400'
+                                    failOpen ? 'bg-emerald-50 border border-emerald-200 text-emerald-700 dark:bg-emerald-500/10 dark:border-emerald-500/20 dark:text-emerald-400' : 'bg-red-50 border border-red-200 text-red-700 dark:bg-red-500/10 dark:border-red-500/20 dark:text-red-400'
                                 }`}
                             >
                                 {failOpen ? 'ENABLED (Safe)' : 'DISABLED'}
@@ -238,18 +238,18 @@ export const PreBidDSPIntegrator: React.FC = () => {
                         </div>
 
                         {/* API keys entitlement */}
-                        <div className="border-t border-white/5 pt-3 flex flex-col gap-1.5">
-                            <span className="text-[9px] text-white/40 block">Authentication Entitlement Token:</span>
+                        <div className="border-t border-slate-200 dark:border-white/5 pt-3 flex flex-col gap-1.5">
+                            <span className="text-[9px] text-slate-500 dark:text-white/40 font-medium block">Authentication Entitlement Token:</span>
                             <div className="flex gap-1">
                                 <input
                                     type="text"
                                     value={apiKey}
                                     readOnly
-                                    className="flex-1 bg-[#03060a] border border-white/10 rounded p-1 text-white text-[8.5px] font-mono focus:outline-none"
+                                    className="flex-1 bg-slate-100 dark:bg-[#03060a] border border-slate-300 dark:border-white/10 rounded p-1 text-slate-800 dark:text-white text-[8.5px] font-mono focus:outline-none"
                                 />
                                 <button
                                     onClick={generateNewToken}
-                                    className="px-2 py-1 rounded bg-blue-500/15 border border-blue-500/20 text-blue-400 hover:bg-blue-500/30 text-[8px] font-bold uppercase transition-all cursor-pointer"
+                                    className="px-2 py-1 rounded bg-blue-50 border border-blue-200 text-blue-700 hover:bg-blue-100 dark:bg-blue-500/15 dark:border-blue-500/20 dark:text-blue-400 dark:hover:bg-blue-500/30 text-[8px] font-bold uppercase transition-all cursor-pointer"
                                 >
                                     GEN
                                 </button>
@@ -258,9 +258,9 @@ export const PreBidDSPIntegrator: React.FC = () => {
                     </div>
 
                     {/* Threat suppression capability audit */}
-                    <div className="border-t border-white/5 pt-3 text-[8.5px] font-mono leading-normal text-white/45 space-y-1">
-                        <div className="flex items-center gap-1 text-[9px] font-bold text-white/70 uppercase">
-                            <ShieldCheck className="w-3.5 h-3.5 text-blue-400" />
+                    <div className="border-t border-slate-200 dark:border-white/5 pt-3 text-[8.5px] font-mono leading-normal text-slate-500 dark:text-white/45 space-y-1 font-medium">
+                        <div className="flex items-center gap-1 text-[9px] font-bold text-slate-700 dark:text-white/70 uppercase">
+                            <ShieldCheck className="w-3.5 h-3.5 text-blue-500 dark:text-blue-400" />
                             <span>SUPPRESSION CAPABILITIES</span>
                         </div>
                         <p>• Multi-Hop Arbitrage Filter: ACTIVE</p>

@@ -20,16 +20,16 @@ export const BoardroomReporter: React.FC = () => {
     };
 
     return (
-        <div className="glass rounded-2xl p-6 border border-white/5 bg-[#080B10]/80 relative overflow-hidden flex flex-col gap-4 h-[350px]">
+        <div className="bg-white border border-slate-200 dark:bg-[#080B10]/80 dark:border-white/5 shadow-sm hover:shadow-md rounded-2xl p-6 relative overflow-hidden flex flex-col gap-4 h-[350px] transition-all">
             {/* Header */}
             <div className="flex items-center justify-between shrink-0">
                 <div className="flex items-center gap-2">
-                    <FileText className="w-5 h-5 text-emerald-400" />
+                    <FileText className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
                     <div>
-                        <h2 className="text-sm font-bold uppercase tracking-widest text-white/90">
+                        <h2 className="text-sm font-bold uppercase tracking-widest text-slate-900 dark:text-white/90">
                             Boardroom Programmatic Audit Reporter
                         </h2>
-                        <p className="text-[10px] text-white/40">Auto-generated McKinsey-grade corporate summaries</p>
+                        <p className="text-[10px] text-slate-500 dark:text-white/40 font-medium">Auto-generated McKinsey-grade corporate summaries</p>
                     </div>
                 </div>
 
@@ -37,7 +37,7 @@ export const BoardroomReporter: React.FC = () => {
                 <button
                     onClick={handleDownload}
                     disabled={downloading}
-                    className="flex items-center gap-1.5 px-3 py-1.5 rounded bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 hover:bg-emerald-500/20 hover:border-emerald-500/40 text-[10px] font-bold font-mono tracking-wide uppercase transition-all cursor-pointer select-none"
+                    className="flex items-center gap-1.5 px-3 py-1.5 rounded bg-emerald-50 border border-emerald-200 text-emerald-700 hover:bg-emerald-100 hover:border-emerald-300 dark:bg-emerald-500/10 dark:border-emerald-500/20 dark:text-emerald-400 dark:hover:bg-emerald-500/20 dark:hover:border-emerald-500/40 text-[10px] font-bold font-mono tracking-wide uppercase transition-all cursor-pointer select-none"
                 >
                     <Download className="w-3.5 h-3.5" />
                     <span>{downloading ? 'Compiling PDF...' : 'Export PDF'}</span>
@@ -45,7 +45,7 @@ export const BoardroomReporter: React.FC = () => {
             </div>
 
             {/* Document body text */}
-            <div className="flex-1 bg-[#03060a]/90 border border-white/5 rounded-xl p-4 font-mono text-xs text-white/70 relative overflow-hidden flex flex-col min-h-0">
+            <div className="flex-1 bg-slate-900 border border-slate-950 dark:bg-[#03060a]/90 dark:border-white/5 rounded-xl p-4 font-mono text-xs text-slate-100 dark:text-white/70 relative overflow-hidden flex flex-col min-h-0">
                 {/* Scanline subtle overlay */}
                 <div className="absolute inset-0 bg-gradient-to-b from-emerald-500/5 to-transparent pointer-events-none" />
 
@@ -53,7 +53,7 @@ export const BoardroomReporter: React.FC = () => {
                     {reportText}
                 </div>
 
-                <div className="flex items-center gap-1.5 text-[9px] text-emerald-500/80 font-bold uppercase tracking-wider border-t border-white/5 pt-2.5 mt-3 shrink-0 z-10">
+                <div className="flex items-center gap-1.5 text-[9px] text-emerald-400 font-bold uppercase tracking-wider border-t border-white/10 dark:border-white/5 pt-2.5 mt-3 shrink-0 z-10">
                     <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
                     <span>Boardroom Verification Standard: Approved</span>
                 </div>

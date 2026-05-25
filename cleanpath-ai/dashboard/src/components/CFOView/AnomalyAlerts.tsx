@@ -105,7 +105,7 @@ export const AnomalyAlerts: React.FC = () => {
             </div>
 
             <div className="px-8 py-4 bg-slate-50/50 dark:bg-white/[0.01] border-t border-slate-200 dark:border-white/5 flex justify-between items-center">
-                <p className="text-[9px] text-slate-400 dark:text-white/20 font-mono">
+                <p className="text-[9px] text-slate-400 dark:text-white/20 font-mono" suppressHydrationWarning>
                     Last audit sync: {new Date().toLocaleTimeString()}
                 </p>
                 <div className="flex items-center gap-4">
