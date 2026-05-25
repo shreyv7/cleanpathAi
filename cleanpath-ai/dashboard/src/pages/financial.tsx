@@ -12,6 +12,7 @@ import { FutureLeakageForecaster } from '@/components/Financial/FutureLeakageFor
 import { PortfolioAnalytics } from '@/components/Financial/PortfolioAnalytics';
 import { EconomicTrustMatrix } from '@/components/Financial/EconomicTrustMatrix';
 import { BoardroomReporter } from '@/components/Financial/BoardroomReporter';
+import { EnvironmentToggle } from '@/components/ui/EnvironmentToggle';
 
 import { ArrowLeft, Shield, Radio, Landmark, Presentation, Layers, Download, CheckCircle2 } from 'lucide-react';
 
@@ -27,7 +28,7 @@ export default function FinancialSuite() {
                 <meta name="description" content="Bloomberg Terminal for programmatic ad spend efficiency and recovery" />
             </Head>
 
-            <main className={`flex min-h-screen flex-col text-white overflow-x-hidden font-sans transition-all duration-700 ${
+            <main className={`flex min-h-screen flex-col text-white overflow-x-hidden transition-all duration-700 ${
                 presentationMode ? 'bg-[#030406] p-4 sm:p-6' : 'bg-[#05070B]'
             }`}>
                 {/* Global Executive Header */}
@@ -62,6 +63,9 @@ export default function FinancialSuite() {
 
                         {/* Right Controls */}
                         <div className="flex items-center gap-4 text-xs font-mono select-none">
+                            <EnvironmentToggle />
+                            <div className="h-6 w-px bg-white/10 hidden md:block" />
+
                             {/* Presentation Toggle */}
                             <button
                                 onClick={() => setPresentationMode(!presentationMode)}
@@ -74,6 +78,7 @@ export default function FinancialSuite() {
                                 <Presentation className="w-3.5 h-3.5" />
                                 <span>CFO Presentation Mode</span>
                             </button>
+
 
                             <div className="h-6 w-px bg-white/10 hidden md:block" />
 

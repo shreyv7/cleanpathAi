@@ -16,6 +16,7 @@ import { PredictiveRiskForecast } from '@/components/Ops/PredictiveRiskForecast'
 import { EntityMemoryViewer } from '@/components/Ops/EntityMemoryViewer';
 import { StrategicCFOInsights } from '@/components/Ops/StrategicCFOInsights';
 import { AttackPlaybackSimulator } from '@/components/Ops/AttackPlaybackSimulator';
+import { EnvironmentToggle } from '@/components/ui/EnvironmentToggle';
 
 import { ArrowLeft, Shield, Radio, Brain, LayoutGrid, Terminal } from 'lucide-react';
 
@@ -64,11 +65,15 @@ export default function OpsRoom() {
 
                         {/* Right Side - Real-time metrics summary */}
                         <div className="flex items-center gap-6 text-xs font-mono">
+                            <EnvironmentToggle />
+                            <div className="h-6 w-px bg-white/10 hidden md:block" />
+
                             {/* Live status */}
                             <div className="flex items-center gap-2">
                                 <Radio className="w-3.5 h-3.5 text-emerald-500 infra-pulse" />
                                 <span className="text-emerald-500 font-bold uppercase tracking-wider text-[10px]">OPERATIONAL FEED LIVE</span>
                             </div>
+
 
                             <div className="hidden lg:flex items-center gap-4 border-l border-white/10 pl-6">
                                 <div className="flex flex-col">

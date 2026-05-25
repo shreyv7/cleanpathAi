@@ -7,6 +7,7 @@ import { CTVIntegrityWidget } from "@/components/TechnicalView/CTV/CTVIntegrityW
 import { MLPerformanceWidget } from "@/components/TechnicalView/CTV/MLPerformanceWidget";
 import { CTVDeviceExplorer } from "@/components/TechnicalView/CTV/CTVDeviceExplorer";
 import { MonitorPlay } from "lucide-react";
+import { EnvironmentToggle } from "@/components/ui/EnvironmentToggle";
 
 import { useRouter } from "next/router";
 
@@ -27,6 +28,9 @@ export default function Home() {
                 </div>
 
                 <div className="flex flex-wrap items-center gap-3">
+                    <EnvironmentToggle />
+                    <div className="h-6 w-px bg-white/10 hidden md:block mx-1" />
+
                     <button
                         onClick={() => router.push('/ops')}
                         className="flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/10 border border-blue-500/20 text-blue-400 hover:bg-blue-500/20 hover:border-blue-500/40 hover:-translate-y-0.5 transition-all text-xs font-bold uppercase tracking-wider cursor-pointer shadow-lg shadow-blue-500/5 duration-300 relative overflow-hidden"

@@ -3,12 +3,13 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 
 // Priority 6: Enterprise Platform Components
-import { DeveloperConsole } from '@/components/Platform/DeveloperConsole';
-import { IntegrationMarketplace } from '@/components/Platform/IntegrationMarketplace';
+import { PreBidDSPIntegrator } from '@/components/Platform/PreBidDSPIntegrator';
+import { DSPPluginBilling } from '@/components/Platform/DSPPluginBilling';
 import { TenantManager } from '@/components/Platform/TenantManager';
 import { AppEcosystem } from '@/components/Platform/AppEcosystem';
 import { GovernanceAuditor } from '@/components/Platform/GovernanceAuditor';
 import { DataExchangeFabric } from '@/components/Platform/DataExchangeFabric';
+import { EnvironmentToggle } from '@/components/ui/EnvironmentToggle';
 
 import { ArrowLeft, Layers, Terminal, Network, ShieldCheck, Radio, UserCheck } from 'lucide-react';
 
@@ -72,6 +73,9 @@ export default function PlatformSuite() {
 
                         {/* Right Side: Compliance online */}
                         <div className="flex items-center gap-4 text-xs font-mono select-none">
+                            <EnvironmentToggle />
+                            <div className="h-6 w-px bg-white/10 hidden md:block" />
+
                             <div className="hidden lg:flex items-center gap-2">
                                 <Radio className="w-3.5 h-3.5 text-emerald-500 infra-pulse" />
                                 <span className="text-emerald-500 font-bold uppercase tracking-wider text-[10px]">PLATFORM SYNC ACTIVE</span>
@@ -79,6 +83,7 @@ export default function PlatformSuite() {
                         </div>
                     </div>
                 </header>
+
 
                 {/* Platform Frame Wrapper */}
                 <div className="flex-1 max-w-7xl w-full mx-auto p-6 md:p-8 flex flex-col gap-6 md:gap-8">
@@ -155,13 +160,11 @@ export default function PlatformSuite() {
                     </div>
 
                     {/* Standard Grid layout */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
                         {/* Developer Stripe console & sync grid (Span 2) */}
                         <div className="lg:col-span-2 flex flex-col gap-6 md:gap-8">
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-                                <DeveloperConsole />
-                                <IntegrationMarketplace />
-                            </div>
+                            <PreBidDSPIntegrator />
+                            <DSPPluginBilling />
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                                 <TenantManager />
                                 <AppEcosystem />
