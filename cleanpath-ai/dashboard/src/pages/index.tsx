@@ -26,7 +26,7 @@ export default function Home() {
                     </code>
                 </div>
 
-                <div className="flex items-center gap-3">
+                <div className="flex flex-wrap items-center gap-3">
                     <button
                         onClick={() => router.push('/ops')}
                         className="flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/10 border border-blue-500/20 text-blue-400 hover:bg-blue-500/20 hover:border-blue-500/40 hover:-translate-y-0.5 transition-all text-xs font-bold uppercase tracking-wider cursor-pointer shadow-lg shadow-blue-500/5 duration-300 relative overflow-hidden"
@@ -52,8 +52,18 @@ export default function Home() {
                         className="flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/10 border border-purple-500/20 text-purple-400 hover:bg-purple-500/20 hover:border-purple-500/40 hover:-translate-y-0.5 transition-all text-xs font-bold uppercase tracking-wider cursor-pointer shadow-lg shadow-purple-500/5 duration-300 relative overflow-hidden"
                     >
                         <div className="flex items-center gap-1.5">
-                            <span className="w-1.5 h-1.5 rounded-full bg-purple-400 infra-pulse-fast animate-pulse" />
+                            <span className="w-1.5 h-1.5 rounded-full bg-purple-400 infra-pulse-fast" />
                             <span>Autonomous Control Plane</span>
+                        </div>
+                    </button>
+
+                    <button
+                        onClick={() => router.push('/developer')}
+                        className="flex items-center gap-2 px-4 py-2 rounded-lg bg-orange-500/10 border border-orange-500/20 text-orange-400 hover:bg-orange-500/20 hover:border-orange-500/40 hover:-translate-y-0.5 transition-all text-xs font-bold uppercase tracking-wider cursor-pointer shadow-lg shadow-orange-500/5 duration-300 relative overflow-hidden"
+                    >
+                        <div className="flex items-center gap-1.5">
+                            <span className="w-1.5 h-1.5 rounded-full bg-orange-400 infra-pulse-fast animate-pulse" />
+                            <span>Developer & Ecosystem Hub</span>
                         </div>
                     </button>
                 </div>
