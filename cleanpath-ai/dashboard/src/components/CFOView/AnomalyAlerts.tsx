@@ -28,32 +28,32 @@ export const AnomalyAlerts: React.FC = () => {
     );
 
     return (
-        <div className="bg-[#0D1117] rounded-3xl border border-white/5 glass overflow-hidden flex flex-col transition-all hover:border-white/10">
-            <div className="p-8 border-b border-white/5 flex justify-between items-center bg-gradient-to-r from-orange-500/5 to-transparent">
+        <div className="bg-[#090B0E]/50 backdrop-blur-xl rounded-2xl border border-white/5 overflow-hidden flex flex-col transition-all duration-300 hover:border-white/10">
+            <div className="p-8 border-b border-white/5 flex justify-between items-center bg-white/[0.01]">
                 <div>
-                    <h3 className="text-2xl font-bold flex items-center gap-3">
-                        <ShieldAlert className="text-orange-400 w-6 h-6" />
+                    <h3 className="text-xl font-bold flex items-center gap-3">
+                        <ShieldAlert className="text-red-400 w-5 h-5" />
                         Supply Path Integrity
                     </h3>
-                    <p className="text-white/40 text-sm mt-1">
+                    <p className="text-white/40 text-xs mt-1">
                         Auditing financial leakage from duplicate auction paths and fee stacking.
                     </p>
                 </div>
                 <div className="text-right">
-                    <span className="text-orange-400 font-bold font-mono text-4xl">{anomalies.length}</span>
-                    <p className="text-white/30 text-[10px] uppercase tracking-widest font-black mt-1">Active Alerts</p>
+                    <span className="text-red-400 font-bold font-mono text-3xl">{anomalies.length}</span>
+                    <p className="text-white/30 text-[9px] uppercase tracking-wider font-bold mt-1">Active Alerts</p>
                 </div>
             </div>
 
             <div className="overflow-x-auto">
                 <table className="w-full text-left">
                     <thead>
-                        <tr className="text-white/30 text-[10px] uppercase tracking-widest font-black border-b border-white/5 whitespace-nowrap">
-                            <th className="px-8 py-5">Publisher Environment</th>
-                            <th className="px-8 py-5">Violation Type</th>
-                            <th className="px-8 py-5">Risk Tier</th>
-                            <th className="px-8 py-5">Audit Insight</th>
-                            <th className="px-8 py-5 text-right">Inventory Audit</th>
+                        <tr className="text-white/30 text-[9px] uppercase tracking-wider font-bold border-b border-white/5 whitespace-nowrap">
+                            <th className="px-8 py-4">Publisher Environment</th>
+                            <th className="px-8 py-4">Violation Type</th>
+                            <th className="px-8 py-4">Risk Tier</th>
+                            <th className="px-8 py-4">Audit Insight</th>
+                            <th className="px-8 py-4 text-right">Inventory Audit</th>
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-white/5">
@@ -69,33 +69,33 @@ export const AnomalyAlerts: React.FC = () => {
                                 </td>
                             </tr>
                         ) : anomalies.map((anomaly, idx) => (
-                            <tr key={idx} className="hover:bg-white/[0.02] transition-colors group cursor-pointer" onClick={() => router.push(`/investigate/${encodeURIComponent(anomaly.siteDomain)}`)}>
-                                <td className="px-8 py-6">
-                                    <div className="font-bold text-white group-hover:text-blue-400 transition-colors cursor-pointer text-base">
+                            <tr key={idx} className="hover:bg-white/[0.01] transition-colors group cursor-pointer" onClick={() => router.push(`/investigate/${encodeURIComponent(anomaly.siteDomain)}`)}>
+                                <td className="px-8 py-5">
+                                    <div className="font-bold text-white group-hover:text-blue-400 transition-colors cursor-pointer text-sm">
                                         {anomaly.siteDomain}
                                     </div>
-                                    <div className="text-[10px] text-white/30 font-mono uppercase mt-1">ID: {anomaly.siteId}</div>
+                                    <div className="text-[10px] text-white/30 font-mono mt-1">ID: {anomaly.siteId}</div>
                                 </td>
-                                <td className="px-8 py-6">
-                                    <span className="text-white/80 font-medium tracking-tight">
+                                <td className="px-8 py-5">
+                                    <span className="text-white/70 font-medium text-xs">
                                         {anomaly.type.replace(/_/g, ' ')}
                                     </span>
                                 </td>
-                                <td className="px-8 py-6">
-                                    <span className={`text-[10px] font-black tracking-widest px-3 py-1.5 rounded-lg ${anomaly.severity === 'HIGH' ? 'bg-red-500/20 text-red-400' : 'bg-orange-500/20 text-orange-400'
+                                <td className="px-8 py-5">
+                                    <span className={`text-[9px] font-bold tracking-wider px-2 py-1 rounded ${anomaly.severity === 'HIGH' ? 'bg-red-500/10 border border-red-500/20 text-red-400' : 'bg-amber-500/10 border border-amber-500/20 text-amber-400'
                                         }`}>
                                         {anomaly.severity}
                                     </span>
                                 </td>
-                                <td className="px-8 py-6">
-                                    <div className="flex items-center gap-2 text-white/50 text-sm">
-                                        <TrendingDown className={`w-4 h-4 ${anomaly.severity === 'HIGH' ? 'text-red-500' : 'text-orange-500'}`} />
+                                <td className="px-8 py-5">
+                                    <div className="flex items-center gap-2 text-white/40 text-xs">
+                                        <TrendingDown className={`w-3.5 h-3.5 ${anomaly.severity === 'HIGH' ? 'text-red-400' : 'text-amber-400'}`} />
                                         <span>{anomaly.details}</span>
                                     </div>
                                 </td>
-                                <td className="px-8 py-6 text-right">
-                                    <button className="bg-white/5 hover:bg-white/10 p-3 rounded-xl transition-all text-white/40 hover:text-white active:scale-90">
-                                        <ExternalLink className="w-4 h-4" />
+                                <td className="px-8 py-5 text-right">
+                                    <button className="bg-white/5 hover:bg-white/10 p-2.5 rounded-lg transition-all text-white/40 hover:text-white active:scale-95">
+                                        <ExternalLink className="w-3.5 h-3.5" />
                                     </button>
                                 </td>
                             </tr>
@@ -104,14 +104,14 @@ export const AnomalyAlerts: React.FC = () => {
                 </table>
             </div>
 
-            <div className="px-8 py-4 bg-white/[0.02] border-t border-white/5 flex justify-between items-center">
-                <p className="text-[10px] text-white/20 uppercase font-bold tracking-tighter">
+            <div className="px-8 py-4 bg-white/[0.01] border-t border-white/5 flex justify-between items-center">
+                <p className="text-[9px] text-white/20 font-mono">
                     Last audit sync: {new Date().toLocaleTimeString()}
                 </p>
                 <div className="flex items-center gap-4">
                     <div className="flex items-center gap-1.5">
-                        <div className="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)]" />
-                        <span className="text-[10px] text-emerald-500/80 font-bold">LIVE AUDIT ACTIVE</span>
+                        <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                        <span className="text-[9px] text-emerald-400 font-bold uppercase tracking-wider">LIVE AUDIT ACTIVE</span>
                     </div>
                 </div>
             </div>

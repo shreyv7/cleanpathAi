@@ -14,6 +14,16 @@ export default function Signup() {
     const handleSignup = (e: React.FormEvent) => {
         e.preventDefault();
         setIsLoading(true);
+        
+        // Persist signup state in browser sessionStorage for live dynamic dashboard rendering
+        const signupData = {
+            email,
+            company: company || 'Acme Corporation',
+            dsp,
+            tier
+        };
+        sessionStorage.setItem('cleanpath_signup_data', JSON.stringify(signupData));
+        
         // Simulate quick corporate tenant provisioning
         setTimeout(() => {
             router.push('/dashboard?signup=true');

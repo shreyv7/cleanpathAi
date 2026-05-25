@@ -24,28 +24,28 @@ export const EnvironmentToggle: React.FC = () => {
     };
 
     return (
-        <div className="flex items-center gap-1.5 p-1 rounded-xl bg-white/[0.02] border border-white/5 font-mono select-none">
+        <div className="flex items-center gap-1 p-1 rounded-xl bg-[#080A0F] border border-white/5 font-mono select-none">
             <button
                 onClick={() => toggleMode(false)}
-                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[9px] font-black uppercase transition-all duration-300 cursor-pointer ${
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[9px] font-bold uppercase transition-all duration-300 cursor-pointer ${
                     !isProd
-                        ? 'bg-purple-500/10 border border-purple-500/20 text-purple-400'
-                        : 'bg-transparent border-transparent text-white/35 hover:text-white/70'
+                        ? 'bg-blue-500/10 border border-blue-500/15 text-blue-400'
+                        : 'bg-transparent border border-transparent text-white/30 hover:text-white/70'
                 }`}
             >
-                <Play className="w-2.5 h-2.5 animate-pulse" />
+                <Play className="w-2.5 h-2.5" />
                 <span>Sandbox Simulator</span>
             </button>
             
             <button
                 onClick={() => toggleMode(true)}
-                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[9px] font-black uppercase transition-all duration-300 cursor-pointer ${
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[9px] font-bold uppercase transition-all duration-300 cursor-pointer ${
                     isProd
-                        ? 'bg-emerald-500/10 border border-emerald-500/20 text-emerald-400'
-                        : 'bg-transparent border-transparent text-white/35 hover:text-white/70'
+                        ? 'bg-emerald-500/10 border border-emerald-500/15 text-emerald-400'
+                        : 'bg-transparent border border-transparent text-white/30 hover:text-white/70'
                 }`}
             >
-                <Activity className="w-2.5 h-2.5 infra-pulse-fast" />
+                <Activity className="w-2.5 h-2.5" />
                 <span>Live Production DB</span>
             </button>
         </div>

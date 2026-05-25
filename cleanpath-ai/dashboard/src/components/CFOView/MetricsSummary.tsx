@@ -58,7 +58,7 @@ export const MetricsSummary: React.FC = () => {
         {
             title: "Working Media %",
             value: `${liveState.overallWorkingMediaPercent.toFixed(1)}%`,
-            icon: <TrendingUp className="w-5 h-5 text-purple-400" />,
+            icon: <TrendingUp className="w-5 h-5 text-white/70" />,
             description: "Clean ad spend ratio"
         },
         {
@@ -70,13 +70,13 @@ export const MetricsSummary: React.FC = () => {
         {
             title: "Avg Thermal Score",
             value: stats?.avg_thermal_score.toFixed(1) || "0",
-            icon: <Zap className="w-5 h-5 text-orange-400" />,
+            icon: <Zap className="w-5 h-5 text-amber-500" />,
             description: "Inventory risk level"
         },
         {
             title: "Bid Shading Savings",
             value: `$${liveShadingSavings.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`,
-            icon: <PiggyBank className="w-5 h-5 text-cyan-400" />,
+            icon: <PiggyBank className="w-5 h-5 text-emerald-400" />,
             description: "Saved via AI optimization"
         }
     ];
@@ -86,21 +86,18 @@ export const MetricsSummary: React.FC = () => {
             {metrics.map((metric, idx) => (
                 <div
                     key={idx}
-                    className="glass rounded-2xl p-6 border border-white/5 bg-white/5 relative overflow-hidden group hover:bg-white/[0.08] transition-all"
+                    className="rounded-2xl p-6 border border-white/5 bg-[#090B0F]/50 backdrop-blur-xl relative overflow-hidden group hover:border-white/10 hover:bg-[#0A0D14]/70 transition-all duration-300"
                 >
                     <div className="flex justify-between items-start mb-4">
-                        <div className="p-2 rounded-lg bg-white/5 border border-white/10">
+                        <div className="p-2 rounded-xl bg-white/[0.02] border border-white/5">
                             {metric.icon}
                         </div>
                     </div>
-                    <h3 className="text-white/50 text-sm font-medium mb-1">{metric.title}</h3>
+                    <h3 className="text-white/40 text-xs font-semibold uppercase tracking-wider mb-1.5">{metric.title}</h3>
                     <div className="text-3xl font-bold tracking-tight text-white mb-2">
                         {metric.value}
                     </div>
-                    <p className="text-xs text-white/30">{metric.description}</p>
-
-                    {/* Subtle glow effect on hover */}
-                    <div className="absolute -right-4 -bottom-4 w-24 h-24 bg-blue-500/5 blur-3xl rounded-full group-hover:bg-blue-500/10 transition-all"></div>
+                    <p className="text-xs text-white/30 font-medium">{metric.description}</p>
                 </div>
             ))}
         </div>

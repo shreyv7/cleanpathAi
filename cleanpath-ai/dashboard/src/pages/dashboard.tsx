@@ -1,4 +1,5 @@
-import { LayoutDashboard, ShieldCheck, Activity, BarChart3 } from "lucide-react";
+import { useEffect, useState } from "react";
+import { LayoutDashboard, ShieldCheck, Activity, BarChart3, Database } from "lucide-react";
 import { MetricsSummary } from "@/components/CFOView/MetricsSummary";
 import { AnomalyAlerts } from "@/components/CFOView/AnomalyAlerts";
 import { DecisionLog } from "@/components/TechnicalView/DecisionLog";
@@ -11,11 +12,60 @@ import { EnvironmentToggle } from "@/components/ui/EnvironmentToggle";
 
 import { useRouter } from "next/router";
 
+interface SignupData {
+    email: string;
+    company: string;
+    dsp: string;
+    tier: string;
+}
+
 export default function Home() {
     const router = useRouter();
+    const [signupData, setSignupData] = useState<SignupData | null>(null);
+
+    useEffect(() => {
+        const stored = sessionStorage.getItem('cleanpath_signup_data');
+        if (stored) {
+            try {
+                setSignupData(JSON.parse(stored));
+            } catch (e) {
+                console.error(e);
+            }
+        }
+    }, []);
 
     return (
         <main className="flex min-h-screen flex-col items-center p-12 bg-[#0B0E14] text-white">
+            {signupData && (
+                <div className="w-full max-w-7xl mb-6 bg-blue-500/5 border border-blue-500/10 rounded-2xl p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4 animate-in slide-in-from-top-4 duration-300">
+                    <div className="flex items-center gap-3">
+                        <div className="w-9 h-9 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center">
+                            <Database className="w-4 h-4 text-blue-400" />
+                        </div>
+                        <div>
+                            <div className="text-[10px] font-mono text-blue-400 uppercase tracking-widest font-bold">Active Programmatic Sandbox</div>
+                            <div className="text-sm font-semibold text-white/90">
+                                Tenant: <span className="text-white">{signupData.company}</span> • Connected DSP: <span className="text-white uppercase font-mono">{signupData.dsp}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="flex items-center gap-2">
+                        <span className="text-[10px] bg-blue-500/10 border border-blue-500/20 text-blue-400 font-mono font-bold px-2 py-0.5 rounded-full uppercase">
+                            {signupData.tier} Tier Plan
+                        </span>
+                        <button
+                            onClick={() => {
+                                sessionStorage.removeItem('cleanpath_signup_data');
+                                setSignupData(null);
+                            }}
+                            className="text-xs text-white/40 hover:text-white/80 transition-colors"
+                        >
+                            Reset
+                        </button>
+                    </div>
+                </div>
+            )}
+
             <div className="z-10 max-w-7xl w-full items-center justify-between font-mono text-sm flex mb-12 border-b border-white/5 pb-6">
                 <div className="flex items-center gap-3">
                     <ShieldCheck className="w-6 h-6 text-blue-500" />
