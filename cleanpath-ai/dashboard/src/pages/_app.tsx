@@ -6,17 +6,20 @@ import { useEffect } from "react";
 export default function App({ Component, pageProps }: AppProps) {
     useEffect(() => {
         const applyTheme = () => {
-            const savedTheme = localStorage.getItem('cleanpath_theme') || 'default';
+            const savedTheme = localStorage.getItem('cleanpath_theme') || 'light';
             const root = window.document.documentElement;
             
             root.classList.remove('dark');
+            document.body.classList.remove('dark');
             
             if (savedTheme === 'dark') {
                 root.classList.add('dark');
+                document.body.classList.add('dark');
             } else if (savedTheme === 'system') {
                 const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
                 if (systemPrefersDark) {
                     root.classList.add('dark');
+                    document.body.classList.add('dark');
                 }
             }
         };
@@ -43,8 +46,26 @@ export default function App({ Component, pageProps }: AppProps) {
                 <title>CleanPath AI | MFA Detection Dashboard</title>
                 <meta name="description" content="Real-time ad fraud detection and analytics" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <script
+                    dangerouslySetInnerHTML={{
+                        __html: `
+                            (function() {
+                                try {
+                                    var theme = localStorage.getItem('cleanpath_theme') || 'light';
+                                    var root = document.documentElement;
+                                    root.classList.remove('dark');
+                                    if (document.body) document.body.classList.remove('dark');
+                                    if (theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                                        root.classList.add('dark');
+                                        if (document.body) document.body.classList.add('dark');
+                                    }
+                                } catch (e) {}
+                            })();
+                        `
+                    }}
+                />
             </Head>
-            <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
+            <div className="min-h-screen bg-[#f8fafc] text-slate-900 dark:bg-[#05070B] dark:text-slate-100 transition-colors duration-300">
                 <Component {...pageProps} />
             </div>
         </>

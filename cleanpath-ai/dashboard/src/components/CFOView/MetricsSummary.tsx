@@ -86,18 +86,18 @@ export const MetricsSummary: React.FC = () => {
             {metrics.map((metric, idx) => (
                 <div
                     key={idx}
-                    className="rounded-2xl p-6 border border-border bg-card shadow-sm hover:border-foreground/10 hover:bg-muted/40 dark:border-white/5 dark:bg-[#090B0F]/50 dark:hover:border-white/10 dark:hover:bg-[#0A0D14]/70 transition-all duration-300"
+                    className="rounded-2xl p-6 border border-slate-200 bg-white shadow-sm hover:border-slate-300 hover:bg-slate-50 dark:border-white/5 dark:bg-[#090B0F]/50 dark:hover:border-white/10 dark:hover:bg-[#0A0D14]/70 transition-all duration-300"
                 >
                     <div className="flex justify-between items-start mb-4">
-                        <div className="p-2 rounded-xl bg-muted border border-border dark:bg-white/[0.02] dark:border-white/5">
+                        <div className="p-2 rounded-xl bg-slate-100 border border-slate-200 dark:bg-white/[0.02] dark:border-white/5">
                             {metric.icon}
                         </div>
                     </div>
-                    <h3 className="text-foreground/50 dark:text-white/40 text-xs font-semibold uppercase tracking-wider mb-1.5">{metric.title}</h3>
-                    <div className="text-3xl font-bold tracking-tight text-foreground dark:text-white mb-2">
+                    <h3 className="text-slate-500 dark:text-white/40 text-xs font-semibold uppercase tracking-wider mb-1.5">{metric.title}</h3>
+                    <div className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white mb-2">
                         {metric.value}
                     </div>
-                    <p className="text-xs text-foreground/40 dark:text-white/30 font-medium">{metric.description}</p>
+                    <p className="text-xs text-slate-400 dark:text-white/30 font-medium">{metric.description}</p>
                 </div>
             ))}
         </div>

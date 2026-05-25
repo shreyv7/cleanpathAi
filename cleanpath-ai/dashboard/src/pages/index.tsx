@@ -15,26 +15,26 @@ export default function LandingPage() {
                 <meta name="description" content="The Financial Integrity Operating System for Programmatic Advertising." />
             </Head>
 
-            <main className="min-h-screen bg-background text-foreground dark:bg-[#030406] dark:text-white font-sans transition-colors duration-300 selection:bg-blue-500/10">
+            <main className="min-h-screen bg-[#f8fafc] text-slate-900 dark:bg-[#030406] dark:text-white font-sans transition-colors duration-300 selection:bg-blue-500/10">
                 {/* Navigation Bar */}
-                <nav className="fixed top-0 w-full z-50 border-b border-border dark:border-white/5 bg-background/80 dark:bg-[#030406]/80 backdrop-blur-md">
+                <nav className="fixed top-0 w-full z-50 border-b border-slate-200 dark:border-white/5 bg-[#f8fafc]/80 dark:bg-[#030406]/80 backdrop-blur-md">
                     <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
                         <div className="flex items-center gap-3">
-                            <ShieldCheck className="w-6 h-6 text-foreground dark:text-white" />
-                            <span className="text-lg font-bold tracking-tight text-foreground dark:text-white">CleanPath AI</span>
+                            <ShieldCheck className="w-6 h-6 text-slate-900 dark:text-white" />
+                            <span className="text-lg font-bold tracking-tight text-slate-900 dark:text-white">CleanPath AI</span>
                         </div>
                         
-                        <div className="hidden md:flex items-center gap-8 text-sm font-medium text-foreground/60 dark:text-white/60">
-                            <a href="#platform" className="hover:text-foreground dark:hover:text-white transition-colors">Platform</a>
-                            <a href="#solutions" className="hover:text-foreground dark:hover:text-white transition-colors">Solutions</a>
-                            <a href="#audit" className="hover:text-foreground dark:hover:text-white transition-colors">System Audit</a>
+                        <div className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600 dark:text-white/60">
+                            <a href="#platform" className="hover:text-slate-900 dark:hover:text-white transition-colors">Platform</a>
+                            <a href="#solutions" className="hover:text-slate-900 dark:hover:text-white transition-colors">Solutions</a>
+                            <a href="#audit" className="hover:text-slate-900 dark:hover:text-white transition-colors">System Audit</a>
                         </div>
 
                         <div className="flex items-center gap-4">
                             <ThemeSwitcher />
                             <button 
                                 onClick={() => router.push('/auth/login')}
-                                className="text-sm font-medium text-foreground/60 dark:text-white/60 hover:text-foreground dark:hover:text-white transition-colors cursor-pointer"
+                                className="text-sm font-medium text-slate-600 dark:text-white/60 hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer"
                             >
                                 Sign In
                             </button>
@@ -49,22 +49,22 @@ export default function LandingPage() {
                 </nav>
 
                 {/* Hero Section */}
-                <section className="relative pt-44 pb-24 px-6 overflow-hidden">
+                <section className="relative min-h-screen flex flex-col justify-center pt-20 pb-20 px-6 overflow-hidden">
                     {/* Ambient subtle glow */}
                     <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[500px] bg-blue-500/10 blur-[150px] rounded-full pointer-events-none opacity-40" />
                     
-                    <div className="max-w-5xl mx-auto text-center relative z-10 flex flex-col items-center">
-                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-border dark:border-white/10 bg-muted dark:bg-white/5 text-[11px] font-medium text-foreground/80 dark:text-white/80 mb-8 backdrop-blur-sm">
+                    <div className="max-w-5xl mx-auto text-center relative z-10 flex flex-col items-center w-full">
+                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-white/5 text-[11px] font-medium text-slate-700 dark:text-white/80 mb-8 backdrop-blur-sm">
                             <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse" />
                             Pre-Bid DSP Integrations Now Live
                         </div>
                         
-                        <h1 className="text-5xl md:text-7xl font-extrabold tracking-tighter leading-[1.05] mb-8 text-foreground dark:text-white">
+                        <h1 className="text-5xl md:text-7xl font-extrabold tracking-tighter leading-[1.05] mb-8 text-slate-900 dark:text-white">
                             The Financial Integrity OS <br className="hidden md:block" />
-                            <span className="text-foreground/40 dark:text-white/40">for Programmatic Ads.</span>
+                            <span className="text-slate-400 dark:text-white/40">for Programmatic Ads.</span>
                         </h1>
                         
-                        <p className="text-lg md:text-xl text-foreground/60 dark:text-white/50 max-w-2xl leading-relaxed mb-12">
+                        <p className="text-lg md:text-xl text-slate-600 dark:text-white/50 max-w-2xl leading-relaxed mb-12">
                             Quantify hidden supply chain economics, isolate multi-hop arbitrage, and enforce buy-side routing policies in real-time across global ad exchanges.
                         </p>
                         
@@ -78,7 +78,7 @@ export default function LandingPage() {
                             </button>
                             <button 
                                 onClick={() => setIsWhitepaperOpen(true)}
-                                className="w-full sm:w-auto px-8 py-4 bg-transparent border border-border dark:border-white/10 text-foreground/80 dark:text-white/80 font-semibold rounded-full hover:bg-muted dark:hover:bg-white/5 hover:text-foreground dark:hover:text-white transition-all cursor-pointer"
+                                className="w-full sm:w-auto px-8 py-4 bg-transparent border border-slate-200 dark:border-white/10 text-slate-700 dark:text-white/80 font-semibold rounded-full hover:bg-slate-50 dark:hover:bg-white/5 hover:text-slate-900 dark:hover:text-white transition-all cursor-pointer"
                             >
                                 Read the Whitepaper
                             </button>
@@ -87,11 +87,11 @@ export default function LandingPage() {
                 </section>
 
                 {/* Features Grid */}
-                <section id="platform" className="py-24 px-6 border-t border-border dark:border-white/5 bg-card dark:bg-[#05070B] relative">
+                <section id="platform" className="py-24 px-6 border-t border-slate-200 dark:border-white/5 bg-white dark:bg-[#05070B] relative">
                     <div className="max-w-7xl mx-auto">
                         <div className="mb-16">
-                            <h2 className="text-3xl font-bold tracking-tight mb-4 text-foreground dark:text-white">A unified control plane for programmatic capital.</h2>
-                            <p className="text-foreground/60 dark:text-white/50 text-base max-w-2xl leading-relaxed">Stop relying on post-bid reporting. CleanPath sits directly on the hot path, modifying bids and routing logic in sub-20 milliseconds.</p>
+                            <h2 className="text-3xl font-bold tracking-tight mb-4 text-slate-900 dark:text-white">A unified control plane for programmatic capital.</h2>
+                            <p className="text-slate-600 dark:text-white/50 text-base max-w-2xl leading-relaxed">Stop relying on post-bid reporting. CleanPath sits directly on the hot path, modifying bids and routing logic in sub-20 milliseconds.</p>
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -117,28 +117,28 @@ export default function LandingPage() {
                 {/* Whitepaper Modal (25 Report Integration) */}
                 {isWhitepaperOpen && (
                     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4 sm:p-6 transition-all duration-300">
-                        <div className="bg-card border border-border dark:bg-[#080A0F] dark:border-white/10 rounded-3xl w-full max-w-4xl h-[85vh] flex flex-col shadow-2xl relative overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+                        <div className="bg-white border border-slate-200 dark:bg-[#080A0F] dark:border-white/10 rounded-3xl w-full max-w-4xl h-[85vh] flex flex-col shadow-2xl relative overflow-hidden animate-in fade-in zoom-in-95 duration-200">
                             {/* Modal Header */}
-                            <div className="flex items-center justify-between px-6 py-4 border-b border-border dark:border-white/5 bg-muted/30 dark:bg-[#0B0E14]">
+                            <div className="flex items-center justify-between px-6 py-4 border-b border-slate-200 dark:border-white/5 bg-slate-50 dark:bg-[#0B0E14]">
                                 <div className="flex items-center gap-3">
                                     <div className="w-8 h-8 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center">
                                         <Award className="w-4 h-4 text-blue-500 dark:text-blue-400" />
                                     </div>
                                     <div>
                                         <div className="text-[10px] text-blue-500 dark:text-blue-400 font-bold uppercase tracking-wider font-mono">CP-AUDIT-25REPORT</div>
-                                        <h3 className="text-sm font-bold text-foreground dark:text-white/90">CleanPath AI System Audit Report</h3>
+                                        <h3 className="text-sm font-bold text-slate-800 dark:text-white/90">CleanPath AI System Audit Report</h3>
                                     </div>
                                 </div>
                                 <button 
                                     onClick={() => setIsWhitepaperOpen(false)}
-                                    className="p-1 rounded-lg hover:bg-muted dark:hover:bg-white/5 text-foreground/40 dark:text-white/40 hover:text-foreground dark:hover:text-white transition-colors cursor-pointer"
+                                    className="p-1 rounded-lg hover:bg-slate-100 dark:hover:bg-white/5 text-slate-400 dark:text-white/40 hover:text-slate-700 dark:hover:text-white transition-colors cursor-pointer"
                                 >
                                     <X className="w-5 h-5" />
                                 </button>
                             </div>
 
                             {/* Modal Content */}
-                            <div className="flex-1 overflow-y-auto p-6 md:p-8 space-y-8 font-sans text-sm text-foreground/80 dark:text-white/70 leading-relaxed scrollbar-thin">
+                            <div className="flex-1 overflow-y-auto p-6 md:p-8 space-y-8 font-sans text-sm text-slate-700 dark:text-white/70 leading-relaxed scrollbar-thin">
                                 <div className="bg-blue-500/5 border border-blue-500/15 rounded-2xl p-4 flex gap-3 text-xs leading-relaxed text-blue-600 dark:text-blue-300/90 font-mono">
                                     <ShieldAlert className="w-4 h-4 text-blue-500 shrink-0 mt-0.5" />
                                     <div>
@@ -148,39 +148,39 @@ export default function LandingPage() {
                                 </div>
 
                                 <div>
-                                    <h4 className="text-base font-bold text-foreground dark:text-white mb-3">1. Executive Summary & Core Identity</h4>
+                                    <h4 className="text-base font-bold text-slate-900 dark:text-white mb-3">1. Executive Summary & Core Identity</h4>
                                     <p className="mb-4">
                                         CleanPath AI is a category-defining, institutional-grade <strong>Financial Integrity Operating System for the Internet</strong>. It operates across global programmatic advertising networks to quantify hidden supply chain economics, isolate and suppress multi-hop reseller arbitrage (intermediary taxes), detect high-sophistication Connected TV (CTV) emulator spoofing, and autonomously enforce buy-side routing policies in real time.
                                     </p>
                                     <p>
-                                        Unlike traditional marketing analytics dashboards, CleanPath is engineered as an <strong>active transaction security layer and self-healing infrastructure plane</strong> (combining features inspired by Palantir Foundry, Bloomberg Terminal, and Cloudflare Developer Platform). It allows Fortune 500 chief financial officers, risk operators, and institutional media buyers to transition from passive, retroactive auditing to active, real-time bid shading and edge filtration.
+                                        Unlike traditional marketing advertising dashboards, CleanPath is engineered as an <strong>active transaction security layer and self-healing infrastructure plane</strong> (combining features inspired by Palantir Foundry, Bloomberg Terminal, and Cloudflare Developer Platform). It allows Fortune 500 chief financial officers, risk operators, and institutional media buyers to transition from passive, retroactive auditing to active, real-time bid shading and edge filtration.
                                     </p>
                                 </div>
 
-                                <div className="h-px bg-border dark:bg-white/5" />
+                                <div className="h-px bg-slate-200 dark:bg-white/5" />
 
                                 <div>
-                                    <h4 className="text-base font-bold text-foreground dark:text-white mb-3">2. Systemic Programmatic Vulnerabilities Addressed</h4>
+                                    <h4 className="text-base font-bold text-slate-900 dark:text-white mb-3">2. Systemic Programmatic Vulnerabilities Addressed</h4>
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
-                                        <div className="p-4 rounded-xl bg-muted/20 border border-border dark:bg-white/[0.02] dark:border-white/5">
-                                            <span className="font-bold text-foreground dark:text-white block mb-1">A. Made-For-Advertising (MFA) Arbitrage</span>
-                                            <p className="text-xs text-foreground/50 dark:text-white/50 leading-relaxed">
+                                        <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 dark:bg-white/[0.02] dark:border-white/5">
+                                            <span className="font-bold text-slate-800 dark:text-white block mb-1">A. Made-For-Advertising (MFA) Arbitrage</span>
+                                            <p className="text-xs text-slate-500 dark:text-white/50 leading-relaxed">
                                                 MFA sites use dynamic content scrapers and high ad density templates to redirect high-quality buy-side media budgets into low-value environments. CleanPath detects page velocity wiggles and structural layout indicators at the edge to block bids in under 15ms.
                                             </p>
                                         </div>
-                                        <div className="p-4 rounded-xl bg-muted/20 border border-border dark:bg-white/[0.02] dark:border-white/5">
-                                            <span className="font-bold text-foreground dark:text-white block mb-1">B. Multi-Hop Reseller Commissions</span>
-                                            <p className="text-xs text-foreground/50 dark:text-white/50 leading-relaxed">
+                                        <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 dark:bg-white/[0.02] dark:border-white/5">
+                                            <span className="font-bold text-slate-800 dark:text-white block mb-1">B. Multi-Hop Reseller Commissions</span>
+                                            <p className="text-xs text-slate-500 dark:text-white/50 leading-relaxed">
                                                 By auditing the OpenRTB supply chain graph (`schain`), we identify redundant intermediary hops that stack duplicate transaction fees, automatically routing budgets to direct publisher endpoints.
                                             </p>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div className="h-px bg-border dark:bg-white/5" />
+                                <div className="h-px bg-slate-200 dark:bg-white/5" />
 
                                 <div>
-                                    <h4 className="text-base font-bold text-foreground dark:text-white mb-3">3. High-Sophistication CTV Emulator Defense</h4>
+                                    <h4 className="text-base font-bold text-slate-900 dark:text-white mb-3">3. High-Sophistication CTV Emulator Defense</h4>
                                     <p className="mb-4">
                                         Invalid Traffic (IVT) verification companies struggle to detect modern CTV emulator farms running headless browser frameworks inside cloud containers, mimicking premium Roku and AppleTV devices.
                                     </p>
@@ -189,10 +189,10 @@ export default function LandingPage() {
                                     </p>
                                 </div>
 
-                                <div className="h-px bg-border dark:bg-white/5" />
+                                <div className="h-px bg-slate-200 dark:bg-white/5" />
 
                                 <div>
-                                    <h4 className="text-base font-bold text-foreground dark:text-white mb-3">4. Dynamic Bid Shading via Thompson Sampling</h4>
+                                    <h4 className="text-base font-bold text-slate-900 dark:text-white mb-3">4. Dynamic Bid Shading via Thompson Sampling</h4>
                                     <p>
                                         Our active reinforcement learning pipeline implements a <strong>Thompson Sampling Multi-Armed Bandit</strong>. Success parameters (view rewards) and failure parameters (non-view click-waste penalties) are updated continuously in Redis for each supply path. Bids are shaded in real time by drawing sub-millisecond probabilities from a Beta distribution using the Marsaglia-Tsang Gamma sampling approximation, guaranteeing maximum value for media spend.
                                     </p>
@@ -200,8 +200,8 @@ export default function LandingPage() {
                             </div>
 
                             {/* Modal Footer */}
-                            <div className="px-6 py-4 border-t border-border dark:border-white/5 bg-muted/30 dark:bg-[#0B0E14] flex items-center justify-between shrink-0">
-                                <span className="text-xs text-foreground/40 dark:text-white/40 font-mono">CleanPath AI Core Systems Audit</span>
+                            <div className="px-6 py-4 border-t border-slate-200 dark:border-white/5 bg-slate-50 dark:bg-[#0B0E14] flex items-center justify-between shrink-0">
+                                <span className="text-xs text-slate-400 dark:text-white/40 font-mono">CleanPath AI Core Systems Audit</span>
                                 <button 
                                     onClick={() => {
                                         setIsWhitepaperOpen(false);
@@ -210,7 +210,6 @@ export default function LandingPage() {
                                     className="px-5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold rounded-lg transition-colors cursor-pointer flex items-center gap-1.5 shadow-lg shadow-blue-500/10"
                                 >
                                     <span>Deploy System Simulator</span>
-                                    <ArrowRight className="w-3.5 h-3.5" />
                                 </button>
                             </div>
                         </div>
@@ -218,16 +217,16 @@ export default function LandingPage() {
                 )}
 
                 {/* Footer */}
-                <footer className="border-t border-border dark:border-white/5 py-12 px-6 bg-card dark:bg-transparent">
+                <footer className="border-t border-slate-200 dark:border-white/5 py-12 px-6 bg-white dark:bg-transparent">
                     <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-                        <div className="flex items-center gap-2 text-foreground/40 dark:text-white/40 font-medium text-sm">
+                        <div className="flex items-center gap-2 text-slate-400 dark:text-white/40 font-medium text-sm">
                             <ShieldCheck className="w-4 h-4" />
                             <span>© 2026 CleanPath AI Systems. All rights reserved.</span>
                         </div>
-                        <div className="flex gap-6 text-sm text-foreground/40 dark:text-white/40">
-                            <a href="#" className="hover:text-foreground dark:hover:text-white transition-colors">Privacy</a>
-                            <a href="#" className="hover:text-foreground dark:hover:text-white transition-colors">Terms</a>
-                            <a href="#" className="hover:text-foreground dark:hover:text-white transition-colors">System Status</a>
+                        <div className="flex gap-6 text-sm text-slate-400 dark:text-white/40">
+                            <a href="#" className="hover:text-slate-900 dark:hover:text-white transition-colors">Privacy</a>
+                            <a href="#" className="hover:text-slate-900 dark:hover:text-white transition-colors">Terms</a>
+                            <a href="#" className="hover:text-slate-900 dark:hover:text-white transition-colors">System Status</a>
                         </div>
                     </div>
                 </footer>
@@ -238,12 +237,12 @@ export default function LandingPage() {
 
 function FeatureCard({ icon, title, description }: { icon: React.ReactNode, title: string, description: string }) {
     return (
-        <div className="p-8 rounded-3xl border border-border bg-card dark:border-white/10 dark:bg-white/[0.02] hover:bg-muted/50 dark:hover:bg-white/[0.04] transition-all group cursor-default shadow-sm">
-            <div className="w-12 h-12 rounded-2xl bg-muted border border-border dark:bg-white/[0.05] dark:border-white/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
+        <div className="p-8 rounded-3xl border border-slate-200 bg-white dark:border-white/10 dark:bg-white/[0.02] hover:bg-slate-50 dark:hover:bg-white/[0.04] transition-all group cursor-default shadow-sm">
+            <div className="w-12 h-12 rounded-2xl bg-slate-100 border border-slate-200 dark:bg-white/[0.05] dark:border-white/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
                 {icon}
             </div>
-            <h3 className="text-xl font-semibold mb-3 text-foreground dark:text-white">{title}</h3>
-            <p className="text-foreground/50 dark:text-white/50 leading-relaxed text-sm">
+            <h3 className="text-xl font-semibold mb-3 text-slate-900 dark:text-white">{title}</h3>
+            <p className="text-slate-500 dark:text-white/50 leading-relaxed text-sm">
                 {description}
             </p>
         </div>
