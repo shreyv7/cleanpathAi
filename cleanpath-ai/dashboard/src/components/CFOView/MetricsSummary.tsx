@@ -86,18 +86,18 @@ export const MetricsSummary: React.FC = () => {
             {metrics.map((metric, idx) => (
                 <div
                     key={idx}
-                    className="rounded-2xl p-6 border border-white/5 bg-[#090B0F]/50 backdrop-blur-xl relative overflow-hidden group hover:border-white/10 hover:bg-[#0A0D14]/70 transition-all duration-300"
+                    className="rounded-2xl p-6 border border-border bg-card shadow-sm hover:border-foreground/10 hover:bg-muted/40 dark:border-white/5 dark:bg-[#090B0F]/50 dark:hover:border-white/10 dark:hover:bg-[#0A0D14]/70 transition-all duration-300"
                 >
                     <div className="flex justify-between items-start mb-4">
-                        <div className="p-2 rounded-xl bg-white/[0.02] border border-white/5">
+                        <div className="p-2 rounded-xl bg-muted border border-border dark:bg-white/[0.02] dark:border-white/5">
                             {metric.icon}
                         </div>
                     </div>
-                    <h3 className="text-white/40 text-xs font-semibold uppercase tracking-wider mb-1.5">{metric.title}</h3>
-                    <div className="text-3xl font-bold tracking-tight text-white mb-2">
+                    <h3 className="text-foreground/50 dark:text-white/40 text-xs font-semibold uppercase tracking-wider mb-1.5">{metric.title}</h3>
+                    <div className="text-3xl font-bold tracking-tight text-foreground dark:text-white mb-2">
                         {metric.value}
                     </div>
-                    <p className="text-xs text-white/30 font-medium">{metric.description}</p>
+                    <p className="text-xs text-foreground/40 dark:text-white/30 font-medium">{metric.description}</p>
                 </div>
             ))}
         </div>

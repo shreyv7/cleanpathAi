@@ -28,17 +28,17 @@ export default function FinancialSuite() {
                 <meta name="description" content="Bloomberg Terminal for programmatic ad spend efficiency and recovery" />
             </Head>
 
-            <main className={`flex min-h-screen flex-col text-white overflow-x-hidden transition-all duration-700 ${
-                presentationMode ? 'bg-[#030406] p-4 sm:p-6' : 'bg-[#05070B]'
+            <main className={`flex min-h-screen flex-col text-foreground dark:text-white overflow-x-hidden transition-all duration-700 bg-background ${
+                presentationMode ? 'dark:bg-[#030406] p-4 sm:p-6' : 'dark:bg-[#05070B]'
             }`}>
                 {/* Global Executive Header */}
-                <header className="sticky top-0 z-50 w-full border-b border-white/5 bg-[#080A0F]/95 backdrop-blur-xl shrink-0">
+                <header className="sticky top-0 z-50 w-full border-b border-border dark:border-white/5 bg-background/95 dark:bg-[#080A0F]/95 backdrop-blur-xl shrink-0">
                     <div className="flex items-center justify-between px-6 h-16">
                         {/* Left Controls */}
                         <div className="flex items-center gap-4">
                             <button
                                 onClick={() => router.push('/dashboard')}
-                                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/[0.03] border border-white/5 text-white/40 hover:text-white hover:border-white/10 hover:bg-white/5 transition-all text-xs cursor-pointer"
+                                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-card border border-border text-foreground/60 hover:text-foreground hover:border-foreground/10 hover:bg-muted dark:bg-white/[0.03] dark:border-white/5 dark:text-white/40 dark:hover:text-white dark:hover:border-white/10 dark:hover:bg-white/5 transition-all text-xs cursor-pointer"
                             >
                                 <ArrowLeft className="w-3.5 h-3.5" />
                                 <span>Return to Executive Summary</span>
