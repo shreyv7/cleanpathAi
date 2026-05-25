@@ -3,7 +3,7 @@ export interface EconomicScorecard {
     type: 'SSP' | 'EXCHANGE' | 'RESELLER' | 'PUBLISHER';
     efficiencyScore: number;  // 0-100
     integrityScore: number;   // 0-100
-    taxRating: 'A+' | 'A' | 'B' | 'C-' | 'D+';
+    taxRating: 'A+' | 'A' | 'A-' | 'B' | 'C-' | 'D+';
     stabilityRating: 'A+' | 'A' | 'B' | 'C' | 'D';
     fraudExposureRating: 'LOW' | 'MEDIUM' | 'HIGH';
 }
