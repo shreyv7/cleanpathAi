@@ -20,7 +20,7 @@ export const FutureLeakageForecaster: React.FC = () => {
     const state = useTelemetry();
 
     return (
-        <div className="bg-white border border-slate-200 dark:bg-[#080B10]/80 dark:border-white/5 shadow-sm hover:shadow-md rounded-2xl p-6 relative overflow-hidden flex flex-col gap-4 h-[400px] transition-all">
+        <div className="card-elevated gap-4">
             {/* Header */}
             <div className="flex items-center justify-between shrink-0">
                 <div className="flex items-center gap-2">

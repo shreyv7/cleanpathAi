@@ -182,7 +182,7 @@
 
 /* Dense panel scrollbar */
 .investigation-scroll::-webkit-scrollbar {
-  width: 4px;
+  width: 6px;
 }
 
 .investigation-scroll::-webkit-scrollbar-track {
@@ -191,9 +191,25 @@
 
 .investigation-scroll::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.08);
-  border-radius: 2px;
+  border-radius: 3px;
 }
 
 .investigation-scroll::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.15);
+}
+
+/* ============================================================
+   PREMIUM LAYOUT SYSTEM — Section Headers & Elevated Cards
+   ============================================================ */
+
+.card-elevated {
+  @apply bg-white border border-slate-200 shadow-sm hover:shadow-lg rounded-3xl p-8 relative overflow-hidden flex flex-col transition-all;
+}
+
+.dark .card-elevated {
+  @apply bg-[#080B10]/80 border-white/5;
+}
+
+.section-header {
+  @apply text-sm font-bold uppercase tracking-widest text-slate-500 dark:text-white/40 mb-4 px-2 border-b border-slate-200 dark:border-white/5 pb-2;
 }

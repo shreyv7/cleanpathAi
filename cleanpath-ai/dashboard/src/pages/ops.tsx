@@ -110,7 +110,7 @@ export default function OpsRoom() {
                 </div>
 
                 {/* Main Content Layout */}
-                <div className="flex-1 max-w-7xl w-full mx-auto p-6 md:p-8 flex flex-col gap-6 md:gap-8">
+                <div className="flex-1 max-w-[1600px] w-full mx-auto p-8 lg:p-10 flex flex-col gap-8 lg:gap-10">
                     {/* Header Controls & Tab Selector */}
                     <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 pb-2 border-b border-slate-200 dark:border-white/5">
                         <div className="flex flex-col gap-1">
@@ -151,15 +151,18 @@ export default function OpsRoom() {
 
                     {/* Active view rendering based on tab state */}
                     {activeTab === 'NOC' && (
-                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8 surgical-fade-in">
+                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10 surgical-fade-in">
                             {/* Left Column: World Map & NOC Timeline (Span 2) */}
-                            <div className="lg:col-span-2 flex flex-col gap-6 md:gap-8">
+                            <div className="lg:col-span-2 flex flex-col gap-8 lg:gap-10">
                                 <GlobalThreatMap />
-                                <IncidentTimeline />
+                                <div className="mt-4">
+                                    <h3 className="section-header">Live Operations Timeline</h3>
+                                    <IncidentTimeline />
+                                </div>
                             </div>
 
                             {/* Right Column: Dynamic KPIs, CFO economics, AI Engine, Health */}
-                            <div className="flex flex-col gap-6 md:gap-8">
+                            <div className="flex flex-col gap-8 lg:gap-10">
                                 <ThreatPressureGauge />
                                 <LiveCFOIntelligence />
                                 <CorrelationEngine />
@@ -169,21 +172,21 @@ export default function OpsRoom() {
                     )}
 
                     {activeTab === 'INTELLIGENCE' && (
-                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8 surgical-fade-in">
+                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10 surgical-fade-in">
                             {/* Left Column: Active threat groups and NLP prompt terminals (Span 2) */}
-                            <div className="lg:col-span-2 flex flex-col gap-6 md:gap-8">
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+                            <div className="lg:col-span-2 flex flex-col gap-8 lg:gap-10">
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
                                     <AIInvestigatorAssistant />
                                     <AttackPlaybackSimulator />
                                 </div>
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
                                     <EntityMemoryViewer />
                                     <StrategicCFOInsights />
                                 </div>
                             </div>
 
                             {/* Right Column: Forecast metrics curves, Threat families list */}
-                            <div className="flex flex-col gap-6 md:gap-8">
+                            <div className="flex flex-col gap-8 lg:gap-10">
                                 <PredictiveRiskForecast />
                                 <ThreatFamiliesList />
                             </div>

@@ -107,8 +107,8 @@ export default function FinancialSuite() {
                 </div>
 
                 {/* Main Workspace Frame */}
-                <div className={`flex-1 max-w-7xl w-full mx-auto flex flex-col gap-6 md:gap-8 transition-all duration-700 ${
-                    presentationMode ? 'p-4 border border-purple-500/15 rounded-3xl bg-[#080B10]/40 backdrop-blur-md shadow-2xl shadow-purple-500/[0.02] mt-6' : 'p-6 md:p-8'
+                <div className={`flex-1 max-w-[1600px] w-full mx-auto flex flex-col gap-8 lg:gap-10 transition-all duration-700 ${
+                    presentationMode ? 'p-6 border border-purple-500/15 rounded-[2rem] bg-[#080B10]/40 backdrop-blur-md shadow-2xl shadow-purple-500/[0.02] mt-6' : 'p-8 lg:p-10'
                 }`}>
                     {/* Header Section */}
                     <div className="flex flex-col gap-1.5 pb-2 border-b border-slate-200 dark:border-white/5">
@@ -135,21 +135,24 @@ export default function FinancialSuite() {
                     )}
 
                     {/* Standard Grid Layout */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                    <div className="mt-4">
+                        <h3 className="section-header">Financial Supply Chain Analysis</h3>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
                         {/* Cost Ladder & Simulator (Span 2) */}
-                        <div className="lg:col-span-2 flex flex-col gap-6 md:gap-8">
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+                        <div className="lg:col-span-2 flex flex-col gap-8 lg:gap-10">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
                                 <IntermediaryTaxLadder />
                                 <DigitalTwinSimulator />
                             </div>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
                                 <EconomicPressureMap />
                                 <PortfolioAnalytics />
                             </div>
                         </div>
 
                         {/* Forecasts, matrix, boardroom logs */}
-                        <div className="flex flex-col gap-6 md:gap-8">
+                        <div className="flex flex-col gap-8 lg:gap-10">
                             <FutureLeakageForecaster />
                             <EconomicTrustMatrix />
                             <BoardroomReporter />

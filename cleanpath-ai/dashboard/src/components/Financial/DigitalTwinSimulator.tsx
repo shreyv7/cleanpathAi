@@ -22,7 +22,7 @@ export const DigitalTwinSimulator: React.FC = () => {
     const estimatedWorkingMedia = Math.min(99.5, state.overallWorkingMediaPercent + simulation.workingMediaChange);
 
     return (
-        <div className="bg-white border border-slate-200 dark:bg-[#080B10]/80 dark:border-white/5 shadow-sm hover:shadow-md rounded-2xl p-6 relative overflow-hidden flex flex-col gap-6 h-[420px] transition-all">
+        <div className="card-elevated gap-6">
             {/* Header */}
             <div>
                 <h2 className="text-sm font-bold uppercase tracking-widest text-slate-900 dark:text-white/90 flex items-center gap-2">

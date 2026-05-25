@@ -15,7 +15,7 @@ export const ThreatPressureGauge: React.FC = () => {
     const strokeDashoffset = circumference - (integrityScore / 100) * circumference;
 
     return (
-        <div className="bg-white border border-slate-200 dark:bg-[#080B10]/80 dark:border-white/5 shadow-sm hover:shadow-md rounded-2xl p-6 relative overflow-hidden flex flex-col items-center justify-between h-[240px] transition-all">
+        <div className="card-elevated items-center justify-between">
             {/* Top info */}
             <div className="w-full text-left self-start">
                 <h2 className="text-sm font-bold uppercase tracking-widest text-slate-900 dark:text-white/90">

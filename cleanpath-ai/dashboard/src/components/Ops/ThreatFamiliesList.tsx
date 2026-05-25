@@ -4,7 +4,7 @@ import { Shield, AlertOctagon, RefreshCw, Zap, Landmark } from 'lucide-react';
 
 export const ThreatFamiliesList: React.FC = () => {
     return (
-        <div className="bg-white border border-slate-200 dark:bg-[#080B10]/80 dark:border-white/5 shadow-sm hover:shadow-md rounded-2xl p-6 relative overflow-hidden flex flex-col gap-4 transition-all">
+        <div className="card-elevated gap-4">
             <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
                     <Shield className="w-5 h-5 text-blue-600 dark:text-blue-500" />

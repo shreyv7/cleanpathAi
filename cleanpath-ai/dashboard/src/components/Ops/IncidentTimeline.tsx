@@ -11,7 +11,7 @@ export const IncidentTimeline: React.FC = () => {
     };
 
     return (
-        <div className="bg-white border border-slate-200 dark:bg-[#080B10]/80 dark:border-white/5 shadow-sm hover:shadow-md rounded-2xl p-6 relative overflow-hidden flex flex-col h-[400px] transition-all">
+        <div className="card-elevated">
             {/* Header */}
             <div className="flex items-center justify-between mb-4 shrink-0">
                 <div className="flex items-center gap-2">

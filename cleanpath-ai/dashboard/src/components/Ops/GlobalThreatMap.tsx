@@ -51,7 +51,7 @@ export const GlobalThreatMap: React.FC = () => {
     ];
 
     return (
-        <div className="glass rounded-2xl p-6 border border-white/5 bg-[#080B10]/80 relative overflow-hidden flex flex-col h-[480px]">
+        <div className="glass card-elevated !border-white/5 !bg-[#080B10]/80 min-h-[500px]">
             {/* Header */}
             <div className="flex items-center justify-between mb-4 z-10">
                 <div className="flex items-center gap-2">

@@ -86,10 +86,10 @@ export default function ControlTower() {
                 </header>
 
                 {/* Command Tower Frame wrapper */}
-                <div className={`flex-1 max-w-7xl w-full mx-auto flex flex-col gap-6 md:gap-8 transition-all duration-700 ${
+                <div className={`flex-1 max-w-[1600px] w-full mx-auto flex flex-col gap-8 lg:gap-10 transition-all duration-700 ${
                     warRoomMode 
-                        ? 'p-4 border border-red-500/15 rounded-3xl bg-[#0F0505]/40 backdrop-blur-md shadow-2xl shadow-red-500/[0.02] mt-6' 
-                        : 'p-6 md:p-8'
+                        ? 'p-6 border border-red-500/15 rounded-[2rem] bg-[#0F0505]/40 backdrop-blur-md shadow-2xl shadow-red-500/[0.02] mt-6' 
+                        : 'p-8 lg:p-10'
                 }`}>
                     {/* Title */}
                     <div className="flex flex-col gap-1.5 pb-2 border-b border-slate-200 dark:border-white/5">
@@ -122,22 +122,29 @@ export default function ControlTower() {
                     )}
 
                     {/* Standard Grid layout */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                        {/* Control Plane Visualizer & Policy (Span 2) */}
-                        <div className="lg:col-span-2 flex flex-col gap-6 md:gap-8">
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-                                <ControlPlaneVisualizer />
-                                <PolicyOrchestration />
-                            </div>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-                                <AutonomousActionQueue />
+                    <div className="mt-4">
+                        <h3 className="section-header">Live Telemetry & Policy Matrix</h3>
+                    </div>
+                    <div className="flex flex-col gap-8 lg:gap-10">
+                        {/* Control Plane Visualizer - Full Width Hero */}
+                        <div className="w-full">
+                            <ControlPlaneVisualizer />
+                        </div>
+                        
+                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10">
+                            {/* Left Column (Span 2) */}
+                            <div className="lg:col-span-2 flex flex-col gap-8 lg:gap-10">
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+                                    <PolicyOrchestration />
+                                    <AutonomousActionQueue />
+                                </div>
                                 <GovernanceStatus />
                             </div>
-                        </div>
 
-                        {/* Incident sequence cascade and active controls */}
-                        <div className="flex flex-col gap-6 md:gap-8">
-                            <IncidentResponseTimeline />
+                            {/* Right Column */}
+                            <div className="flex flex-col gap-8 lg:gap-10">
+                                <IncidentResponseTimeline />
+                            </div>
                         </div>
                     </div>
                 </div>

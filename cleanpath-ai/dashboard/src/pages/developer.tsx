@@ -102,7 +102,7 @@ export default function PlatformSuite() {
 
 
                 {/* Platform Frame Wrapper */}
-                <div className="flex-1 max-w-7xl w-full mx-auto p-6 md:p-8 flex flex-col gap-6 md:gap-8">
+                <div className="flex-1 max-w-[1600px] w-full mx-auto p-8 lg:p-10 flex flex-col gap-8 lg:gap-10">
                     {/* Header Controls & Role Switcher */}
                     <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 pb-2 border-b border-slate-200 dark:border-white/5">
                         <div className="flex flex-col gap-1">
@@ -176,21 +176,30 @@ export default function PlatformSuite() {
                     </div>
 
                     {/* Standard Grid layout */}
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
-                        {/* Developer Stripe console & sync grid (Span 2) */}
-                        <div className="lg:col-span-2 flex flex-col gap-6 md:gap-8">
+                    <div className="mt-4">
+                        <h3 className="section-header">Developer Integration Console</h3>
+                    </div>
+                    <div className="flex flex-col gap-8 lg:gap-10">
+                        {/* PreBid DSP Integrator - Full Width Hero */}
+                        <div className="w-full">
                             <PreBidDSPIntegrator />
-                            <DSPPluginBilling />
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-                                <TenantManager />
-                                <AppEcosystem />
-                            </div>
                         </div>
+                        
+                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10">
+                            {/* Left Column (Span 2) */}
+                            <div className="lg:col-span-2 flex flex-col gap-8 lg:gap-10">
+                                <DSPPluginBilling />
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+                                    <TenantManager />
+                                    <AppEcosystem />
+                                </div>
+                            </div>
 
-                        {/* SOC2 Auditor and live exchange logs */}
-                        <div className="flex flex-col gap-6 md:gap-8">
-                            <GovernanceAuditor />
-                            <DataExchangeFabric />
+                            {/* Right Column */}
+                            <div className="flex flex-col gap-8 lg:gap-10">
+                                <GovernanceAuditor />
+                                <DataExchangeFabric />
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -3,7 +3,7 @@ import { ShieldCheck, ShieldAlert, Play, ArrowRight } from 'lucide-react';
 
 export const ControlPlaneVisualizer: React.FC = () => {
     return (
-        <div className="bg-white border border-slate-200 dark:bg-[#080B10]/80 dark:border-white/5 shadow-sm hover:shadow-md rounded-2xl p-6 relative overflow-hidden flex flex-col justify-between h-[400px] transition-all">
+        <div className="card-elevated justify-between">
             {/* Header */}
             <div>
                 <h2 className="text-sm font-bold uppercase tracking-widest text-slate-900 dark:text-white/90 flex items-center gap-2">

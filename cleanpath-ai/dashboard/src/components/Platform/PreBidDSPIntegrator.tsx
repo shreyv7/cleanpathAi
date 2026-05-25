@@ -136,7 +136,7 @@ export const PreBidDSPIntegrator: React.FC = () => {
     };
 
     return (
-        <div className="bg-white border border-slate-200 dark:bg-[#080B10]/80 dark:border-white/5 shadow-sm hover:shadow-md rounded-2xl p-6 relative overflow-hidden flex flex-col gap-5 h-[420px] font-mono text-xs select-none transition-all">
+        <div className="card-elevated gap-5  font-mono text-xs select-none">
             {/* Header */}
             <div className="flex justify-between items-center shrink-0">
                 <div className="flex items-center gap-2">

@@ -6,7 +6,7 @@ export const SystemHealthPanel: React.FC = () => {
     const state = useTelemetry();
 
     return (
-        <div className="bg-white border border-slate-200 dark:bg-[#080B10]/80 dark:border-white/5 shadow-sm hover:shadow-md rounded-2xl p-6 relative overflow-hidden flex flex-col gap-4 transition-all">
+        <div className="card-elevated gap-4">
             <div>
                 <h2 className="text-sm font-bold uppercase tracking-widest text-slate-900 dark:text-white/90 flex items-center gap-2">
                     <Server className="w-4 h-4 text-blue-600 dark:text-blue-500" />

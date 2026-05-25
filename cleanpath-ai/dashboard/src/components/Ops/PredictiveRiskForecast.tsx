@@ -8,7 +8,7 @@ export const PredictiveRiskForecast: React.FC = () => {
     const forecastPoints = generatePredictiveData(state.globalFraudPressure);
 
     return (
-        <div className="bg-white border border-slate-200 dark:bg-[#080B10]/80 dark:border-white/5 shadow-sm hover:shadow-md rounded-2xl p-6 relative overflow-hidden flex flex-col gap-4 transition-all">
+        <div className="card-elevated gap-4">
             <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
                     <TrendingUp className="w-5 h-5 text-emerald-650 dark:text-emerald-400" />

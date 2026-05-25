@@ -30,7 +30,7 @@ export const LiveCFOIntelligence: React.FC = () => {
     const projectedRecovery = (animatedBlocked + animatedSavings) * 90; // Projections scaled 90 days out
 
     return (
-        <div className="bg-white border border-slate-200 dark:bg-[#080B10]/80 dark:border-white/5 shadow-sm hover:shadow-md rounded-2xl p-6 relative overflow-hidden flex flex-col gap-6 transition-all">
+        <div className="card-elevated gap-6">
             <div>
                 <h2 className="text-sm font-bold uppercase tracking-widest text-slate-900 dark:text-white/90 flex items-center gap-2">
                     <Landmark className="w-4 h-4 text-emerald-500" />
