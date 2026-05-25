@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useTelemetry } from '@/hooks/useTelemetry';
@@ -8,11 +8,21 @@ import { CorrelationEngine } from '@/components/Ops/CorrelationEngine';
 import { SystemHealthPanel } from '@/components/Ops/SystemHealthPanel';
 import { IncidentTimeline } from '@/components/Ops/IncidentTimeline';
 import { ThreatPressureGauge } from '@/components/Ops/ThreatPressureGauge';
-import { ArrowLeft, Shield, Radio, Layers, Landmark, Activity, LayoutGrid } from 'lucide-react';
+
+// Priority 3: Intelligence Correlation Core Components
+import { AIInvestigatorAssistant } from '@/components/Ops/AIInvestigatorAssistant';
+import { ThreatFamiliesList } from '@/components/Ops/ThreatFamiliesList';
+import { PredictiveRiskForecast } from '@/components/Ops/PredictiveRiskForecast';
+import { EntityMemoryViewer } from '@/components/Ops/EntityMemoryViewer';
+import { StrategicCFOInsights } from '@/components/Ops/StrategicCFOInsights';
+import { AttackPlaybackSimulator } from '@/components/Ops/AttackPlaybackSimulator';
+
+import { ArrowLeft, Shield, Radio, Brain, LayoutGrid, Terminal } from 'lucide-react';
 
 export default function OpsRoom() {
     const router = useRouter();
     const state = useTelemetry();
+    const [activeTab, setActiveTab] = useState<'NOC' | 'INTELLIGENCE'>('NOC');
 
     return (
         <>
@@ -80,32 +90,84 @@ export default function OpsRoom() {
 
                 {/* Main Content Layout */}
                 <div className="flex-1 max-w-7xl w-full mx-auto p-6 md:p-8 flex flex-col gap-6 md:gap-8">
-                    {/* Page Subtitle section */}
-                    <div className="flex flex-col gap-1.5">
-                        <h1 className="text-3xl font-extrabold tracking-tight text-white/90">
-                            Global Supply Chain Integrity Room
-                        </h1>
-                        <p className="text-white/40 text-sm">
-                            Autonomous programmatic media routing, bot mitigation, and live financial waste exclusion control center.
-                        </p>
-                    </div>
-
-                    {/* Dashboard grid layout */}
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
-                        {/* Left Column: World Map & Alerts (Span 2 for rich landscape maps) */}
-                        <div className="lg:col-span-2 flex flex-col gap-6 md:gap-8">
-                            <GlobalThreatMap />
-                            <IncidentTimeline />
+                    {/* Header Controls & Tab Selector */}
+                    <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 pb-2 border-b border-white/5">
+                        <div className="flex flex-col gap-1">
+                            <h1 className="text-3xl font-extrabold tracking-tight text-white/90">
+                                Global Supply Chain Integrity Room
+                            </h1>
+                            <p className="text-white/40 text-sm">
+                                Autonomous programmatic media routing, bot mitigation, and live financial waste exclusion control center.
+                            </p>
                         </div>
 
-                        {/* Right Column: Dynamic KPIs, CFO economics, AI Engine, Health */}
-                        <div className="flex flex-col gap-6 md:gap-8">
-                            <ThreatPressureGauge />
-                            <LiveCFOIntelligence />
-                            <CorrelationEngine />
-                            <SystemHealthPanel />
+                        {/* Interactive Tab Selectors */}
+                        <div className="flex items-center gap-1.5 p-1 rounded-xl bg-white/[0.03] border border-white/5 font-mono select-none">
+                            <button
+                                onClick={() => setActiveTab('NOC')}
+                                className={`flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                                    activeTab === 'NOC'
+                                        ? 'bg-blue-500/10 border border-blue-500/20 text-blue-400'
+                                        : 'bg-transparent border-transparent text-white/40 hover:text-white/70'
+                                }`}
+                            >
+                                <LayoutGrid className="w-3.5 h-3.5" />
+                                <span>NOC TELEMETRY</span>
+                            </button>
+                            <button
+                                onClick={() => setActiveTab('INTELLIGENCE')}
+                                className={`flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                                    activeTab === 'INTELLIGENCE'
+                                        ? 'bg-purple-500/10 border border-purple-500/20 text-purple-400'
+                                        : 'bg-transparent border-transparent text-white/40 hover:text-white/70'
+                                }`}
+                            >
+                                <Brain className="w-3.5 h-3.5" />
+                                <span>INTELLIGENCE CORE</span>
+                            </button>
                         </div>
                     </div>
+
+                    {/* Active view rendering based on tab state */}
+                    {activeTab === 'NOC' && (
+                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8 surgical-fade-in">
+                            {/* Left Column: World Map & NOC Timeline (Span 2) */}
+                            <div className="lg:col-span-2 flex flex-col gap-6 md:gap-8">
+                                <GlobalThreatMap />
+                                <IncidentTimeline />
+                            </div>
+
+                            {/* Right Column: Dynamic KPIs, CFO economics, AI Engine, Health */}
+                            <div className="flex flex-col gap-6 md:gap-8">
+                                <ThreatPressureGauge />
+                                <LiveCFOIntelligence />
+                                <CorrelationEngine />
+                                <SystemHealthPanel />
+                            </div>
+                        </div>
+                    )}
+
+                    {activeTab === 'INTELLIGENCE' && (
+                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8 surgical-fade-in">
+                            {/* Left Column: Active threat groups and NLP prompt terminals (Span 2) */}
+                            <div className="lg:col-span-2 flex flex-col gap-6 md:gap-8">
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+                                    <AIInvestigatorAssistant />
+                                    <AttackPlaybackSimulator />
+                                </div>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+                                    <EntityMemoryViewer />
+                                    <StrategicCFOInsights />
+                                </div>
+                            </div>
+
+                            {/* Right Column: Forecast metrics curves, Threat families list */}
+                            <div className="flex flex-col gap-6 md:gap-8">
+                                <PredictiveRiskForecast />
+                                <ThreatFamiliesList />
+                            </div>
+                        </div>
+                    )}
                 </div>
             </main>
         </>
