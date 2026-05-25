@@ -201,16 +201,16 @@ function Card({ icon, title, description, href }: { icon: React.ReactNode, title
     return (
         <a 
             href={href} 
-            className="group rounded-2xl border border-white/5 bg-white/5 px-5 py-6 transition-all hover:border-white/20 hover:bg-white/[0.08] hover:-translate-y-1 block cursor-pointer glass duration-300"
+            className="group rounded-2xl border border-slate-200 bg-white dark:border-white/5 dark:bg-[#090B0F]/50 px-6 py-6 transition-all hover:border-blue-500/50 hover:bg-slate-50 dark:hover:border-white/20 dark:hover:bg-white/[0.08] hover:-translate-y-1 block cursor-pointer shadow-sm hover:shadow-md duration-300"
         >
             <div className="mb-4">{icon}</div>
-            <h2 className="mb-3 text-2xl font-semibold flex items-center gap-1">
+            <h2 className="mb-2 text-xl font-bold flex items-center gap-1 text-slate-900 dark:text-white transition-colors group-hover:text-blue-600 dark:group-hover:text-blue-400">
                 {title}{" "}
                 <span className="inline-block transition-transform group-hover:translate-x-1.5 motion-reduce:transform-none">
                     -&gt;
                 </span>
             </h2>
-            <p className="m-0 max-w-[30ch] text-sm opacity-50 leading-relaxed">
+            <p className="m-0 max-w-[30ch] text-xs text-slate-500 dark:text-white/50 leading-relaxed font-medium">
                 {description}
             </p>
         </a>

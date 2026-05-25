@@ -44,20 +44,20 @@ export const CTVDeviceExplorer = () => {
     }, []);
 
     return (
-        <div className="bg-white/5 border border-white/10 rounded-xl overflow-hidden backdrop-blur-sm">
-            <div className="p-6 border-b border-white/10 flex justify-between items-center">
-                <h3 className="text-xl font-bold flex items-center gap-2">
-                    <MonitorPlay className="w-5 h-5 text-blue-400" />
+        <div className="bg-white border border-slate-200 dark:bg-white/5 dark:border-white/10 rounded-xl overflow-hidden shadow-sm">
+            <div className="p-6 border-b border-slate-200 dark:border-white/10 flex justify-between items-center">
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                    <MonitorPlay className="w-5 h-5 text-blue-500 dark:text-blue-400" />
                     Device Fingerprint Explorer
                 </h3>
-                <span className="text-xs uppercase tracking-wider text-white/50 bg-white/5 px-2 py-1 rounded">
+                <span className="text-xs uppercase tracking-wider text-slate-500 bg-slate-100 dark:text-white/50 dark:bg-white/5 px-2.5 py-1 rounded-lg font-semibold">
                     {devices.length} Devices Tracked
                 </span>
             </div>
 
             <div className="overflow-x-auto">
                 <table className="w-full text-left text-sm">
-                    <thead className="bg-white/5 text-white/50 font-medium">
+                    <thead className="bg-slate-50/50 text-slate-500 border-b border-slate-200 dark:bg-white/5 dark:text-white/50 dark:border-white/10 font-medium">
                         <tr>
                             <th className="px-6 py-4">IFA / IP</th>
                             <th className="px-6 py-4">Device Details</th>
@@ -67,23 +67,23 @@ export const CTVDeviceExplorer = () => {
                             <th className="px-6 py-4">Last Seen</th>
                         </tr>
                     </thead>
-                    <tbody className="divide-y divide-white/5">
+                    <tbody className="divide-y divide-slate-100 dark:divide-white/5">
                         {devices.map((device, i) => (
-                            <tr key={i} className="hover:bg-white/5 transition-colors">
+                            <tr key={i} className="hover:bg-slate-50 dark:hover:bg-white/5 transition-colors">
                                 <td className="px-6 py-4 font-mono text-xs">
-                                    <div className="text-white">{device.ifa}</div>
-                                    <div className="text-white/40">{device.ip}</div>
+                                    <div className="text-slate-700 dark:text-white font-medium">{device.ifa}</div>
+                                    <div className="text-slate-400 dark:text-white/40">{device.ip}</div>
                                 </td>
                                 <td className="px-6 py-4">
-                                    <div className="font-medium text-white">{device.make}</div>
-                                    <div className="text-white/50">{device.model}</div>
+                                    <div className="font-semibold text-slate-900 dark:text-white">{device.make}</div>
+                                    <div className="text-slate-500 dark:text-white/50 text-xs">{device.model}</div>
                                 </td>
-                                <td className="px-6 py-4 text-white/70">{device.os}</td>
+                                <td className="px-6 py-4 text-slate-600 dark:text-white/70">{device.os}</td>
                                 <td className="px-6 py-4">
                                     <RiskBadge score={device.riskScore} />
                                 </td>
-                                <td className="px-6 py-4 text-white/70">{device.mutationCount}</td>
-                                <td className="px-6 py-4 text-white/50 text-xs">
+                                <td className="px-6 py-4 text-slate-600 dark:text-white/70">{device.mutationCount}</td>
+                                <td className="px-6 py-4 text-slate-400 dark:text-white/50 text-xs font-mono">
                                     {new Date(device.lastSeen).toLocaleTimeString()}
                                 </td>
                             </tr>

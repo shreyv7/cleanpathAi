@@ -71,7 +71,7 @@ export const CTVIntegrityWidget = () => {
         fetchData();
     }, []);
 
-    if (loading || !data) return <div className="animate-pulse h-64 bg-white/5 rounded-xl"></div>;
+    if (loading || !data) return <div className="animate-pulse h-64 bg-slate-100 dark:bg-white/5 rounded-xl"></div>;
 
     const pieData = [
         { name: 'Clean', value: data.verdictBreakdown.clean, color: COLORS.clean },
@@ -82,9 +82,9 @@ export const CTVIntegrityWidget = () => {
     return (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {/* Verdict Distribution */}
-            <div className="bg-white/5 border border-white/10 rounded-xl p-6 backdrop-blur-sm">
-                <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
-                    <ShieldCheck className="w-5 h-5 text-blue-400" />
+            <div className="bg-white border border-slate-200 dark:bg-white/5 dark:border-white/10 rounded-xl p-6 shadow-sm">
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
+                    <ShieldCheck className="w-5 h-5 text-blue-500 dark:text-blue-400" />
                     Traffic Verdicts
                 </h3>
                 <div className="h-64">
@@ -98,7 +98,7 @@ export const CTVIntegrityWidget = () => {
                                 outerRadius={80}
                                 paddingAngle={5}
                                 dataKey="value"
-                            >
+                             >
                                 {pieData.map((entry, index) => (
                                     <Cell key={`cell-${index}`} fill={entry.color} stroke="none" />
                                 ))}
@@ -113,24 +113,24 @@ export const CTVIntegrityWidget = () => {
                 </div>
                 <div className="mt-4 grid grid-cols-3 gap-2 text-center text-sm">
                     <div>
-                        <div className="text-emerald-400 font-bold">{data.verdictBreakdown.clean.toLocaleString()}</div>
-                        <div className="text-white/50">Clean</div>
+                        <div className="text-emerald-500 dark:text-emerald-400 font-bold text-base">{data.verdictBreakdown.clean.toLocaleString()}</div>
+                        <div className="text-slate-500 dark:text-white/50 text-xs font-semibold">Clean</div>
                     </div>
                     <div>
-                        <div className="text-amber-400 font-bold">{data.verdictBreakdown.suspicious.toLocaleString()}</div>
-                        <div className="text-white/50">Suspicious</div>
+                        <div className="text-amber-600 dark:text-amber-400 font-bold text-base">{data.verdictBreakdown.suspicious.toLocaleString()}</div>
+                        <div className="text-slate-500 dark:text-white/50 text-xs font-semibold">Suspicious</div>
                     </div>
                     <div>
-                        <div className="text-red-400 font-bold">{data.verdictBreakdown.spoofed.toLocaleString()}</div>
-                        <div className="text-white/50">Spoofed</div>
+                        <div className="text-red-500 dark:text-red-400 font-bold text-base">{data.verdictBreakdown.spoofed.toLocaleString()}</div>
+                        <div className="text-slate-500 dark:text-white/50 text-xs font-semibold">Spoofed</div>
                     </div>
                 </div>
             </div>
 
             {/* Top Signals */}
-            <div className="bg-white/5 border border-white/10 rounded-xl p-6 backdrop-blur-sm">
-                <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
-                    <ShieldAlert className="w-5 h-5 text-orange-400" />
+            <div className="bg-white border border-slate-200 dark:bg-white/5 dark:border-white/10 rounded-xl p-6 shadow-sm">
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
+                    <ShieldAlert className="w-5 h-5 text-orange-500 dark:text-orange-400" />
                     Top Risk Signals
                 </h3>
                 <div className="h-64">
@@ -141,15 +141,15 @@ export const CTVIntegrityWidget = () => {
                                 type="category"
                                 dataKey="signal"
                                 width={150}
-                                tick={{ fill: '#9CA3AF', fontSize: 12 }}
+                                tick={{ fill: '#64748B', fontSize: 12 }}
                                 axisLine={false}
                                 tickLine={false}
                             />
                             <Tooltip
-                                cursor={{ fill: 'white', opacity: 0.1 }}
+                                cursor={{ fill: 'rgba(0,0,0,0.05)', opacity: 0.1 }}
                                 contentStyle={{ backgroundColor: '#1F2937', borderColor: '#374151', color: '#F3F4F6' }}
                             />
-                            <Bar dataKey="count" fill="#60A5FA" radius={[0, 4, 4, 0]} barSize={20} />
+                            <Bar dataKey="count" fill="#3B82F6" radius={[0, 4, 4, 0]} barSize={20} />
                         </BarChart>
                     </ResponsiveContainer>
                 </div>
