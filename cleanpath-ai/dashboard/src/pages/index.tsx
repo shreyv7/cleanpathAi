@@ -8,14 +8,33 @@ import { MLPerformanceWidget } from "@/components/TechnicalView/CTV/MLPerformanc
 import { CTVDeviceExplorer } from "@/components/TechnicalView/CTV/CTVDeviceExplorer";
 import { MonitorPlay } from "lucide-react";
 
+import { useRouter } from "next/router";
+
 export default function Home() {
+    const router = useRouter();
+
     return (
         <main className="flex min-h-screen flex-col items-center p-12 bg-[#0B0E14] text-white">
-            <div className="z-10 max-w-7xl w-full items-center justify-between font-mono text-sm flex mb-12">
-                <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-800 bg-gradient-to-b from-zinc-800/30 pb-6 pt-8 backdrop-blur-2xl lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-800/30 lg:p-4">
-                    CleanPath AI&nbsp;
-                    <code className="font-bold text-blue-400">v0.1.0</code>
-                </p>
+            <div className="z-10 max-w-7xl w-full items-center justify-between font-mono text-sm flex mb-12 border-b border-white/5 pb-6">
+                <div className="flex items-center gap-3">
+                    <ShieldCheck className="w-6 h-6 text-blue-500" />
+                    <span className="text-lg font-black tracking-widest text-white/90">
+                        CLEANPATH AI
+                    </span>
+                    <code className="text-[10px] bg-blue-500/10 border border-blue-500/20 text-blue-400 font-mono font-bold px-1.5 py-0.5 rounded">
+                        v0.1.0
+                    </code>
+                </div>
+
+                <button
+                    onClick={() => router.push('/ops')}
+                    className="flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 hover:bg-emerald-500/20 hover:border-emerald-500/40 hover:-translate-y-0.5 transition-all text-xs font-bold uppercase tracking-wider cursor-pointer shadow-lg shadow-emerald-500/5 duration-300 relative overflow-hidden"
+                >
+                    <div className="flex items-center gap-1.5">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 infra-pulse-fast" />
+                        <span>Launch Operations Room</span>
+                    </div>
+                </button>
             </div>
 
             <div className="max-w-7xl w-full flex flex-col gap-24">

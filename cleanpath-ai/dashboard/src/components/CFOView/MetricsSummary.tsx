@@ -3,8 +3,10 @@ import { DollarSign, ShieldAlert, Zap, BarChart2, TrendingUp, PiggyBank } from '
 import { fetchDecisionStats } from '@/services/statsService';
 import { fetchFinancialSummary, type FinancialSummary } from '@/services/financialService';
 import { DecisionStats } from '@/services/types';
+import { useTelemetry } from '@/hooks/useTelemetry';
 
 export const MetricsSummary: React.FC = () => {
+    const liveState = useTelemetry();
     const [stats, setStats] = useState<DecisionStats | null>(null);
     const [financial, setFinancial] = useState<FinancialSummary | null>(null);
     const [loading, setLoading] = useState(true);
@@ -35,22 +37,27 @@ export const MetricsSummary: React.FC = () => {
     if (loading && !stats) return <div className="text-white/50 animate-pulse">Loading executive metrics...</div>;
     if (error && !stats) return <div className="text-red-400">Error: {error}</div>;
 
+    // Synthesize database values with live telemetry ticking values
+    const liveRequestsCount = stats ? (stats.total_requests + (liveState.totalRequests - 849200)) : liveState.totalRequests;
+    const liveWastePrevented = financial ? (financial.totalBlocked + (liveState.totalBlockedSpend - 42104.50)) : liveState.totalBlockedSpend;
+    const liveShadingSavings = financial ? (financial.totalSavingsFromShading + (liveState.totalSavingsFromShading - 18450.20)) : liveState.totalSavingsFromShading;
+
     const metrics = [
         {
             title: "Total Bid Requests",
-            value: stats?.total_requests.toLocaleString() || "0",
+            value: liveRequestsCount.toLocaleString(),
             icon: <BarChart2 className="w-5 h-5 text-blue-400" />,
             description: "Processed by edge filter"
         },
         {
             title: "Waste Recovered",
-            value: `$${(financial?.totalBlocked || stats?.estimated_waste_saved || 0).toFixed(2)}`,
+            value: `$${liveWastePrevented.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`,
             icon: <DollarSign className="w-5 h-5 text-emerald-400" />,
             description: "Blocked fraudulent spend"
         },
         {
             title: "Working Media %",
-            value: `${(financial?.overallWorkingMediaPercent || 0).toFixed(1)}%`,
+            value: `${liveState.overallWorkingMediaPercent.toFixed(1)}%`,
             icon: <TrendingUp className="w-5 h-5 text-purple-400" />,
             description: "Clean ad spend ratio"
         },
@@ -68,7 +75,7 @@ export const MetricsSummary: React.FC = () => {
         },
         {
             title: "Bid Shading Savings",
-            value: `$${(financial?.totalSavingsFromShading || 0).toFixed(2)}`,
+            value: `$${liveShadingSavings.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`,
             icon: <PiggyBank className="w-5 h-5 text-cyan-400" />,
             description: "Saved via AI optimization"
         }
