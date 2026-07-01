@@ -2,6 +2,7 @@ import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import { useEffect } from "react";
+import ZeroShieldCmp from "@/components/ZeroShieldCmp";
 
 export default function App({ Component, pageProps }: AppProps) {
     useEffect(() => {
@@ -42,6 +43,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
     return (
         <>
+            <ZeroShieldCmp />
             <Head>
                 <title>CleanPath AI | MFA Detection Dashboard</title>
                 <meta name="description" content="Real-time ad fraud detection and analytics" />
