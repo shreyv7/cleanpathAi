@@ -1,15 +1,13 @@
 import Script from "next/script";
 
-const enabled = process.env.NEXT_PUBLIC_ZEROSHIELD_ENABLED === "true";
-const propertyId = process.env.NEXT_PUBLIC_ZEROSHIELD_PROPERTY_ID;
-const apiKey = process.env.NEXT_PUBLIC_ZEROSHIELD_API_KEY;
-const apiUrl = process.env.NEXT_PUBLIC_ZEROSHIELD_API_URL;
-const scriptUrl =
-    process.env.NEXT_PUBLIC_ZEROSHIELD_SCRIPT_URL ??
-    (apiUrl ? `${apiUrl.replace(/\/$/, "")}/integrations/cmp.js` : undefined);
-const language = process.env.NEXT_PUBLIC_ZEROSHIELD_LANGUAGE ?? "auto";
-const blockerMode = process.env.NEXT_PUBLIC_ZEROSHIELD_BLOCKER_MODE ?? "strict";
-const bannerId = process.env.NEXT_PUBLIC_ZEROSHIELD_BANNER_ID;
+const enabled = true;
+const propertyId = "ee130581-3699-483c-b4c8-aef92ae586fd";
+const apiKey = "zsk_live_TAp5ulKoiZoPR8LZu6qgRhcp";
+const apiUrl = "https://dpdpa-backend-290927690790.asia-south1.run.app/public/v1";
+const scriptUrl = "https://dpdpashield-500607.web.app/cmp.js";
+const language = "auto";
+const blockerMode = "strict";
+const bannerId = "c0c7dadd-994d-4035-971c-dbb585a55aee";
 
 export default function ZeroShieldCmp() {
     if (!enabled || !propertyId || !apiKey || !scriptUrl || !apiUrl) {
